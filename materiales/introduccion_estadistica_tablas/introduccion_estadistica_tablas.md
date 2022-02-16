@@ -137,8 +137,14 @@ $$\frac{x_1 + x_2 + x_3 +\ldots  + x_n}{n} = \frac{1}{n}\sum^{n}_{i=1} x_i$$
 
 a este valor se le denota $\overline x$
 
-idea geométrica:
-![img/middle_point.png](img/middle_point.png){ width=350px }
+
+### Idea geométrica
+Dados dos puntos en el espacio $x$ e $y$, el punto medio entre ambos es justamente $(x+y)/2$. Esto ocurre tanto en la recta como en el espacio
+
+![punto medio](img/middle_point.png){ width=250px}
+
+
+### Cómo calcularla
 
 Para calcularlo, si tenemos una tabla de frecuencias 
 
@@ -162,11 +168,44 @@ en el caso de que tengamos una tabla de frecuencias agrupadas por intervalos
 |$[l_1, l_2)$| $x_1$|$n_1$|
 |$[l_2, l_3)$| $x_2$| $n_2$|
 |$[l_3, l_4)$| $x_3$|$n_3$|
-|$\vdots$|$\vdots$|
-|$[l_{N}, l_{N+1})$| $x_N$||$n_N$|
+|$\vdots$|$\vdots$|$\vdots$|
+|$[l_{K}, l_{K+1})$| $x_K$|$n_K$|
 
 
-haremos lo mismo pero usando la marca de clase $x_i = \frac{x_i + x_{i+1}}{2}$
+haremos lo mismo pero usando la marca de clase $x_i = \frac{l_i + l_{i+1}}{2}$
+
+### Ejemplos
+
+La siguiente tabla recoge las ventas de 100 sucursales de una empresa
+
+|ventas (miles)|$x_i$| $n_i$| $x_i \cdot n_i$
+|-             |-    |   -| -|
+|[700, 800)    |750  |   4|  3000   |        
+|[800, 900)    |850  |   7|  5950   |    
+|[900, 1000)   |950  |   8|  7600   |     
+|[1000, 1100)  |1050 |  10|  10500  |      
+|[1100, 1200)  |1150 |  12|  13800  |      
+|[1200, 1300)  |1250 |  17|  21250  |      
+[1300, 1400)   |1350 |  13|  17550  |   
+[1400, 1500)   |1450 |  10|  14500  |   
+[1500, 1600)   |1550 |   9|  13950  |   
+[1600, 1700)   |1650 |   7|  11550  |   
+[1700, 1800)   |1750 |   2|  3500   |   
+[1800, 1900)   |1850 |   1|  1850   |   
+
+
+
+
+calculemos la media
+
+
+\begin{align*}
+\overline x &= \frac{1}{N}\sum^{N}_{i=1} x_i  \cdot n_i\\
+&= \frac{750  \cdot  4 + 850  \cdot  7 + 950 \cdot 8 +  \ldots + 1850 \cdot  1}{100}\\
+& = \frac{3000  + 5950  + 7600  + 10500 + 13800 + 21250 + 17550 + 14500 + 13950 + 11550 + 3500  + 1850}{100}\\
+&=\frac{125000}{100}=1250
+\end{align*}
+
 
 ## Moda
 
