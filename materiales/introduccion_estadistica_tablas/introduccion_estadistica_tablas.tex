@@ -473,7 +473,7 @@ brutos)
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-renta & \(n_i\)\tabularnewline
+\(x_i\) & \(n_i\)\tabularnewline
 \midrule
 \endhead
 0.5 & 1\tabularnewline
@@ -548,6 +548,60 @@ Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
   Si no encontramos uno cuya \(N_i\) iguale a \(N/2\) sino uno que la
   supere directamente, tomamos ese dato como mediana. \(Me = x_i\).
 \end{enumerate}
+
+\hypertarget{ejemplo-1-1}{%
+\subsubsection{Ejemplo 1}\label{ejemplo-1-1}}
+
+Se recogen datos de la satisfacción de 37 usuarios con un servicio. Los
+usuarios responden con notas del 1 al 9.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+nota & \(n_i\) & \(N_i\)\tabularnewline
+\midrule
+\endhead
+1 & 2 & 2\tabularnewline
+2 & 2 & 4\tabularnewline
+3 & 4 & 8\tabularnewline
+4 & 5 & 13\tabularnewline
+5 & 8 & 21\tabularnewline
+6 & 9 & 30\tabularnewline
+7 & 3 & 33\tabularnewline
+8 & 4 & 37\tabularnewline
+9 & 2 & 39\tabularnewline
+\bottomrule
+\end{longtable}
+
+Calculamos \(N/2\) y obtenemos \(39/2 = 19.5\). Encontramos que el la
+primera frecuencia acumulada que supera o iguala \(19.5\) es 21, no
+habiendo ninguna que la iguale, de modo que \(Me = 5\)
+
+\hypertarget{ejemplo-2-1}{%
+\subsubsection{Ejemplo 2}\label{ejemplo-2-1}}
+
+Si en el ejemplo anterior en lugar de la tabla anterior hubieramos
+tenido la tabla:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+nota & \(n_i\) & \(N_i\)\tabularnewline
+\midrule
+\endhead
+1 & 2 & 2\tabularnewline
+2 & 2 & 4\tabularnewline
+3 & 4 & 8\tabularnewline
+4 & 5 & 13\tabularnewline
+5 & 8 & 21\tabularnewline
+6 & 9 & 30\tabularnewline
+7 & 3 & 33\tabularnewline
+8 & 4 & 37\tabularnewline
+9 & 5 & 42\tabularnewline
+\bottomrule
+\end{longtable}
+
+En este caso \(N/2= 21\) y al mirar entre las frecuencias acumuladas
+vemos que hay una que iguala 21, luego la mediana será
+\[ Me = (5+6)/2 = 5.5\]
 
 \hypertarget{bibliografuxeda}{%
 \section{Bibliografía}\label{bibliografuxeda}}

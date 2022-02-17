@@ -239,7 +239,7 @@ La siguente muestra es el resultado realizar una muestra de renta per capita en 
 
 $$ 14, 23, 15, 17,12, 0.5, 30, 12, 23, 18, 25, 30, 15, 12, 23 $$
 
-|renta|$n_i$| 
+|$x_i$|$n_i$| 
 |-    |-    |   
 | 0.5 |1  |     
 |  12 |3  |      
@@ -306,6 +306,45 @@ Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
 1. Buscamos el valor que ocupa la *posición central* mirando en la tabla cual es el primer dato $x_i$ cuya frecuencia acumulada supera o iguala $N/2$.
 2. Si encontramos un dato cuya frecuencia acumulada $N_i$ **iguala** $N/2$ tomamos como mediana la media de ese dato $x_i$ y el siguiente $x_{i+1}$. $Me = \frac{x_{i} + x_{i+1}}{2}$
 3. Si no encontramos uno cuya $N_i$ iguale a $N/2$ sino uno que la supere directamente, tomamos ese dato como mediana. $Me = x_i$.
+
+
+### Ejemplo 1
+
+Se recogen datos de la satisfacción de 37 usuarios con un servicio. Los usuarios responden
+con notas del 1 al 9.
+
+|nota|$n_i$|$N_i$|
+|-|-|-|
+|1|2 |2  |
+|2|2 |4  | 	
+|3|4 |8  | 	
+|4|5 |13 | 	
+|5|8 |21 | 	
+|6|9 |30 | 	
+|7|3 |33 | 	
+|8|4 |37 | 	
+|9|2 |39 |
+
+Calculamos $N/2$ y obtenemos $39/2 = 19.5$. Encontramos que el la primera frecuencia acumulada que supera o iguala $19.5$ es 21, no habiendo ninguna que la iguale, de modo que $Me = 5$
+
+### Ejemplo 2
+
+Si en el ejemplo anterior en lugar  de la tabla anterior hubieramos tenido la tabla:
+
+|nota|$n_i$|$N_i$|
+|-|-|-|
+|1|2 |2  |
+|2|2 |4  | 	
+|3|4 |8  | 	
+|4|5 |13 | 	
+|5|8 |21 | 	
+|6|9 |30 | 	
+|7|3 |33 | 	
+|8|4 |37 | 	
+|9|5 |42 |
+
+En este caso    $N/2= 21$ y al mirar entre las frecuencias acumuladas vemos que hay una que iguala 21, luego la mediana será
+$$ Me = (5+6)/2 = 5.5$$       
 
 # Bibliografía
 
