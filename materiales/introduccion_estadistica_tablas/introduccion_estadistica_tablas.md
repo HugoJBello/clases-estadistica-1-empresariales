@@ -24,6 +24,25 @@ proporciones en que están incluidas en tal población.
 
 En las elecciones generales, la **población** sería el conjunto total de votantes. Una muestra sería seleccionar a 1000 individuos para intentar predecir el resultado de las elecciones. La muestra será **representativa** si contiene la misma proporción de mujeres y hombres que la población votante, geográficamente todas las regiones están proporcionalmente representadas...
 
+## Variables estadísticas
+
+La noción de variable estadística, es una simplificación del concepto de *variable aleatoria* que veremos en temas posteriores. De momento, definiremos *variable estadística* como:
+
+> característica o cualidad de un individuo que está propensa a adquirir diferentes 
+> valores. Estos valores, a su vez, se caracterizan por poder medirse. 
+
+### Tipos de variables estadísticas
+
+- **Cuantitativas**: Pueden ser medidas numéricamente.
+    - **Continuas**: Puede tomar cualquier valor dentro de un intervalo o intervalos
+    - **Discretas**: Solo toma una cantidad discreta de valores (por ejemplo una cantidad finita de valores)
+- **Cualitativas**: son aquellas características o cualidades que no pueden ser calculadas con números, sino que son clasificadas con palabras
+
+### Ejemplo
+- Cualitativa: Situación laboral de una persona (empleado / estudiante / paro). 
+- Cuantitativa continua: IPC, IBEX
+- Cuantitativa discreta: número de hermanos, edad.
+
 # Las tablas de frecuencias
 
 Pensemos en los siguientes datos: Supongamos que hemos extraído una muestra de la producción diaria de 30 telares de alfombras
@@ -194,8 +213,6 @@ La siguiente tabla recoge las ventas de 100 sucursales de una empresa
 [1800, 1900)   |1850 |   1|  1850   |   
 
 
-
-
 calculemos la media
 
 
@@ -209,9 +226,86 @@ calculemos la media
 
 ## Moda
 
+La **moda** ($Mo$) es el valor que aparece con mayor frecuencia en un conjunto de datos. Si hubiera varios datos con frecuencia máxima (no hay un único dato con mayor frecuencia sino varios) la moda serían todos ellos. Por lo tanto la moda puede no ser única.
+
+
+### Cómo calcularla
+
+Simplemente buscamos el valor o valores con mayor frecuencia absoluta.
+
+### Ejemplo
+
+La siguente muestra es el resultado realizar una muestra de renta per capita en un barrio concreto de madrid (en miles de euros anuales brutos)
+
+$$ 14, 23, 15, 17,12, 0.5, 30, 12, 23, 18, 25, 30, 15, 12, 23 $$
+
+|renta|$n_i$| 
+|-    |-    |   
+| 0.5 |1  |     
+|  12 |3  |      
+|  14 |1 |       
+|  17 |1 |       
+|  18 |1 |       
+|  23 |3 |    
+|  30 |2 |    
+
+Luego la moda es:
+$$Mo = 12, 23$$
+
+
+<!-- 
+Para obtener la moda en datos agrupados por intervalos, debemos primero buscar el intervalo de mayor frecuencia $I_i$ y para elegir que valor es la moda dentro de ese intervalo se usa la siguiente fórmula: \ref{a}
+
+   $$M=L_{i}+\left({\frac {D_{1}}{D_{1}+D_{2}}}\right)A_{i}$$
+
+Donde:
+
+$\displaystyle L_{i}$ = Límite inferior de la clase modal.
+
+$D_1 =$ es la diferencia entre la frecuencia absoluta modal y la frecuencia absoluta premodal.
+
+$D_2 =$ es la diferencia entre la frecuencia absoluta modal y la frecuencia absoluta postmodal.
+
+$A_{i} =$ Amplitud del intervalo modal
+
+!-->
+
+
 ## Mediana
 
+La mediana $Me$ representa el valor de la variable de posición central en un conjunto de datos ordenados.
 
+Si tenemos un número impar de datos, tomamos como mediana simplemente el valor que ocupe la posición central al ordenarlos, por ejemplo para los datos
+
+$$1, 2, 3, 4, 5$$
+ 
+El dato central es $3$ así que $Me = 3$.
+
+
+Si tenemos un número par de datos,  al ordenar los datos no encontraremos un dato central, sino dos, con lo cual tomaremos como mediana la media entre estos dos datos centrales. Por ejemplo para los datos
+
+$$7, 8, 9, 10, 11, 12 $$
+
+No hay un dato central, podríamos decir que los valores $9$ y $10$ son *centrales* así que tomamos $Me= (9+10)/2$
+
+### Cómo calcularla
+
+Si los datos no están en una tabla de frecuencias, haremos lo que hemos comentado en los párrafos anteriores. Si hemos organizado los datos por frecuencias, haremos lo siguiente:
+
+Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
+
+
+|$x_i$|$n_i$| $N_i$
+|-|-| -|
+|$x_1$| $n_1$| $N_1$|
+|$x_2$| $n_2$|$N_2$|
+|$x_3$| $n_3$|$N_3$|
+|$\vdots$|$\vdots$|$\vdots$|
+|$x_N$|$n_N$| $N_N$|
+
+1. Buscamos el valor que ocupa la *posición central* mirando en la tabla cual es el primer dato $x_i$ cuya frecuencia acumulada supera o iguala $N/2$.
+2. Si encontramos un dato cuya frecuencia acumulada $N_i$ **iguala** $N/2$ tomamos como mediana la media de ese dato $x_i$ y el siguiente $x_{i+1}$. $Me = \frac{x_{i} + x_{i+1}}{2}$
+3. Si no encontramos uno cuya $N_i$ iguale a $N/2$ sino uno que la supere directamente, tomamos ese dato como mediana. $Me = x_i$.
 
 # Bibliografía
 

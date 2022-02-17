@@ -136,6 +136,57 @@ intentar predecir el resultado de las elecciones. La muestra será
 hombres que la población votante, geográficamente todas las regiones
 están proporcionalmente representadas\ldots{}
 
+\hypertarget{variables-estaduxedsticas}{%
+\subsection{Variables estadísticas}\label{variables-estaduxedsticas}}
+
+La noción de variable estadística, es una simplificación del concepto de
+\emph{variable aleatoria} que veremos en temas posteriores. De momento,
+definiremos \emph{variable estadística} como:
+
+\begin{quote}
+característica o cualidad de un individuo que está propensa a adquirir
+diferentes valores. Estos valores, a su vez, se caracterizan por poder
+medirse.
+\end{quote}
+
+\hypertarget{tipos-de-variables-estaduxedsticas}{%
+\subsubsection{Tipos de variables
+estadísticas}\label{tipos-de-variables-estaduxedsticas}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Cuantitativas}: Pueden ser medidas numéricamente.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Continuas}: Puede tomar cualquier valor dentro de un
+    intervalo o intervalos
+  \item
+    \textbf{Discretas}: Solo toma una cantidad discreta de valores (por
+    ejemplo una cantidad finita de valores)
+  \end{itemize}
+\item
+  \textbf{Cualitativas}: son aquellas características o cualidades que
+  no pueden ser calculadas con números, sino que son clasificadas con
+  palabras
+\end{itemize}
+
+\hypertarget{ejemplo-1}{%
+\subsubsection{Ejemplo}\label{ejemplo-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Cualitativa: Situación laboral de una persona (empleado / estudiante /
+  paro).
+\item
+  Cuantitativa continua: IPC, IBEX
+\item
+  Cuantitativa discreta: número de hermanos, edad.
+\end{itemize}
+
 \hypertarget{las-tablas-de-frecuencias}{%
 \section{Las tablas de frecuencias}\label{las-tablas-de-frecuencias}}
 
@@ -401,8 +452,102 @@ calculemos la media
 \hypertarget{moda}{%
 \subsection{Moda}\label{moda}}
 
+La \textbf{moda} (\(Mo\)) es el valor que aparece con mayor frecuencia
+en un conjunto de datos. Si hubiera varios datos con frecuencia máxima
+(no hay un único dato con mayor frecuencia sino varios) la moda serían
+todos ellos. Por lo tanto la moda puede no ser única.
+
+\hypertarget{cuxf3mo-calcularla-1}{%
+\subsubsection{Cómo calcularla}\label{cuxf3mo-calcularla-1}}
+
+Simplemente buscamos el valor o valores con mayor frecuencia absoluta.
+
+\hypertarget{ejemplo-2}{%
+\subsubsection{Ejemplo}\label{ejemplo-2}}
+
+La siguente muestra es el resultado realizar una muestra de renta per
+capita en un barrio concreto de madrid (en miles de euros anuales
+brutos)
+
+\[ 14, 23, 15, 17,12, 0.5, 30, 12, 23, 18, 25, 30, 15, 12, 23 \]
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+renta & \(n_i\)\tabularnewline
+\midrule
+\endhead
+0.5 & 1\tabularnewline
+12 & 3\tabularnewline
+14 & 1\tabularnewline
+17 & 1\tabularnewline
+18 & 1\tabularnewline
+23 & 3\tabularnewline
+30 & 2\tabularnewline
+\bottomrule
+\end{longtable}
+
+Luego la moda es: \[Mo = 12, 23\]
+
 \hypertarget{mediana}{%
 \subsection{Mediana}\label{mediana}}
+
+La mediana \(Me\) representa el valor de la variable de posición central
+en un conjunto de datos ordenados.
+
+Si tenemos un número impar de datos, tomamos como mediana simplemente el
+valor que ocupe la posición central al ordenarlos, por ejemplo para los
+datos
+
+\[1, 2, 3, 4, 5\]
+
+El dato central es \(3\) así que \(Me = 3\).
+
+Si tenemos un número par de datos, al ordenar los datos no encontraremos
+un dato central, sino dos, con lo cual tomaremos como mediana la media
+entre estos dos datos centrales. Por ejemplo para los datos
+
+\[7, 8, 9, 10, 11, 12 \]
+
+No hay un dato central, podríamos decir que los valores \(9\) y \(10\)
+son \emph{centrales} así que tomamos \(Me= (9+10)/2\)
+
+\hypertarget{cuxf3mo-calcularla-2}{%
+\subsubsection{Cómo calcularla}\label{cuxf3mo-calcularla-2}}
+
+Si los datos no están en una tabla de frecuencias, haremos lo que hemos
+comentado en los párrafos anteriores. Si hemos organizado los datos por
+frecuencias, haremos lo siguiente:
+
+Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\(x_i\) & \(n_i\) & \(N_i\)\tabularnewline
+\midrule
+\endhead
+\(x_1\) & \(n_1\) & \(N_1\)\tabularnewline
+\(x_2\) & \(n_2\) & \(N_2\)\tabularnewline
+\(x_3\) & \(n_3\) & \(N_3\)\tabularnewline
+\(\vdots\) & \(\vdots\) & \(\vdots\)\tabularnewline
+\(x_N\) & \(n_N\) & \(N_N\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Buscamos el valor que ocupa la \emph{posición central} mirando en la
+  tabla cual es el primer dato \(x_i\) cuya frecuencia acumulada supera
+  o iguala \(N/2\).
+\item
+  Si encontramos un dato cuya frecuencia acumulada \(N_i\)
+  \textbf{iguala} \(N/2\) tomamos como mediana la media de ese dato
+  \(x_i\) y el siguiente \(x_{i+1}\). \(Me = \frac{x_{i} + x_{i+1}}{2}\)
+\item
+  Si no encontramos uno cuya \(N_i\) iguale a \(N/2\) sino uno que la
+  supere directamente, tomamos ese dato como mediana. \(Me = x_i\).
+\end{enumerate}
 
 \hypertarget{bibliografuxeda}{%
 \section{Bibliografía}\label{bibliografuxeda}}
