@@ -223,6 +223,33 @@ calculemos la media
 &=\frac{125000}{100}=1250
 \end{align*}
 
+### Propiedades de la media
+- Se ve muy afectada por valores extremos
+- La media de dos variables es la suma de dos medias
+
+  \begin{align*}
+   x_1, x_2, x_3,\ldots , x_n &\longrightarrow \overline x\\
+   y_1, y_2, y_3,\ldots , y_n &\longrightarrow \overline y
+   &\\
+   x_1 + y_1, x_2+y_2, \ldots , x_n + y_n & \longrightarrow \overline{x+y}
+  \end{align*}
+
+
+  $$\overline{x + y} = \overline x + \overline y$$
+
+- Sumar a cada valor de los datos una cierta cantidad y hacer la media del resultado es lo mismo que sumar dicha cantidad a la media de los datos:
+  
+\begin{align*}
+\overline{x+k} &= \frac{(x_1 +k)+ (x_2+k) +\ldots  + (x_N +k) }{N}\\
+&=\frac{N\cdot k + x_1+  x_2 +  x_3  +\ldots  +  x_N}{N} = \overline {x} +k
+\end{align*}
+
+- Multiplicar a una variable por una cantidad y hacer su media resulta en multiplicar a la media por dicha cantidad:
+  
+\begin{align*}
+k \overline{x} &= k\frac{x_1+ x_2  + x_3  +\ldots  + x_N }{N}\\
+&=\frac{k x_1+ k x_2 + k x_3  +\ldots  + k x_N}{N} = \overline {kx}
+\end{align*}
 
 ## Moda
 
@@ -308,6 +335,7 @@ Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
 3. Si no encontramos uno cuya $N_i$ iguale a $N/2$ sino uno que la supere directamente, tomamos ese dato como mediana. $Me = x_i$.
 
 
+
 ### Ejemplo 1
 
 Se recogen datos de la satisfacción de 37 usuarios con un servicio. Los usuarios responden
@@ -344,7 +372,83 @@ Si en el ejemplo anterior en lugar  de la tabla anterior hubieramos tenido la ta
 |9|5 |42 |
 
 En este caso    $N/2= 21$ y al mirar entre las frecuencias acumuladas vemos que hay una que iguala 21, luego la mediana será
-$$ Me = (5+6)/2 = 5.5$$       
+$$Me = (5+6)/2 = 5.5$$       
+
+### Propiedades de la mediana
+- No se ve afectada por valores extremos.
+- Al igual que con la media
+  $$Me(k\cdot x) = Me(x) \cdot k$$
+  $$Me(k+ x) = Me(x) + k$$
+  Esto se debe a que sumar todos los datos por una cantidad o multiplicarlos no varía la elección del valor central.
+- la mediana de la suma de dos conjuntos de datos (variables) **no** coincide con la suma de las medianas de estos datos.
+
+# Medidas de orden
+Son medidas estadísticas que se basan en la ordenación de los datos para extraer propiedades de la distribución. 
+
+Las principales medidas de orden son los Cuartiles y los percentiles.
+
+## Cuartiles y percentiles
+
+Dados unos datos:
+
+$$x_1, x_2, x_3,\ldots , x_n$$
+
+- Dado cualquier número $k$ entre 0 y 100, el **percentil** $k$ (denotado por $P_k$) es el valor $x_i$ de la muestra ordenada que deja tras de si al $k\%$ de los datos.
+- El **primer cuartil** $Q_1$ es el dato $x_i$ de la muestra ordenada que deja tras de si a una cuarta parte de los datos. Por lo tanto $Q_1 = P_{25}$
+- El **segundo cuartil** $Q_2$ es el dato $x_i$ de la muestra ordenada que deja tras de si a la mitad de los datos. Es decir el segundo cuartil es la mediana. $Q_2 = Me = P_{50}$.
+- El **tercer cuartil** $Q_3$ es el dato $x_i$ de la muestra ordenada que deja tras de si a tres cuartas partes de los datos. Por lo tanto $Q_3 = P_{75}$
+
+
+### Cómo calcularlos 
+
+Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
+
+
+|$x_i$|$n_i$| $N_i$
+|-|-| -|
+|$x_1$| $n_1$| $N_1$|
+|$x_2$| $n_2$|$N_2$|
+|$x_3$| $n_3$|$N_3$|
+|$\vdots$|$\vdots$|$\vdots$|
+|$x_N$|$n_N$| $N_N$|
+
+1. Buscamos el valor que deja tras de si a la proporción de los datos que buscamos, si queremos calcular el percentil $k$, calculamos el $k$ por ciento de N (es decir $N\cdot k /100$). Después  mirando en la tabla cual es el primer dato $x_i$ cuya frecuencia acumulada supera o iguala ese valor.
+2. Si encontramos un dato cuya frecuencia acumulada $N_i$ **iguala** el porcentaje de $N$ calculado antes, tomamos como $P_k$ la media de ese dato $x_i$ y el siguiente $x_{i+1}$. 
+3. Si no encontramos uno cuya $N_i$ iguale el pordentaje anterior sino uno que la supere directamente, tomamos ese dato $P_k$.
+
+Como se puede observar es el mismo proceso que hicimos con la mediana pero en vez de hacer $N/2$ hacemos $N/4$ para $Q_1$ o $3N/4$ para $Q_3$.
+
+
+### Ejemplos
+
+La siguiente tabla recoge los datos del número de veces que un conjunto de 20 encuestados consumen un determinado servicio a la semana
+
+|$x_i$|$n_i$|$N_i$|
+|-|-|-|
+|1|2 |2  |
+|2|5 |7  | 	
+|3|5 |12  | 	
+|4|3 |15 | 	
+|5|3 |18 | 	
+|6|1 |19 | 	
+|7|1 |20 | 	
+
+Calculemos los cuartiles
+
+- Calculamos $25 \cdot N / 100 = 5$. Buscamos el primer valor cuya $N_i$ es mayor o igual que 5. Encontramos que el 2 directamente tiene una frecuencia acumulada que supera y no hay ningún valor que lo iguala. Así que $Q_1 = 2$.
+
+- Calculamos $N/2 = 5$. Buscamos el primer valor cuya $N_i$ es mayor o igual que 10. Encontramos que el 3 directamente tiene una frecuencia acumulada que supera y no hay ningún valor que lo iguala. Así que $Q_2 = Me = 3$.
+
+
+- Calculamos $75 N/100 = 15$. Buscamos el primer valor cuya $N_i$ es mayor o igual que 15. Encontramos que el 4 tiene una frecuencia acumulada que iguala 15 así que $Q_3 = P_{75} = (4+5)/2$.
+
+Calculemos el percentil 90 $P_{90}$. Para ello  calculamos $0.90*N = 18$. Buscamos el primer valor cuya $N_i$ es mayor o igual que 18.  Encontramos que el 5 tiene una frecuencia acumulada que iguala 18 así que $P_{90} = (5+6)/2$.
+
+
+
+# Medidas de dispersión
+
+
 
 # Bibliografía
 

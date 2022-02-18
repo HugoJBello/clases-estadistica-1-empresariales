@@ -449,6 +449,46 @@ calculemos la media
 &=\frac{125000}{100}=1250
 \end{align*}
 
+\hypertarget{propiedades-de-la-media}{%
+\subsubsection{Propiedades de la media}\label{propiedades-de-la-media}}
+
+\begin{itemize}
+\item
+  Se ve muy afectada por valores extremos
+\item
+  La media de dos variables es la suma de dos medias
+
+  \begin{align*}
+   x_1, x_2, x_3,\ldots , x_n &\longrightarrow \overline x\\
+   y_1, y_2, y_3,\ldots , y_n &\longrightarrow \overline y
+   &\\
+   x_1 + y_1, x_2+y_2, \ldots , x_n + y_n & \longrightarrow \overline{x+y}
+  \end{align*}
+
+  \[\overline{x + y} = \overline x + \overline y\]
+\item
+  Sumar a cada valor de los datos una cierta cantidad y hacer la media
+  del resultado es lo mismo que sumar dicha cantidad a la media de los
+  datos:
+\end{itemize}
+
+\begin{align*}
+\overline{x+k} &= \frac{(x_1 +k)+ (x_2+k) +\ldots  + (x_N +k) }{N}\\
+&=\frac{N\cdot k + x_1+  x_2 +  x_3  +\ldots  +  x_N}{N} = \overline {x} +k
+\end{align*}
+
+\begin{itemize}
+\tightlist
+\item
+  Multiplicar a una variable por una cantidad y hacer su media resulta
+  en multiplicar a la media por dicha cantidad:
+\end{itemize}
+
+\begin{align*}
+k \overline{x} &= k\frac{x_1+ x_2  + x_3  +\ldots  + x_N }{N}\\
+&=\frac{k x_1+ k x_2 + k x_3  +\ldots  + k x_N}{N} = \overline {kx}
+\end{align*}
+
 \hypertarget{moda}{%
 \subsection{Moda}\label{moda}}
 
@@ -601,7 +641,147 @@ nota & \(n_i\) & \(N_i\)\tabularnewline
 
 En este caso \(N/2= 21\) y al mirar entre las frecuencias acumuladas
 vemos que hay una que iguala 21, luego la mediana será
-\[ Me = (5+6)/2 = 5.5\]
+\[Me = (5+6)/2 = 5.5\]
+
+\hypertarget{propiedades-de-la-mediana}{%
+\subsubsection{Propiedades de la
+mediana}\label{propiedades-de-la-mediana}}
+
+\begin{itemize}
+\tightlist
+\item
+  No se ve afectada por valores extremos.
+\item
+  Al igual que con la media \[Me(k\cdot x) = Me(x) \cdot k\]
+  \[Me(k+ x) = Me(x) + k\] Esto se debe a que sumar todos los datos por
+  una cantidad o multiplicarlos no varía la elección del valor central.
+\item
+  la mediana de la suma de dos conjuntos de datos (variables)
+  \textbf{no} coincide con la suma de las medianas de estos datos.
+\end{itemize}
+
+\hypertarget{medidas-de-orden}{%
+\section{Medidas de orden}\label{medidas-de-orden}}
+
+Son medidas estadísticas que se basan en la ordenación de los datos para
+extraer propiedades de la distribución.
+
+Las principales medidas de orden son los Cuartiles y los percentiles.
+
+\hypertarget{cuartiles-y-percentiles}{%
+\subsection{Cuartiles y percentiles}\label{cuartiles-y-percentiles}}
+
+Dados unos datos:
+
+\[x_1, x_2, x_3,\ldots , x_n\]
+
+\begin{itemize}
+\tightlist
+\item
+  Dado cualquier número \(k\) entre 0 y 100, el \textbf{percentil} \(k\)
+  (denotado por \(P_k\)) es el valor \(x_i\) de la muestra ordenada que
+  deja tras de si al \(k\%\) de los datos.
+\item
+  El \textbf{primer cuartil} \(Q_1\) es el dato \(x_i\) de la muestra
+  ordenada que deja tras de si a una cuarta parte de los datos. Por lo
+  tanto \(Q_1 = P_{25}\)
+\item
+  El \textbf{segundo cuartil} \(Q_2\) es el dato \(x_i\) de la muestra
+  ordenada que deja tras de si a la mitad de los datos. Es decir el
+  segundo cuartil es la mediana. \(Q_2 = Me = P_{50}\).
+\item
+  El \textbf{tercer cuartil} \(Q_3\) es el dato \(x_i\) de la muestra
+  ordenada que deja tras de si a tres cuartas partes de los datos. Por
+  lo tanto \(Q_3 = P_{75}\)
+\end{itemize}
+
+\hypertarget{cuxf3mo-calcularlos}{%
+\subsubsection{Cómo calcularlos}\label{cuxf3mo-calcularlos}}
+
+Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\(x_i\) & \(n_i\) & \(N_i\)\tabularnewline
+\midrule
+\endhead
+\(x_1\) & \(n_1\) & \(N_1\)\tabularnewline
+\(x_2\) & \(n_2\) & \(N_2\)\tabularnewline
+\(x_3\) & \(n_3\) & \(N_3\)\tabularnewline
+\(\vdots\) & \(\vdots\) & \(\vdots\)\tabularnewline
+\(x_N\) & \(n_N\) & \(N_N\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Buscamos el valor que deja tras de si a la proporción de los datos que
+  buscamos, si queremos calcular el percentil \(k\), calculamos el \(k\)
+  por ciento de N (es decir \(N\cdot k /100\)). Después mirando en la
+  tabla cual es el primer dato \(x_i\) cuya frecuencia acumulada supera
+  o iguala ese valor.
+\item
+  Si encontramos un dato cuya frecuencia acumulada \(N_i\)
+  \textbf{iguala} el porcentaje de \(N\) calculado antes, tomamos como
+  \(P_k\) la media de ese dato \(x_i\) y el siguiente \(x_{i+1}\).
+\item
+  Si no encontramos uno cuya \(N_i\) iguale el pordentaje anterior sino
+  uno que la supere directamente, tomamos ese dato \(P_k\).
+\end{enumerate}
+
+Como se puede observar es el mismo proceso que hicimos con la mediana
+pero en vez de hacer \(N/2\) hacemos \(N/4\) para \(Q_1\) o \(3N/4\)
+para \(Q_3\).
+
+\hypertarget{ejemplos-1}{%
+\subsubsection{Ejemplos}\label{ejemplos-1}}
+
+La siguiente tabla recoge los datos del número de veces que un conjunto
+de 20 encuestados consumen un determinado servicio a la semana
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\(x_i\) & \(n_i\) & \(N_i\)\tabularnewline
+\midrule
+\endhead
+1 & 2 & 2\tabularnewline
+2 & 5 & 7\tabularnewline
+3 & 5 & 12\tabularnewline
+4 & 3 & 15\tabularnewline
+5 & 3 & 18\tabularnewline
+6 & 1 & 19\tabularnewline
+7 & 1 & 20\tabularnewline
+\bottomrule
+\end{longtable}
+
+Calculemos los cuartiles
+
+\begin{itemize}
+\item
+  Calculamos \(25 \cdot N / 100 = 5\). Buscamos el primer valor cuya
+  \(N_i\) es mayor o igual que 5. Encontramos que el 2 directamente
+  tiene una frecuencia acumulada que supera y no hay ningún valor que lo
+  iguala. Así que \(Q_1 = 2\).
+\item
+  Calculamos \(N/2 = 5\). Buscamos el primer valor cuya \(N_i\) es mayor
+  o igual que 10. Encontramos que el 3 directamente tiene una frecuencia
+  acumulada que supera y no hay ningún valor que lo iguala. Así que
+  \(Q_2 = Me = 3\).
+\item
+  Calculamos \(75 N/100 = 15\). Buscamos el primer valor cuya \(N_i\) es
+  mayor o igual que 15. Encontramos que el 4 tiene una frecuencia
+  acumulada que iguala 15 así que \(Q_3 = P_{75} = (4+5)/2\).
+\end{itemize}
+
+Calculemos el percentil 90 \(P_{90}\). Para ello calculamos
+\(0.90*N = 18\). Buscamos el primer valor cuya \(N_i\) es mayor o igual
+que 18. Encontramos que el 5 tiene una frecuencia acumulada que iguala
+18 así que \(P_{90} = (5+6)/2\).
+
+\hypertarget{medidas-de-dispersiuxf3n}{%
+\section{Medidas de dispersión}\label{medidas-de-dispersiuxf3n}}
 
 \hypertarget{bibliografuxeda}{%
 \section{Bibliografía}\label{bibliografuxeda}}
