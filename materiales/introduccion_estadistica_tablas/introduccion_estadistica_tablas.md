@@ -404,13 +404,14 @@ $$x_1, x_2, x_3,\ldots , x_n$$
 Dada una tabla (en la que calculamos tambíen las frecuencias acumuladas)
 
 
-|$x_i$|$n_i$| $N_i$
-|-|-| -|
-|$x_1$| $n_1$| $N_1$|
-|$x_2$| $n_2$|$N_2$|
-|$x_3$| $n_3$|$N_3$|
+|$x_i$   |$n_i$   |$N_i$   |
+|-       |-       | -      |
+|$x_1$   | $n_1$  |$N_1$   |
+|$x_2$   | $n_2$  |$N_2$   |
+|$x_3$   | $n_3$  |$N_3$   |
 |$\vdots$|$\vdots$|$\vdots$|
-|$x_N$|$n_N$| $N_N$|
+|$x_N$   |$n_N$   | $N_N$  |
+
 
 1. Buscamos el valor que deja tras de si a la proporción de los datos que buscamos, si queremos calcular el percentil $k$, calculamos el $k$ por ciento de N (es decir $N\cdot k /100$). Después  mirando en la tabla cual es el primer dato $x_i$ cuya frecuencia acumulada supera o iguala ese valor.
 2. Si encontramos un dato cuya frecuencia acumulada $N_i$ **iguala** el porcentaje de $N$ calculado antes, tomamos como $P_k$ la media de ese dato $x_i$ y el siguiente $x_{i+1}$. 
@@ -448,6 +449,221 @@ Calculemos el percentil 90 $P_{90}$. Para ello  calculamos $0.90*N = 18$. Buscam
 
 # Medidas de dispersión
 
+Las medidas de dispersión tratan, a **través de diferentes cálculos**, de arrojar un valor numérico que ofrezca información sobre el grado de variabilidad de una variable. En otras palabras, las medidas de dispersión valores numéricos que indican si una variable se mueve mucho, poco, más o menos que otra.
+
+## Rango  y rango intercuartílico
+Dada una muestra 
+$$ x_1, x_2, \ldots , x_N$$
+
+El **rango** se define como 
+
+$$R= Max - Min$$
+donde $Max$ es el valor máximo de la muestra y $Min$ el valor mínimo
+
+Por otra parte el **rango intercuartílico** de define como 
+
+$$RI =  Q_3 - Q_1$$
+ 
+Donde $Q_3$ es el tercer cuartil y $Q_1$ el primer cuartil.
+
+Ambas dan una idea de cual es la distancia entre los valores más pequeños y los más grandes que toma la muestra.
+
+## Varianza y desviación típica
+Dada una muestra 
+$$ x_1, x_2, \ldots , x_N$$
+
+La **varianza** se define como 
+
+$$S^2 = \frac{1}{n}\big( (x_1 - \overline x)^2 + (x_2 - \overline x)^2 + \ldots + (x_N - \overline x)^2 \big)= \frac{1}{n}\sum^N_{i=1} (x_i - \overline x)^2$$
+
+La idea detrás de la varianza es promediar cuanto se separa cada valor del valor medio. 
+
+Esto se aprecia bien en la siguiente figura
+
+![&nbsp;](img/desviaciones_diagrama.drawio.png){ width=550px}
+
+En la figura vemos marcadas las distancias de cada punto respencto a la media. La varianza no es sino las sumas de los cuadrados de esas distancias. En la muestra 1 vemos como los datos están más separados respecto a la media, de modo que esas distancias serán mayores, mientras que en la muestra 2 (debajo) vemos como están menos separados y por lo tanto esto impactará en las distancias. La muestra 1 de la figura tendrá una varianza mayor que la muestra 2.
+
+
+La varianza cumple que
+
+$$S^2 = \overline{x^2} - \overline x^2$$
+
+donde $\overline{x^2}$ indica la media de los cuadrados de las observaciones. Esta propiedad deduce simplemente expandiendo los cuadrados $(x_i - \overline x)^2$ ya que:
+
+$$S^2 = \frac{1}{n}\sum^N_{i=1} (x_i - \overline x)^2 = \frac{1}{n}\sum^N_{i=1} (x^2_i - 2x_i \overline x + \overline x^2)$$
+$$=\frac{1}{n}\sum^N_{i=1} x_i^2 - \frac{1}{n}\sum^N_{i=1}2 x_i \overline x + \sum^N_{i=1}\overline x^2$$
+$$=\frac{1}{n}\sum^N_{i=1} x_i^2 - 2 \overline x^2 + \overline x^2 = \frac{1}{n}\sum^N_{i=1} x_i^2 - \overline x^2 = \overline{x^2} - \overline x^2$$
+
+La propiedad anterior permite en ocasiones calcular la varianza de una forma más sencilla.
+
+la desviación típica se define como la raíz cuadrada de la varianza:
+
+$$S = \sqrt{(S^2)} = \sqrt{\frac{1}{n}\sum^N_{i=1} (x_i - \overline x)^2}$$
+
+
+### Cálculo mediante tablas de frecuencias
+
+Si tenemos una tabla de frecuencias
+
+
+|$x_i$   |$n_i$   |
+|-       |-       |
+|$x_1$   | $n_1$  |
+|$x_2$   | $n_2$  |
+|$x_3$   | $n_3$  |
+|$\vdots$|$\vdots$|
+|$x_N$   |$n_N$   |
+
+
+puesto que cada valor de la tabla $x_i$ se repite $n_i$ veces tenemos que modificar la formula anterior de la varianza para tener en cuenta al sumar estas frecuencias. 
+
+Con una tabla como la anterior la varianza se calcula usando
+
+$$S^2 = \frac{1}{n}\big( (x_1 - \overline x)^2 \cdot n_1 + (x_2 - \overline x)^2 \cdot n_2 + \ldots + (x_N - \overline x)^2 \cdot n_N \big)= \frac{1}{n}\sum^N_{i=1} (x_i - \overline x)^2 \cdot n_i$$
+
+y la desviación tipica haciendo la raíz cuadrada de la expresión anterior.
+
+$$S = \sqrt{S^2}$$
+
+Si deseamos usar la formula  $S^2 = \overline{x^2} - \overline x^2$ debemos tener en cuenta que al tener los datos en una tabla de frecuencias el valor $\overline{x^2}$ se calculará usando:
+
+$$\overline{x^2} = \sum^N_{i=1} x^2_i \cdot n_i$$ 
+
+Esto lo veremos más claramente en el ejemplo más adelante. El proceso será el mismo si tenemos una tabla agrupada por intervalos, simplemente usaremos las marcas de clase.
+
+
+## Desviación media
+
+Dada una muestra $(x_i)$ como la anterior la desviación media se define de un modo similar a la varianza, pero tomando valores absolutos en vez de cuadrados:
+
+$$DM = \frac{1}{n}\big( |x_1 - \overline x| + |x_2 - \overline x| + \ldots + |x_N - \overline x| \big)= \frac{1}{n}\sum^N_{i=1} |x_i - \overline x|$$
+
+Al igual que con la varianza, si tenemos los datos organizados en una tabla de frecuencias deberemos multiplicar a cada sumando por su frecuencia, es decir debemos usar
+
+$$DM = \frac{1}{n}\sum^N_{i=1} |x_i - \overline x| \cdot n_i$$
+
+## Ejemplos
+Volviendo al ejemplo de la encuesta de satisfacción realizado a unos usuarios de un servicio, teníamos la tabla:
+
+|$x_i$|$n_i$|$N_i$|
+|-|-|-|
+|1|2 |2  |
+|2|5 |7  | 	
+|3|5 |12  | 	
+|4|3 |15 | 	
+|5|3 |18 | 	
+|6|1 |19 | 	
+|7|1 |20 | 	
+
+Dado que el valor máximo es 7 el el mínimo es 1 tenemos:
+
+$$R=Max - Min = 7-1=6$$
+
+Recordemos que habíamos calculado que los cuartiles eran $Q_1 =2$ y $Q_3 = 4.5$.
+
+Por lo tanto tenemos
+
+$$RI= Q_3 - Q_1 = 4.5 -2 = 2.5$$
+
+Para calcular la varianza debo calcular la media. Ampliaremos la tabla para simplificar los cálculos
+
+
+|$x_i$|$n_i$|$N_i$| $x_i \cdot n_i$| $x_i^2 \cdot n_i$
+|-|-|-|-|-|    
+|1|2 |2  |2  | 2   |                
+|2|5 |7  |10 | 20  |               
+|3|5 |12 |15 | 45  |             
+|4|3 |15 |12 | 48  |             
+|5|3 |18 |15 | 75  |             
+|6|1 |19 |6  | 36  |            
+|7|1 |20 |7  | 49  |            
+
+ 
+de modo que para calcular la media me basta sumar la tercera columna entera y dividir entre 20, es decir
+
+$$\overline x = (2+10+15+\ldots 7)/20 = 3.35$$
+
+y para calcular la varianza voy a usar la fórmula $S^2 = \overline{x^2} - \overline x^2$
+
+para calcular $\overline{x^2}$ basta sumar la última columna correspondiente a $x_i^2 \cdot n_i$ y dividir entre el número de datos $20$.
+
+$$\overline x^2 = (2+20+45+\ldots 49)/20 = 275/20 = 13.75$$
+
+De modo que 
+
+$$S^2 =\overline{x^2} - \overline x^2 = 13.75-3.35^2 = 2.5275$$ 
+
+Para calcular la desviación típica simplemente calculamos la raíz cuadrada
+
+$$S= \sqrt{2.5275} \cong 1.58$$
+
+Para calcular la desviación media, necesitamos una vez más completar la tabla para calcular las diferencias $|x_i - \overline x|\cdot n_i$
+
+|$x_i$|$n_i$| $|x_i - \overline x|\cdot n_i$|
+|-|-|-| 
+|1|2 |4.7   |                
+|2|5 |6.75  |               
+|3|5 |1.75  |             
+|4|3 |1.95  |             
+|5|3 |4.95  |             
+|6|1 |2.65  |            
+|7|1 |3.65  |   
+
+y la variación media será el resultado de sumar la tercera columna y dividir entre 20.
+
+$$DM \cong 26.39/20\cong 1.31$$
+
+# Gráficos estadísticos
+
+Los gráficos estadísticos son gráficos que intentan de capturar de forma visual la información estadística de un conjunto de datos. Particularmente tratan de representar lo concentrados o dispersos que están los datos, los valores más comunes o más centrales de la distribución así como la simetría o asimetría de los datos.
+
+## Histogramas y diagramas de frecuencias
+
+Los histogramas son gráficos en el que en el eje $X$ colocamos cada valor de los datos (o intervalo si hemos agrupado por intervalos) y colocamos una barra o segmento encima de cada uno de estos valores que tiene la altura igual a la frecuencia de dicho valor o intervalo.
+
+por ejemplo si tenemos los datos del ejemplo anterior
+
+|$x_i$|$n_i$|
+|-|-|
+|1|2 |                
+|2|5 |               
+|3|5 |             
+|4|3 |             
+|5|3 |             
+|6|1 |            
+|7|1 | 
+
+resulta en el siguiente histograma
+
+![&nbsp;](img/histograma.png){ width=350px}
+
+Mientras que para los datos
+
+
+|ventas (miles)|$x_i$| $n_i$| $x_i \cdot n_i$
+|-             |-    |   -| -|
+|[700, 800)    |750  |   4|  3000   |        
+|[800, 900)    |850  |   7|  5950   |    
+|[900, 1000)   |950  |   8|  7600   |     
+|[1000, 1100)  |1050 |  10|  10500  |      
+|[1100, 1200)  |1150 |  12|  13800  |      
+|[1200, 1300)  |1250 |  17|  21250  |      
+|[1300, 1400)  |1350 |  13|  17550  |   
+|[1400, 1500)  |1450 |  10|  14500  |   
+|[1500, 1600)  |1550 |   9|  13950  |   
+|[1600, 1700)  |1650 |   7|  11550  |   
+|[1700, 1800)  |1750 |   2|  3500   |   
+|[1800, 1900)  |1850 |   1|  1850   | 
+
+Tendremos el histograma
+
+![&nbsp;](img/histograma2.png){ width=450px}
+
+
+## Diagramas de sectores
+
+## Diagrama de cajas y bigotes
 
 
 # Bibliografía
