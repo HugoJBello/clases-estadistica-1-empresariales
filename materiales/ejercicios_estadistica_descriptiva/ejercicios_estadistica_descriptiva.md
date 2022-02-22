@@ -1,5 +1,5 @@
 ---
-title: "Introducción a estadística. Uso de Tablas"
+title: "Introducción a estadística descriptiva. Uso de Tablas"
 author: Hugo J. Bello
 date:
 geometry: margin=3cm

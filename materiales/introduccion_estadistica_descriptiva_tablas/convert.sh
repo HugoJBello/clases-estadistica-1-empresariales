@@ -1,4 +1,4 @@
-filename="introduccion_estadistica_tablas"
+filename="introduccion_estadistica_descriptiva_tablas"
 
 pandoc -f markdown+implicit_figures  $filename.md -o $filename.pdf --pdf-engine=xelatex --template=template.latex
 
