@@ -1,0 +1,164 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Ejercicios estadística descriptiva. Uso de Tablas},
+  pdfauthor={Hugo J. Bello},
+  colorlinks=true,
+  linkcolor={PineGreen},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=3cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+
+
+\title{Ejercicios estadística descriptiva. Uso de Tablas}
+\author{Hugo J. Bello}
+\date{}
+
+\hypersetup{
+colorlinks=true,
+    urlcolor=PineGreen,
+    citecolor=PineGreen,
+}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\pagestyle{empty}
+\pagestyle{fancy}
+
+\fancyhead[LE,RO]{Ejercicios estadística descriptiva. Uso de Tablas}
+\fancyhead[LO,RE]{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+
+
+
+\maketitle
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Las de una tienda a lo largo del mes de enero (en miles de euros) son
+  \[1, 1.5, 2.5, 2, 2.4, 2.4, 2.5, 2.4, 2.5, 2, 1.2, 1.5, 2.5, 2.7, 2.8\]
+  mientras que las ventas a lo largo del mes de febrero
+  \[1, 1.4, 2.4, 2, 2.3, 2.3, 2.1, 2.3, 2.3, 2.1, 1.1, 1.3, 2.4, 2.5, 2.8\]
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Para la muestra de las ventas de enero, calcular media, mediana, los
+    cuartiles 1 y 3 y el percentil 70.
+  \item
+    Para la muestra de las ventas de enero, calcular la desviación
+    media, la varianza y desviación típica
+  \item
+    Usar una medida de dispersión para determinar cual de las dos
+    muestras es más dispersa
+  \item
+    Usar dos diagramas de cajas y bigotes para comparar ambas muestras.
+  \end{itemize}
+\item
+  Calcular la desviación media, la varianza y desviación típica de la
+  primera muestra del ejercicio anterior pero agrupando por intervalos
+  de longitud \(0.5\)
+\item
+  Para conocer la calidad de fabricación una fabrica extrae una muestra
+  con el número de imperfecciones de las piezas fabricadas, obteniendo
+  la muestra \[2, 2, 5, 5, 7,8 9, 10, 10, 11\] Calcular
+
+  \begin{itemize}
+  \tightlist
+  \item
+    la mediana, cuartiles y percentil 90.
+  \end{itemize}
+\item
+  Una empresa pregunta a un grupo de usuarios cuántas veces hace uso del
+  sevicio al mes. Se obtienen los siguentes resultados una vez agrupados
+  por intervalos.
+
+  \begin{longtable}[]{@{}ll@{}}
+  \toprule
+  interv & frecuencia\tabularnewline
+  \midrule
+  \endhead
+  {[}0, 2) & 2\tabularnewline
+  {[}2, 4) & 3\tabularnewline
+  {[}4, 6) & 9\tabularnewline
+  {[}6, 8) & 11\tabularnewline
+  {[}8, 10) & 8\tabularnewline
+  {[}10, 12) & 5\tabularnewline
+  {[}12, 14{]} & 2\tabularnewline
+  &\tabularnewline
+  \bottomrule
+  \end{longtable}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Calcular la desviación mediana, la varianza y desviación típica
+  \item
+    Dibujar su histograma
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
