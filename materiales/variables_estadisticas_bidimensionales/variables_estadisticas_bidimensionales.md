@@ -139,10 +139,23 @@ $$(x_1, y_1), (x_2, y_2), (x_3,y_3), \ldots (x_N,y_N)$$
 
 Y un modelo como el anterior $f(X) = a + bY$, definimos el **residuo suma de cuadrados** como
 
-$$RRS =  \sum^n_{i=1} (y_i - f(x_i))^2 =  \sum^n_{i=1} (y_i - a -b\cdot x_i)^2$$
+$$S(a,b) =  \sum^n_{i=1} (y_i - f(x_i))^2 =  \sum^n_{i=1} (y_i - a -b\cdot x_i)^2$$
 
+Lo llamamos de esta manera $S(a,b)$ puesto que es el error que se produce al elegir $a$ y $b$ como parámetros de la recta de regresión.
 
+De este modo, los valores de $a$ y $b$ que **menor error de aproximación** $S(a,b)$ produzcan serán los más deseados. Esos valores precisamente son los que definen la **recta de regresión**.
 
+Para encontrar esos valores debemos calcular el mínimo de la función $S(a,b)$
+
+deberemos calcular
+
+$$\frac {\partial S}{\partial a}=0$$
+$$\frac {\partial S}{\partial b}=0$$
+
+resolver el sistema y averiguar que sea mínimo. Si hacemos esto encontraremos que 
+
+$$a = \overline{y} - \frac{S_{XY}}{S^2_X} \overline x$$
+$$b = \frac{S_{XY}}{S^2_X}$$
 
 # Ejercicios
 
