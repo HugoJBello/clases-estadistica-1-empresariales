@@ -112,6 +112,37 @@ Deducimos de aquí que dado que el coeficiente de correlación de Pearson es cer
 
     ![nube de puntos correlación negativa](cloud_menos.png){ width=250px }
 
+# Regresión simple
+
+En las nubes de puntos que hemos utilizado hasta ahora, veíamos como en los casos en que $\rho_{XY}$ es cercano a $-1$ o $1$, los puntos $(X,Y)$ parecen acercarse a una recta que puede ajustarse visualmente. Esta recta es la **recta de regresión**.
+
+En esta sección, aprenderemos a calcular
+la línea de regresión de manera más precisa, usando la ecuación más sencilla que relaciona las dos variables matemáticamente. Aquí, examinaremos sólo relaciones lineales entre dos variables. Recordemos que la ecuación de una recta viene dada por
+
+$$Y= a + b X $$
+
+Habitualmente, dados unas variables $X$ e $Y$, será la variable $Y$ la que querremos predecir a partir de la $X$, por eso llamaremos a $Y$ *variable dependiente* ya a la $X$ *variable independiente*. 
+
+## Método de mínimos cuadrados
+
+Imaginemos que tenemos una recta
+
+$$f(X)= a + b X$$
+
+El valor $f(X)$ representa el valor con el que intentamos predecir $Y$. Por lo tanto el error (o residuo) de la predicción es precisamente $f(X) - Y$. Una manera de trabajar con el error es trabajar con el cuadrado de la expresión anterior, es decir, el cuadrado del error de la predicción
+
+$$(f(X)- Y)^2$$
+
+Si tenemos una muestra 
+
+$$(x_1, y_1), (x_2, y_2), (x_3,y_3), \ldots (x_N,y_N)$$
+
+Y un modelo como el anterior $f(X) = a + bY$, definimos el **residuo suma de cuadrados** como
+
+$$RRS =  \sum^n_{i=1} (y_i - f(x_i))^2 =  \sum^n_{i=1} (y_i - a -b\cdot x_i)^2$$
+
+
+
 
 # Ejercicios
 
