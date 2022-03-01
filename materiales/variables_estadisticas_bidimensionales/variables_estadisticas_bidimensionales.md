@@ -129,17 +129,29 @@ Imaginemos que tenemos una recta
 
 $$f(X)= a + b X$$
 
-El valor $f(X)$ representa el valor con el que intentamos predecir $Y$. Por lo tanto el error (o residuo) de la predicción es precisamente $f(X) - Y$. Una manera de trabajar con el error es trabajar con el cuadrado de la expresión anterior, es decir, el cuadrado del error de la predicción
+El valor $f(X)$ representa el valor con el que intentamos predecir $Y$. Por lo tanto el error (o residuo) de la predicción es precisamente 
+$$Y - f(X) = Y- a - b X$$ 
 
-$$(f(X)- Y)^2$$
+Una manera de trabajar con el error es trabajar con el cuadrado de la expresión anterior, es decir, el cuadrado del error de la predicción
+
+$$(Y- f(X))^2 = (Y- a - bX)^2$$
 
 Si tenemos una muestra 
 
 $$(x_1, y_1), (x_2, y_2), (x_3,y_3), \ldots (x_N,y_N)$$
 
-Y un modelo como el anterior $f(X) = a + bY$, definimos el **residuo suma de cuadrados** como
+
+Y un modelo como el anterior $f(X) = a + bY$, los errores medidos de la forma anterior son las distancias en vertical entre la recta y cada punto como puede verse en la figura siguiente:
+
+![los cuadrados de las distancias son precisamente los errores $(Y- f(X))^2$](least_squares.png){ width=450px }
+
+De tal modo que podemos decir que el error **global** de aproximar $Y$ con la recta $f(X)= a+bX$ se puede medir como la suma de todos los cuadrados de las distancias anteriores. Pensemos que cuanto más alejados estén los puntos de la recta, *peor* aproxima la recta.
+
+
+Por lo tanto definimos el **residuo suma de cuadrados** como
 
 $$S(a,b) =  \sum^n_{i=1} (y_i - f(x_i))^2 =  \sum^n_{i=1} (y_i - a -b\cdot x_i)^2$$
+
 
 Lo llamamos de esta manera $S(a,b)$ puesto que es el error que se produce al elegir $a$ y $b$ como parámetros de la recta de regresión.
 
@@ -156,6 +168,48 @@ resolver el sistema y averiguar que sea mínimo. Si hacemos esto encontraremos q
 
 $$a = \overline{y} - \frac{S_{XY}}{S^2_X} \overline x$$
 $$b = \frac{S_{XY}}{S^2_X}$$
+
+## Coeficiente de determinación $R^2$
+
+El coeficiente de determinación se define como el cuadrado del coeficiente de correlación de pearson:
+
+$$R^2 = \rho ^2$$
+
+Este valor da una idea de **cómo de bien** podemos aproximar a los valores de $Y$ usando la recta de regresión
+
+El coeficiente de determinación está comprendido entre 0 y 1. Cuanto más se aproxime a 0, peor es el modelo de regresión lineal para describir la relación entre las variables. Cuanto más se
+aproxime a 1, mejor es el modelo. 
+
+No existe un criterio inequívoco sobre el mínimo valor exigible  para que el modelo de regresión lineal sea aceptable. En general, se considera inadmisible un
+modelo con $R<0.5$
+
+## Metodo completo del cálculo de la recta de regresión
+
+Si tenemos unos datos
+
+$$(x_1, y_1), (x_2, y_2), (x_3,y_3), \ldots (x_N,y_N)$$
+
+Para calcular la **recta de regresión de $Y$ sobre $X$** (y por lo tanto predecir $Y$ usando $X$ debemos):
+
+1. calcular $\overline x$, $\overline y$, $S_{XY}$, $S_X$ y $S_Y$. Esto nos permitirá calcular el coeficiente de correlación de Pearson $\rho$
+   $$\rho = \frac{S_{XY}}{S_X S_Y}$$
+
+2. Interpretar $\rho$: Un valor cercano a 1 es dependencia lineal directa. Un valor cercano a $-1$ indirecta, y un valor cercano a 0 implica no dependencia lineal.
+
+3. Calcular los coeficientes $a$ y $b$ de la recta usando
+   
+   $$a = \overline{y} - \frac{S_{XY}}{S^2_X} \overline x$$
+   $$b = \frac{S_{XY}}{S^2_X}$$
+
+4. Calcular el coeficiente de determinación $$R^2 = \rho^2$$ e interpretarlo. Un valor cercano a 0 significa que el modelo no aproxima bien, mientras que un valor cercano a 1 significa que el modelo es capaz de aproximar bien los valores de $Y$ a partir de x
+
+
+Si ahora tenemos un nuevo valor de $x$ y queremos estimar un valor de $Y$ basta hacer
+
+$$y = a + b x$$
+
+con los valores obtenidos en el método anterior. 
+
 
 # Ejercicios
 
