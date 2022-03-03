@@ -129,8 +129,8 @@ Imaginemos que tenemos una recta
 
 $$f(X)= a + b X$$
 
-El valor $f(X)$ representa el valor con el que intentamos predecir $Y$. Por lo tanto el error (o residuo) de la predicción es precisamente 
-$$Y - f(X) = Y- a - b X$$ 
+El valor $\hat Y = f(X)$ representa el valor con el que intentamos predecir $Y$. Por lo tanto el error (o residuo) de la predicción es precisamente 
+$$Y- \hat Y = Y - f(X) = Y- a - b X$$ 
 
 Una manera de trabajar con el error es trabajar con el cuadrado de la expresión anterior, es decir, el cuadrado del error de la predicción
 
@@ -169,19 +169,123 @@ resolver el sistema y averiguar que sea mínimo. Si hacemos esto encontraremos q
 $$a = \overline{y} - \frac{S_{XY}}{S^2_X} \overline x$$
 $$b = \frac{S_{XY}}{S^2_X}$$
 
+Para calcular la estimación $\hat y$ que nuestro modelo produce para un valor de $x$ calculamos 
+
+$$\hat y = a + b x$$
+
+### Ejemplo
+
+Para el ejemplo con el que comenzamos este tema, en el que teníamos una tabla con las ventas de enero (X) y las de febrero (Y), habiamos calculado
+
+$$S_{xy} \cong 29.386$$
+$$S_x \cong 8.205$$
+$$S_y \cong 3.920$$
+$$\overline x \cong155.207$$
+$$\overline y \cong77.337 $$
+
+De modo que si queremos calcular la recta de regresión de Y sobre X (es decir usar las ventas en enero para predecir las de febrero, esto es X para predecir Y) tenemos que calcular
+
+$$a = \overline{y} - \frac{S_{XY}}{S^2_X} \overline x = 77.337 - \frac{29.386}{8.205^2}\cdot 155.207 = 77.337 - 0.436 \cdot 155.207 = 9.666$$
+$$b = 0.436$$
+
+De tal modo que si queremos calcular una predicción usando este modelo de regresión para el valor de ventas en febrero, conociendo que en enero hemos vendido $x=172$ tendremos que substituir en nuestra recta $a + bx$, resultando la predicción
+
+$$\hat y = a+bx = 9.666 + 0.436 \cdot 172 = 84.658$$
+
 ## Coeficiente de determinación $R^2$
 
 El coeficiente de determinación se define como el cuadrado del coeficiente de correlación de pearson:
 
 $$R^2 = \rho ^2$$
 
-Este valor da una idea de **cómo de bien** podemos aproximar a los valores de $Y$ usando la recta de regresión
+Este valor da una idea  **la precisión** con que podemos aproximar a los valores de $Y$ usando la recta de regresión
 
 El coeficiente de determinación está comprendido entre 0 y 1. Cuanto más se aproxime a 0, peor es el modelo de regresión lineal para describir la relación entre las variables. Cuanto más se
 aproxime a 1, mejor es el modelo. 
 
 No existe un criterio inequívoco sobre el mínimo valor exigible  para que el modelo de regresión lineal sea aceptable. En general, se considera inadmisible un
 modelo con $R<0.5$
+
+## El error estándar de la estimación
+
+El **error estándar de la estimación** es una alternativa al coeficiente de determinación para  estudiar la  **la precisión** con que podemos aproximar a los valores de $Y$ usando la recta de regresión.
+
+Se define simplemente calculando un promedio los errores cometidos por la estimación en cada uno de los puntos de la muestra
+
+$$S_e = \sqrt{\frac{\sum^N_{i=1} (y_i - \hat y_i)^2 }{N-2}} = \sqrt{\frac{\sum^N_{i=1} (y_i - a - bx_i)^2 }{N-2}} $$
+
+Donde 
+
+- $(x_i, y_i)$ son los puntos de la muestra bidimensional
+- $a$ y $b$ son los coeficientes de la recta de regresión de $Y$ sobre $X$ definidos anteriormente
+- $N$ es el número de datos
+
+La idea es visualizando los datos en el diagrama de nube de puntos, cuanto más se peguen los datos a la recta menor será este error estandar de estimación,
+
+### Método sencillo para calcular $S_e$
+
+Razonando sobre la fórmula anterior, en realidad podemos calcular $S_e$ fácilmente usando
+
+$$S_e =  \sqrt{\frac{\sum^N_{i=1} (y_i - a - bx_i)^2 }{N-2}} =\sqrt{\frac{\sum^N_{i=1} y_i^2 - a \cdot \sum^N_{i=1} y_i - b\cdot \sum^N_{i=1} x_i y_i }{N-2}} $$
+
+Esto simplifica bastante el cálculo ya que calcular $\cdot \sum^N_{i=1} x_i y_i$, $\cdot \sum^N_{i=1} y_i$ y $\cdot \sum^N_{i=1} y_i^2$ suele hacerse como cálculo intermedio para calcular la covarianza y las varianzas
+
+### Ejemplo
+
+En la siguente tabla $x_i$ representan los años de antiguedad de los camiones de una empresa, e $y_i$ representa los gastos de reparación.
+
+|$x_i$|$y_i$|$x_iy_i$|$x_i^2$|$y_i^2$|
+|-|-|-|-|-|
+|5|7|35|25|49|
+|3|7|21|9|49|
+|3|6|18|9|36|
+|1|4|4 |1|16|
+
+
+Si calcularmos los coeficientes de la recta de regresión de $Y$ sobre $X$ obtendremos
+
+$$a=3.75$$
+$$b=0.75$$
+
+De la tabla obtenemos $\sum xy = 78, \sum y = 24, \sum y^2 = 150$
+
+
+luego 
+
+$$S_e = \sqrt{\frac{\sum^N_{i=1} y_i^2 - a \cdot \sum^N_{i=1} y_i - b\cdot \sum^N_{i=1} x_i y_i }{N-2}} = \frac{ \sqrt{150 - 3.75 \cdot24 - 0.75 \cdot 78}}{4-2} \cong 0.866$$
+
+## Interpretación del error estándar de la estimación
+
+Como ocurría en el caso de la desviación estándar, mientras más grande sea el error estándar de la estimación, mayor será la dispersión de los puntos alrededor de la línea de regresión. De manera inversa, si $S_e=0$, esperamos que la ecuación de estimación sea un estimador *perfecto* de la variable dependiente. En ese caso, todos los puntos caerían directamente sobre la línea de regresión y no habría puntos dispersos alrededor.
+
+Suponiendo que los puntos observados siguen una distribución normal alrededor de la recta de regresión, podemos esperar encontrar el 68% de los puntos dentro de $\pm 1 S_e$ (o más menos 1 error estándar de la estimación), el 95.5% de los puntos dentro de $\pm 2 S_e$
+y el 99.7% de los puntos dentro de $\pm 3 S_e$ . 
+
+La siguiente figura resume adecuadamente este hecho
+
+![](error_regression_2.png){ width=350px }
+
+
+Es importante observar que en la figura anterior el error estándar de la
+estimación se mide a lo largo del eje Y, y no perpendicularmente desde la recta de regresión.
+
+
+
+Siendo precisos, para que lo establecido en la figura sea correcto y los porcentajes comentados antes sean ciertos se debe asumir:
+
+1. Los valores observados para Y tienen distribución normal alrededor de cada valor estimado de $\hat Y$.
+2. La varianza de las distribuciones alrededor de cada valor posible de $\hat Y$ es la misma.
+Si esta segunda suposición no fuera cierta, entonces el error estándar en un punto de la recta de regresión podría diferir del error estándar en otro punto
+
+
+## Interpretación geométrica del error estándar de la estimación y $R^2$
+
+Observemos las siguientes dos muestras bidimensionales
+
+![](error_regression.png){ width=350px }
+
+- La muestra de la izquierda está muy pegada a la recta de regresión, por lo que tendrá un error estandar $S_e$ bajo, y un $R^2$ cercano a 1
+- La muestra de la derecha está poco muy separada de la recta de regresión, por lo tanto será dificil de predecir usando regresión y  tendrá un error estandar $S_e$ alto, y un $R^2$ cercano a 0
 
 ## Metodo completo del cálculo de la recta de regresión
 
@@ -201,7 +305,7 @@ Para calcular la **recta de regresión de $Y$ sobre $X$** (y por lo tanto predec
    $$a = \overline{y} - \frac{S_{XY}}{S^2_X} \overline x$$
    $$b = \frac{S_{XY}}{S^2_X}$$
 
-4. Calcular el coeficiente de determinación $$R^2 = \rho^2$$ e interpretarlo. Un valor cercano a 0 significa que el modelo no aproxima bien, mientras que un valor cercano a 1 significa que el modelo es capaz de aproximar bien los valores de $Y$ a partir de x
+4. Calcular el coeficiente de determinación $R^2 = \rho^2$ e interpretarlo. Un valor cercano a 0 significa que el modelo no aproxima bien, mientras que un valor cercano a 1 significa que el modelo es capaz de aproximar bien los valores de $Y$ a partir de x. También podemos calcular el error estándar de estimación $S_e$.
 
 
 Si ahora tenemos un nuevo valor de $x$ y queremos estimar un valor de $Y$ basta hacer
@@ -216,7 +320,7 @@ con los valores obtenidos en el método anterior.
 1. Los siguientes datos corresponden al precio de un porducto y a la cantidad ofertada:
 
 
-    | cantidad  ofertada (miles)   |precio (euros) |
+    | cantidad  ofertada (miles) Y  |precio (euros) X|
     | -------                      | ----------|
     | 1                            | 3.5       |
     | 5                            | 5         |
@@ -226,4 +330,6 @@ con los valores obtenidos en el método anterior.
     | 25                           | 13        |
     | 30                           | 15        |
 
-     Calcula la covarianza y el coeficiente de correlación de Pearson e interprétalo. ¿Se cumple la ley de la oferta?
+     1. Calcula la covarianza y el coeficiente de correlación de Pearson e interprétalo. ¿Se cumple la ley de la oferta?
+     2. Calcula la recta de regresión de Y sobre X
+     3. Estima el valor de la cantidad ofertada que corresponderá al precio  18
