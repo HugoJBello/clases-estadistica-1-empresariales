@@ -112,7 +112,7 @@ Deducimos de aquí que dado que el coeficiente de correlación de Pearson es cer
 
     ![nube de puntos correlación negativa](cloud_menos.png){ width=250px }
 
-# Regresión simple
+# Regresión lineal simple
 
 En las nubes de puntos que hemos utilizado hasta ahora, veíamos como en los casos en que $\rho_{XY}$ es cercano a $-1$ o $1$, los puntos $(X,Y)$ parecen acercarse a una recta que puede ajustarse visualmente. Esta recta es la **recta de regresión**.
 
@@ -313,6 +313,88 @@ Si ahora tenemos un nuevo valor de $x$ y queremos estimar un valor de $Y$ basta 
 $$y = a + b x$$
 
 con los valores obtenidos en el método anterior. 
+
+# Regresión no lineal
+
+Los modelos de regresión no siempre son lineales, es decir, no siempre vienen ex­presados por la ecuación de una recta. Existen también modificaciones de esta ecuación de tal manera que se pueden practicar análisis de regresión cuadrática, cúbica, logarít­mica, logística, etc.
+
+
+## Regresión exponencial
+
+En muchas ocasiones la dependencia entre las variables $X$ e $Y$  es de forma exponencial, en cuyo caso interesa ajustar a la nube de puntos una función del tipo:
+
+$$Y=ae^{bX}$$
+
+Mediante una transformación lineal, tomando logaritmos, se convierte el problema en una cuestión de regresión lineal, es decir, tomando logaritmos obtenemos
+
+$$\ln {(Y)}=bX+\ln {(a)}$$
+
+Podemos hacer el cambio de variable 
+
+$$Z=\ln(Y)$$
+
+y obtendíamos
+
+$$Z = bX + \ln(a)$$
+
+Aplicando el modelo de regresíon de $Z$ sobre $X$ vemos que podemos obtener $b$ y $\ln(a)$ usando
+
+$$b = \frac{S_{XZ}}{S^2_X}$$
+
+$$\ln a = \overline{Z} - \frac{S_{XZ}}{S^2_X} \overline x$$
+$$a = e^{ \overline{Z} - \frac{S_{XZ}}{S^2_X} \overline x}$$
+
+### Ejemplo
+
+|$x_i$ 	|$y_i$ 	    |$z_i = \ln(y_i)$|$x_i^2$  |$z_i^2$	|$x_i z_i$|
+|- 	    |-          |- 	            |-  	  |-        | -|
+|1 	    | 0.06      | -2.81	        |1  	  |7.9      |-2.81   |
+|1.2    | 0.02      | -3.91	        |1,44 	  |15.29    |-4.69   |
+|1.5    | 0.08      | -2.53         |2.25 	  |6.4      |-3.8    |
+|2 	    | 0.57      | -0.56	        |4   	  |0.31     |-1.12   |
+|3      | 10.8      |  2.38	        |9 	      |5.66     |7.14    |
+|3.7    | 29.66     |  3.39	        |13.69 	  |11.49    |12.54   |
+|4 	    | 43.28     |  3.77	        |16 	  |14.21    |15.08   |
+|4.5    | 1978.49   |  7.59	        |20.25 	  |57.61    |34.16   |
+|5      | 9171.47   |  9.12	        |20.25 	  |83.17    |45.6    |
+|--     |--         |--             |--  	  |- -      | --|
+25.9    |11234.43   |16.44          |92.63    | 202.05  |102.1|
+
+
+si dibujamos los puntos $(x_i,y_i)$ encontramos
+
+![a](exponential_regression.png){ width=350px }
+
+
+por otra parte, si dibujamos $(x_i,z_i)$
+
+![a](exponential_regression2.png){ width=350px }
+
+
+usando la tabla calculamos
+
+$$N=9$$
+$$\overline{x} = 25.9/9 = 2.88$$
+$$\overline{z} = 16.44/9 = 1.82$$
+$$\overline{x^2}=92.63^2/9 = 10.29$$
+$$S^2_X=\overline{x^2} - \overline{x} = 2.01$$
+
+$$\overline{XZ} = 102.1/9 = 11.34$$
+$$S_{XZ}=11.34 - 6.08$$
+
+
+de modo que 
+
+$$b = \frac{S_{XZ}}{S^2_X} = 6.08/2.01 = $$
+
+$$\ln a = \overline{Z} - \frac{S_{XZ}}{S^2_X} \overline x = 1.82 - (6.08/2.01)\cdot 2.88 = -6.89$$
+$$a = e^{ -6.89} = 0.001$$
+
+aquí tenemos las predicciones junto con los valores reales
+
+
+![a](exponential_regression3.png){ width=350px }
+
 
 
 # Ejercicios
