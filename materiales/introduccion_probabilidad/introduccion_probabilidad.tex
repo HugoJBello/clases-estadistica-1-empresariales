@@ -1,0 +1,149 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Introducción a la probabilidad}
+\author{Hugo J. Bello}
+\date{}
+
+\usepackage{fancyhdr}
+
+\pagestyle{empty}
+
+\fancyhead[LE,RO]{Introducción a la probabilidad}
+\fancyhead[LO,RE]{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+
+\begin{document}
+
+\section{Introducción y terminología}
+
+\begin{definition}
+La \textbf{probabilidad} puede ser entendida como una medida de la certidumbre de que ocurra un evento. 
+Su valor es un número entre 0 y 1, 
+donde un evento imposible corresponde a cero y uno seguro corresponde a uno.
+\end{definition}
+
+Una forma empírica de estimar la probabilidad consiste en obtener la 
+frecuencia con la que sucede un determinado acontecimiento mediante la 
+repetición de experimentos aleatorios, bajo condiciones suficientemente estables. 
+En algunos experimentos de los que se conocen todos los resultados posibles, 
+la probabilidad de estos sucesos pueden ser calculadas de manera teórica, 
+especialmente cuando todos son igualmente probables.
+
+La teoría de la probabilidad es la rama de la matemática que estudia los experimentos 
+o fenómenos aleatorios. Se usa extensamente en áreas como la estadística, 
+la física, las ciencias sociales, la Investigación médica, las finanzas, 
+la economía y la filosofía para conocer la viabilidad de sucesos 
+y la mecánica subyacente de sistemas complejos. 
+
+\subsection*{Experimentos aleatorios}
+
+\begin{definition}
+Un \textbf{experimento aleatorio} es la reproducción controlada de un fenómeno, 
+existiendo incertidumbre sobre el resultado que se obtendrá.
+Un experimento aleatorio bajo el mismo conjunto aparente de condiciones iniciales, 
+puede presentar resultados diferentes, es decir, no se puede predecir o reproducir 
+el resultado exacto de cada experiencia particular. (Ej.: Lanzamiento de un dado,
+lanzamiento de una moneda, lanzamiento de una carta de una baraja).
+
+Este tipo de fenómeno es opuesto al suceso determinista, 
+en el que conocer todos los factores de un experimento permite 
+predecir exactamente el resultado del mismo. Por ejemplo, conociendo 
+la altura desde la que se arroja un móvil es posible saber exactamente
+el tiempo que tardará en llegar al suelo en condiciones de vacío. 
+ Es al azar ya que es aleatorio. 
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+    \item Lanzar un dado de seis caras y anotar el resultado
+    \item Preguntar su edad a cualquier persona que me encuentre y anotarla
+    \item Lanzar una moneda y anotar si sale cara o cruz
+    \item Lanzar 5 veces una moneda y anotar el número de caras
+\end{enumerate}
+\end{example}
+
+
+\subsection*{Sucesos y el espacio muestral}
+
+\begin{definition}
+   Dado un experimento aleatorio, el \textbf{espacio muestral}  es 
+   conjunto de todos los posibles resultados de un experimento aleatorio. Este conjunto se denota 
+   por $\Omega$.
+\end{definition}
+
+\begin{example}
+        \begin{enumerate}
+            \item Al Lanzar un dado de seis caras, tenemos el espacio muestral 
+            \[\Omega = \{1, 2, 3, 4, 5, 6\}\]
+            \item En el experimento preguntar su edad a cualquier persona que me encuentre y anotarla tenemos
+            \[\Omega = \{0,1, 2, 3,\cdots, 130\}\]
+            (suponiendo que la edad máxima de una persona sea 130)
+            \item En el experimento lanzar una moneda y anotar si sale cara o cruz
+            \[\Omega = \{C, X\}\]
+            \item Lanzar 5 veces una moneda y anotar el número de caras
+            \[\Omega = \{0, 1, 2, 3, 4, 5\}\]
+        \end{enumerate}
+\end{example}
+
+\end{document}
