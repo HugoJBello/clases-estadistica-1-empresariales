@@ -1,61 +1,27 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-%
-\documentclass[
-]{article}
+\documentclass[]{book}
 \usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
+
+\usepackage{longtable}
+\usepackage{booktabs}
+
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Variables estadísticas bidimensionales},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
-\usepackage[margin=3cm]{geometry}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
 \usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
+\usepackage[spanish]{babel}
+
+
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
@@ -64,43 +30,52 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
 
-
-\title{Variables estadísticas bidimensionales}
-\author{}
+\title{Variables aleatorias bidimensionales}
+\author{Hugo J. Bello}
 \date{}
 
-\hypersetup{
-colorlinks=true,
-    urlcolor=PineGreen,
-    citecolor=PineGreen,
-}
-\usepackage{fancyhdr}
-\usepackage{caption}
-\pagestyle{empty}
-\pagestyle{fancy}
-
-\fancyhead[LE,RO]{Variables estadísticas bidimensionales}
-\fancyhead[LO,RE]{}
-\fancyfoot[LE,RO]{\thepage}
-\fancyfoot[C]{}
 
 \renewcommand{\familydefault}{\sfdefault}
+\setcounter{chapter}{1}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
 
 \begin{document}
 
+\chapter{Variables estadísticas bidimensionales}
 
-
-
-\maketitle
 
 En ocasiones los datos se presentan en pares \((x,y)\). Es decir que al
 recoger los datos no solo tenemos una variable, sino dos y hay una
@@ -212,7 +187,7 @@ En el ejemplo anterior, el gráfico sería el siguente.
 
 \begin{figure}
 \centering
-\includegraphics[width=3.64583in,height=\textheight]{cloud.png}
+\includegraphics[width=3.64583in,height=\textheight]{img/cloud.png}
 \caption{nube de puntos}
 \end{figure}
 
@@ -258,7 +233,7 @@ Pearson}\label{interpretaciuxf3n-del-coeficiente-de-correlaciuxf3n-de-pearson}}
 
   \begin{figure}
   \centering
-  \includegraphics[width=2.60417in,height=\textheight]{cloud.png}
+  \includegraphics[width=2.60417in,height=\textheight]{img/cloud.png}
   \caption{nube de puntos correlación positiva}
   \end{figure}
 \item
@@ -267,7 +242,7 @@ Pearson}\label{interpretaciuxf3n-del-coeficiente-de-correlaciuxf3n-de-pearson}}
 
   \begin{figure}
   \centering
-  \includegraphics[width=2.60417in,height=\textheight]{cloud_cero.png}
+  \includegraphics[width=2.60417in,height=\textheight]{img/cloud_cero.png}
   \caption{nube de puntos correlación 0}
   \end{figure}
 \item
@@ -277,7 +252,7 @@ Pearson}\label{interpretaciuxf3n-del-coeficiente-de-correlaciuxf3n-de-pearson}}
 
   \begin{figure}
   \centering
-  \includegraphics[width=2.60417in,height=\textheight]{cloud_menos.png}
+  \includegraphics[width=2.60417in,height=\textheight]{img/cloud_menos.png}
   \caption{nube de puntos correlación negativa}
   \end{figure}
 \end{itemize}
@@ -330,7 +305,7 @@ punto como puede verse en la figura siguiente:
 
 \begin{figure}
 \centering
-\includegraphics[width=4.6875in,height=\textheight]{least_squares.png}
+\includegraphics[width=4.6875in,height=\textheight]{img/least_squares.png}
 \caption{los cuadrados de las distancias son precisamente los errores
 \((Y- f(X))^2\)}
 \end{figure}
@@ -512,7 +487,7 @@ La siguiente figura resume adecuadamente este hecho
 
 \begin{figure}
 \centering
-\includegraphics[width=3.64583in,height=\textheight]{error_regression_2.png}
+\includegraphics[width=3.64583in,height=\textheight]{img/error_regression_2.png}
 \caption{-}
 \end{figure}
 
@@ -543,7 +518,7 @@ de la estimación y
 
 Observemos las siguientes dos muestras bidimensionales
 
-\includegraphics[width=3.64583in,height=\textheight]{error_regression.png}
+\includegraphics[width=3.64583in,height=\textheight]{img/error_regression.png}
 
 \begin{itemize}
 \tightlist
@@ -664,15 +639,7 @@ si dibujamos los puntos \((x_i,y_i)\) encontramos
 
 \begin{figure}
 \centering
-\includegraphics[width=3.64583in,height=\textheight]{exponential_regression.png}
-\caption{a}
-\end{figure}
-
-por otra parte, si dibujamos \((x_i,z_i)\)
-
-\begin{figure}
-\centering
-\includegraphics[width=3.64583in,height=\textheight]{exponential_regression2.png}
+\includegraphics[width=3.64583in,height=\textheight]{img/exponential_regression.png}
 \caption{a}
 \end{figure}
 
@@ -695,7 +662,7 @@ aquí tenemos las predicciones junto con los valores reales
 
 \begin{figure}
 \centering
-\includegraphics[width=3.64583in,height=\textheight]{exponential_regression3.png}
+\includegraphics[width=3.64583in,height=\textheight]{img/exponential_regression3.png}
 \caption{a}
 \end{figure}
 

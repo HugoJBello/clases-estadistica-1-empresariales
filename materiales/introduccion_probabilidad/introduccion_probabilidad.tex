@@ -41,14 +41,6 @@
 \author{Hugo J. Bello}
 \date{}
 
-\usepackage{fancyhdr}
-
-\pagestyle{empty}
-
-\fancyhead[LE,RO]{Introducción a la probabilidad}
-\fancyhead[LO,RE]{}
-\fancyfoot[LE,RO]{\thepage}
-\fancyfoot[C]{}
 
 \renewcommand{\familydefault}{\sfdefault}
 \setcounter{chapter}{2}
@@ -139,6 +131,7 @@ el tiempo que tardará en llegar al suelo en condiciones de vacío.
 \end{definition}
 Veamos varios ejemplos de espacios muestrales en distintos experimentos aleatorios
 \begin{example}
+  Veamos distintos ejemplos de experimentos aleatorios y espacios muestrales
         \begin{enumerate}
             \item Al Lanzar un dado de seis caras, tenemos el espacio muestral 
             \[\Omega = \{1, 2, 3, 4, 5, 6\}\]
@@ -153,7 +146,7 @@ Veamos varios ejemplos de espacios muestrales en distintos experimentos aleatori
 \end{example}
 
 
-\begin{definition}
+\begin{definition}[Sucesos]
   Dado un experimento aleatorio, un \textbf{suceso}  cualquier conjunto de de resultados posibles del experimento.
 
 Existen distintos tipos de sucesos
@@ -174,7 +167,14 @@ Existen distintos tipos de sucesos
   \[A=\text{\emph{que salga uno o dos}} = \{1, 2\}\]
   es compuesto ya que podemos escribirlo como una unión de dos sucesos simples
   \[A= \{1, 2\} = \{1\} \cup \{2\}\]
-
+  \item \textbf{Sucesos excluyentes.}  Dos sucesos $A$ y $B$ son excluyentes si se corresponden a resultados del experimento aleatorio que no pueden 
+  darse nunca juntos, esto es $A\cap B = \emptyset$. Por ejemplo al tirar una moneda 
+  \[A=\text{\emph{que salga cara}} = \{C\}\]
+  \[B=\text{\emph{que salga cruz}} = \{X\}\]
+  \[A\cap B=\text{\emph{que salga cara y cruz}} = \{C\} \cap \{X\} = \emptyset\]
+  Por lo tanto el los sucesos $A$ y $B$ son excluyentes.
+  \item  \textbf{Suceso complementario.} Dado un suceso $A$, su complementario es el suceso formado 
+  por el conjunto complementario $A^c$
 \end{itemize}
 
 \end{definition}
@@ -197,6 +197,8 @@ Existen distintos tipos de sucesos
 
     \item Un conjunto $A$ es un \textbf{subconjunto} de $B$ si todo elemento de $A$ es un elemento de $B$. En este caso escribiremos
     $A\subset B$.
+    \item Dado un conjunto $A$, considerándolo como subconjunto de un conjunto $\Omega$, su \textbf{complementario} $A^c$ se define como
+    el conjunto de $\Omega$ formado por todos los elementos de $\Omega$ que no están en $A$.
     \end{itemize}
 
     \begin{figure}[htbp]
@@ -224,6 +226,8 @@ Existen distintos tipos de sucesos
     \end{figure} 
 \end{note}
 
+
+\newpage
 \section{Definición de probabilidad y sus propiedades}
 
 Definir de manera formal la probabilidad require conocimientos que se salen de lo que se intenta transmitir aquí. Daremos una aproximación
