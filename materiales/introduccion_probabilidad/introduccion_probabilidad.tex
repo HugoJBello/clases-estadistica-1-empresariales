@@ -188,7 +188,7 @@ Existen distintos tipos de sucesos
     \item La \textbf{intersección} de dos conjuntos $A$ y $B$ se denota por $A\cap B$ y es el conjunto formado por los 
     elementos que están en $A$ \textbf{y} en $B$.
     \item El conjunto vacío $\emptyset$ es aquel que no tiene ningún elemento.
-    \item Dado un conjunto $A$, su complementario (dentro de un conjunto universo $\Omega$) lo conforman los elementos 
+    \item Dado un conjunto $A$, su \textbf{complementario} (dentro de un conjunto universo $\Omega$) lo conforman los elementos 
     \emph{que no están en $A$}.
     \item Dos conjuntos $A$ y $B$ son \textbf{disjuntos} si no tienen elementos en común, esto es 
     \[
@@ -197,8 +197,8 @@ Existen distintos tipos de sucesos
 
     \item Un conjunto $A$ es un \textbf{subconjunto} de $B$ si todo elemento de $A$ es un elemento de $B$. En este caso escribiremos
     $A\subset B$.
-    \item Dado un conjunto $A$, considerándolo como subconjunto de un conjunto $\Omega$, su \textbf{complementario} $A^c$ se define como
-    el conjunto de $\Omega$ formado por todos los elementos de $\Omega$ que no están en $A$.
+    
+    \item Dados dos conjuntos $A$ y $B$ la \textbf{resta} de conjuntos $A-B$ se define como los elementos de $A$ que no están en $B$.
     \end{itemize}
 
     \begin{figure}[htbp]
@@ -238,15 +238,47 @@ es un número entre $0$ y $1$ que denotaremos por $P(A)$ y que expresa
 \begin{itemize}
   \item la frecuencia relativa con la que se presenta el suceso (al repetir el experimento si esto fuera posible)
   \item la proporción o cociente entre el número de resultados que forma el suceso y el número de sucesos posibles del experimento.
-  \item el grado de creencia o certeza que tenemos de la ocurrencia del suceso
+  \item el grado de creencia o certeza que tenemos de la ocurrencia del suceso.
 \end{itemize}
 
-La manera en que se define la propiedad es a través de sus axiomas, que son tres. Dado un espacio muestral $\Omega$, la probabilidad asigna a cada $A\in \Omega$ un número
+La manera en que se define la propiedad es a través de sus axiomas, que son tres. 
+
+\begin{definition}[Axiomas de la probabilidad]\label{def_axiom}
+Dado un espacio muestral $\Omega$, la probabilidad asigna a cada $A\in \Omega$ un número
 $P(A)$ que cumple
 \begin{enumerate}
   \item[i.] $P(A)$ está entre $0$ y $1$
   \item[ii.] $P(\Omega) = 1$
   \item[iii.] Si $A$ y $B$ son sucesos excluyentes (esto es, $A\cap B = \emptyset$) entonces $P(A\cup B) = P(A) + P(B)$.
 \end{enumerate}
+\end{definition}
+
+\begin{property}
+  De los axiomas de la probabilidad se deducen las siguientes propiedades
+\begin{enumerate}
+  \item Si $A_1, A_2, \ldots A_n$ son sucesos excluyentes dos a dos \footnote{esto es, dados dos cuales quiera de ellos $A_i, A_j$, no tienen elementos en común, es decir $A_i\cap A_j = \emptyset$}
+  Entonces $$P(A_1 \cup A_2, \ldots, A_n)=P(A_1) + P(A_2) + \ldots P(A_n)$$
+  Esta propiedad símplemente generaliza \ref{def_axiom}.iii y se deduce de esta.
+  \item Para cualquier suceso $A\in \omega$, se cumple
+  \begin{equation}\label{eq_compl}
+    P(A^c) = 1-P(A)
+  \end{equation}
+  Para convencernos de esto basta observar de que $A$ y $A^c$ son siempre sucesos excluyentes, 
+  por otra parte puesto que $\Omega = A \cup A^c$, por la propiedades \ref{def_axiom}.ii y \ref{def_axiom}.iii se deduce esta propiedad \ref{eq_compl}. 
+  \item Se cumple
+  \[P(\emptyset) = 0 \]
+  esto se deduce de \ref{def_axiom}.ii, dado que $\emptyset$ y $\Omega$ son complementarios.
+  \item Para cualesquiera sucesos $A,B\in \Omega$
+  \[P(A-B)= P(A) - P(A\cap B)\]
+  Esto se deduce de que $A$ puede ponerse como unión de dos conjuntos disjuntos de la siguiente manera $A = A \cup (A-B)$
+  \item Para cualesquiera sucesos $A,B\in \Omega$
+  \[P(A\cup B) = P(A) + P(B) - P(A\cap B)\]
+  \footnote{para deducir esto podemos observar que $A\cup B $ se puede poner como unión de tres sucesos excluyentes (conjuntos disjuntos) de la siguiente manera 
+   $A\cup B = (A-B) \cup (A\cap B) \cup (B-A)$ de modo que la probabilidad de $A\cup B$ será la suma de estas tres probabilidades, es decir 
+   \[P(A\cup B) = P(A-B) - P(A\cap B) + P(A\cap B) + P(B) - P(A\cap B) = P(A) + P(B) - P(A\cap B) \]}
+\end{enumerate}
+\end{property}
+
+
 
 \end{document}
