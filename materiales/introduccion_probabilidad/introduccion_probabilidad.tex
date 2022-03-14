@@ -9,6 +9,7 @@
 
 \usepackage{parskip}
 \usepackage{lmodern}
+\usepackage{enumerate}
 
 
 \usepackage{xcolor}
@@ -48,7 +49,7 @@
 
 \theoremstyle{plain}
 \swapnumbers % Switch number/label style
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{claim}{Claim}[theorem]
@@ -58,9 +59,9 @@
 \newtheorem{hypothesis}[theorem]{Hypothesis}
 \newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{property}[theorem]{Propiedad}
 \newtheorem{properties}[theorem]{Propiedades}
 \newtheorem{criterion}[theorem]{Criterion}
+
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definición}
 \newtheorem{note}[theorem]{Nota}
@@ -69,6 +70,7 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{problem}[theorem]{Problem}
 \newtheorem{principle}[theorem]{Principle}
+\newtheorem{property}[theorem]{Propiedad}
 
 \begin{document}
 \chapter{Introducción a la probabilidad}
@@ -255,7 +257,7 @@ $P(A)$ que cumple
 
 \begin{property}
   De los axiomas de la probabilidad se deducen las siguientes propiedades
-\begin{enumerate}
+\begin{enumerate}[(1)]
   \item Si $A_1, A_2, \ldots A_n$ son sucesos excluyentes dos a dos \footnote{esto es, dados dos cuales quiera de ellos $A_i, A_j$, no tienen elementos en común, es decir $A_i\cap A_j = \emptyset$}
   Entonces $$P(A_1 \cup A_2, \ldots, A_n)=P(A_1) + P(A_2) + \ldots P(A_n)$$
   Esta propiedad símplemente generaliza \ref{def_axiom}.iii y se deduce de esta.
@@ -279,6 +281,175 @@ $P(A)$ que cumple
 \end{enumerate}
 \end{property}
 
+
+\section{Ley de Laplace}
+
+\begin{theorem}[Ley de Laplace]\label{th_laplace}
+  Si realizamos un experimento aleatorio en el que hay $n$ sucesos 
+  simples, todos igualmente probables (equiprobables), 
+  entonces si $A$ es un suceso, 
+  la probabilidad de que ocurra el suceso $A$ es:
+  \begin{equation}\label{equ_array}
+    P(A) = \frac{\text{número de casos favorables para que ocurra A}}{\text{número de casos posibles para que ocurra A}}
+  \end{equation}
+\end{theorem}
+
+\begin{example}
+  Hallar la probabilidad de que al lanzar dos monedas al aire salgan dos caras
+  Llamemos $A$ al suceso \emph{salgan dos caras}
+  
+  Los casos favorables para $A$, serán solo: cc.
+
+  Los casos posibles para $A$ serán : cc, cx, xc, xx.
+  
+  Aplicando la Ley de Laplace la probabilidad
+  \[     P(A) = \frac{\text{número de casos favorables para que ocurra A}}{\text{número de casos posibles para que ocurra A}} = \frac{1}{4}\]
+\end{example}
+
+
+\begin{example}
+  Hallar la probabilidad de que al lanzar dos monedas al aire salgan dos caras
+  Llamemos $A$ al suceso \emph{salgan dos caras}
+  
+  Los casos favorables para $A$, serán solo: cc.
+
+  Los casos posibles para $A$ serán : cc, cx, xc, xx.
+  
+  Aplicando la Ley de Laplace la probabilidad \ref{th_laplace}
+  \[     P(A) = \frac{\text{número de casos favorables para que ocurra A}}{\text{número de casos posibles para que ocurra A}} = \frac{1}{4}\]
+\end{example}
+
+\begin{example}
+  Calcular la probabilidad de que al echar un dado al aire, salga:
+\begin{enumerate}[(1)]
+  \item Un número par
+  \item Un múltiplo de tres
+  \item Un número mayor que 4
+\end{enumerate}
+Para $(1)$
+llamemos \[A=\text{que salga par}\]
+
+Casos favorables para $A$: 2, 4, 6.
+
+Casos posibles para $A$: 1, 2, 3, 4, 5, 6.
+
+Aplicando \ref{th_laplace}
+
+$$\displaystyle \text{P(A)}=\frac{3}{6}=\frac{1}{2}$$
+
+Para $(2)$
+llamemos \[B=\text{que salga múltiplo de 3}\]
+
+Casos favorables para $B$: 3, 6.
+
+Casos posibles para $B$: 1, 2, 3, 4, 5, 6.
+
+Aplicando \ref{th_laplace}
+
+$$\displaystyle \text{P(B)}=\frac{2}{6}=\frac{1}{3}$$
+
+Para $(3)$ llamemos 
+\[C = \text{que salga mayor que 4}\]
+
+Casos favorables para C: 5, 6.
+
+Casos posibles para C: 1, 2, 3, 4, 5, 6
+
+Aplicando \ref{th_laplace}
+
+$$\displaystyle \text{P(C)}=\frac{2}{6}=\frac{1}{3}$$
+
+\end{example}
+
+
+
+
+\begin{note}[Repaso combinatoria, conteo sencillo]
+
+A menudo necesitaremos contar el número de maneras posibles en que podemos
+ordenar o seleccionar subconjuntos de un conjunto. Esto require hablar de \textbf{combinatoria}.
+La combinatoria tiene mucha terminología, en muchas ocasiones podemos 
+realizar conteos de manera intuitiva teniendo en cuenta el siguiente truco.
+
+Si queremos contar las maneras de $k$ elementos de un conjunto de $n$ teniendo en cuenta el orden podemos 
+comprenderlo bien através de los siguiente ejemplos
+
+Si queremos contar las \textbf{maneras posibles de formar números de 2 dígitos permitiendo repeticiones} podemos observar como 
+tenemos dos \emph{espacios} o \emph{huecos}, uno por cáda dígito, y podemos elegir 
+de entre 10 elementos en el primero y 10 en el segundo
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=3.5in,height=\textheight]{img/conteo_basico_1.png}
+  \caption{truco para contar las maneras de formar números de dos dígitos permitiendo repeticiones}
+  \end{figure}%
+  
+Con lo cual al final esto nos resulta en 100 posibilidades. Esto se puede entender escribiéndolas o pensando que son 10 por cada \emph{hueco posible}
+
+Si queremos contar las \textbf{maneras posibles de formar números de 3 dígitos permitiendo repeticiones} la historia es similar
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=3.5in,height=\textheight]{img/conteo_basico_2.png}
+  \caption{truco para contar las maneras de formar números de 3 dígitos permitiendo repeticiones}
+  \end{figure}%
+  
+Vemos que es la misma idea, basta multiplicar el número de opciones que tenemos en cada \emph{hueco}. En este caso 10 en el primero, 10 en el segundo y otras 10 en el tercero.
+
+Otro caso es pensar en hacer esto pero sin repetir ningún dígito, es decir contar las \textbf{maneras posibles de formar números de 3 dígitos sin repeticiones}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=3.5in,height=\textheight]{img/conteo_basico_3.png}
+  \caption{truco para contar las maneras de formar números de 3 dígitos sin repeticiones}
+  \end{figure}%
+
+Como vemos, con cada elección las opciones merman, ya que no podemos repetir. De modo que en el primer hueco tenemos $10$ opciones, en el segundo $9$ y en el tercero $8$. El resultado 
+será $10 \cdot 9 \cdot 8$. 
+
+En general hemos aprendido el siguente truco. Si tenemos un conjunto de $n$ elementos y tenemos que elegir $k$ importando el orden, lo que tendremos que hacer es:
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=3.5in,height=\textheight]{img/conteo_basico_4.png}
+  \caption{truco para contar las maneras de formar números de 3 dígitos sin repeticiones}
+  \end{figure}%
+
+\end{note}
+
+
+\begin{note}[Repaso combinatoria, combinaciones]
+
+En los ejemplos anteriores nos centramos en el conteo de maneras de formar subconjuntos de tal manera que importaba el orden, pero ¿Cómo lo podemos hacer si el orden no importa?
+
+Por ejemplo, Si quiero repartir 2 premios iguales a 2 personas distintas de una clase de 30 alumnas de cuántas maneras puedo hacerlo. 
+Aquí vemos como  da lo mismo el orden en que reparta los premios ya que son iguales (no hay un primero y segundo).
+
+En este caso estamos ante las combinaciones.
+
+Se llama \textbf{combinaciones} de $n$ elementos tomados de  $k$ en $k $
+a todas las agrupaciones posibles que pueden hacerse con los 
+$k$ elementos de forma que:
+\begin{itemize}
+  \item No importa el orden
+  \item No se repiten los elementos
+\end{itemize}
+
+Y el total de formas de hacer esto es justamente
+\[{n \choose k} = \frac{n!}{(n-k)! k!}\]
+
+Donde el símbolo $!$ es el \emph{factorial} y se calcula de la siguiente manera:
+
+\[n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1\]
+
+En el ejemplo anterior tendríamos 
+
+\[{10 \choose 2} = \frac{10!}{(10-2)! 2!}\]
+
+
+
+
+\end{note}
 
 
 \end{document}
