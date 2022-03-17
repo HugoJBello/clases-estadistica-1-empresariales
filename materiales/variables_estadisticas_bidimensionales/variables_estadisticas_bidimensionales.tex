@@ -76,6 +76,7 @@
 
 \chapter{Variables estadísticas bidimensionales}
 
+\section{Covarianza y coeficiente de correlación de Pearson}
 
 En ocasiones los datos se presentan en pares \((x,y)\). Es decir que al
 recoger los datos no solo tenemos una variable, sino dos y hay una
@@ -83,9 +84,8 @@ correspondencia entre los valores de una y los de la otra.
 
 Pensemos en el siguente ejemplo:
 
-\hypertarget{ejemplo}{%
-\subsubsection{Ejemplo}\label{ejemplo}}
-
+\begin{example}
+  
 Una empresa observa que parece haber una relación fuerte entre las
 ventas en enero y las ventas en febrero. Para ello se recogen los datos
 de 9 años y se anotan en una tabla las ventas de enero y febrero de cada
@@ -120,10 +120,11 @@ Mediante ellos intentaremos capturar la relación de dependencia entre
 ambas variables, particularmente la \emph{dependencia lineal,}, que
 ocurre cuando una de las variables puede ser aproximadas a partir de la
 otra mediante una recta.
+\end{example}
 
-\hypertarget{covarianza}{%
-\section{Covarianza}\label{covarianza}}
-
+ 
+\begin{definition}
+  
 La \textbf{covarianza} es un valor que indica el grado de variación
 conjunta de dos variables aleatorias respecto a sus medias. Es el dato
 básico para determinar si existe una dependencia entre ambas variables y
@@ -141,10 +142,11 @@ La covarianza se denota por \(S_{xy}\) y se define como
 donde \(\overline x\) denota la media de la primera variable (\(x\)), e
 \(\overline y\) denota la media de la segunda (\(y\))
 
-\hypertarget{ejemplo-1}{%
-\subsection{Ejemplo}\label{ejemplo-1}}
+\end{definition}
 
-Para entender cómo calcularlo, usaremos el ejemplo anterior. Primero
+
+\begin{example}\label{ex_alturas}
+  Para entender cómo calcularlo, usaremos el ejemplo anterior. Primero
 calculamos la media de ambas variables. En este caso como todos los
 datos son distintos no hay frecuencias así que para calcular las medias
 basta sumar y dividir entre el número de datos.
@@ -175,27 +177,11 @@ y para calcular la covarianza basta sumar esta tercera columna y dividir
 entre el número de datos
 
 \[S_{xy} \cong 264.474/9 \cong 29.386\]
+\end{example}
 
-\hypertarget{el-gruxe1fico-nubes-de-puntos}{%
-\subsection{El gráfico nubes de
-puntos}\label{el-gruxe1fico-nubes-de-puntos}}
 
-Una manera de visualizar la relación o dependencia entre las dos
-variables es dibujar cada punto \((x_i, y_i)\) en el plano.
-
-En el ejemplo anterior, el gráfico sería el siguente.
-
-\begin{figure}
-\centering
-\includegraphics[width=3.64583in,height=\textheight]{img/cloud.png}
-\caption{nube de puntos}
-\end{figure}
-
-\hypertarget{coeficiente-de-correlaciuxf3n-de-pearson}{%
-\section{Coeficiente de correlación de
-Pearson}\label{coeficiente-de-correlaciuxf3n-de-pearson}}
-
-El coeficiente de \textbf{correlación de Pearson} es una medida de
+\begin{definition}
+  El coeficiente de \textbf{correlación de Pearson} es una medida de
 dependencia lineal entre dos variables estadísticas cuantitativas. A
 diferencia de la covarianza, la correlación de Pearson es independiente
 de la escala de medida de las variables.
@@ -207,8 +193,10 @@ Se define como
 donde \(S_{xy}\) de nota la covarianza, \(S_X\) denota la desviación
 típica de la primera variable y \(S_Y\) la desviación típica de la
 segunda.
+\end{definition}
 
-en el ejemplo anterior, si calculamos además la desviación típica de
+\begin{example}
+  Con los datos del ejemplo anterior, si calculamos además la desviación típica de
 \(X\) e \(Y\) obtenemos
 
 \[S_x \cong 8.205\] \[S_y \cong 3.920\]
@@ -221,9 +209,25 @@ Deducimos de aquí que dado que el coeficiente de correlación de Pearson
 es cercano a 1 existe una dependencia lineal directa entre las ventas de
 enero y febrero
 
-\hypertarget{interpretaciuxf3n-del-coeficiente-de-correlaciuxf3n-de-pearson}{%
-\subsection{Interpretación del coeficiente de correlación de
-Pearson}\label{interpretaciuxf3n-del-coeficiente-de-correlaciuxf3n-de-pearson}}
+\end{example}
+
+
+\section{Interpretación gráfica}
+\begin{definition}
+  Una manera de visualizar la relación o dependencia entre las dos
+variables es dibujar cada punto \((x_i, y_i)\) en el plano.
+ A este tipo de representaciones se les llama \textbf{gráfico de nube de puntos}
+\end{definition}
+
+En el ejemplo anterior \ref{ex_alturas}, el gráfico sería el siguiente.
+
+\begin{figure}
+\centering
+\includegraphics[width=3.64583in,height=\textheight]{img/cloud.png}
+\caption{nube de puntos}
+\end{figure}
+
+Teniendo en mente esta representación podemos interpretar el coeficiente de correlación de pearson de la siguiente manera
 
 \begin{itemize}
 \item
@@ -257,9 +261,9 @@ Pearson}\label{interpretaciuxf3n-del-coeficiente-de-correlaciuxf3n-de-pearson}}
   \end{figure}
 \end{itemize}
 
-\hypertarget{regresiuxf3n-lineal-simple}{%
-\section{Regresión lineal simple}\label{regresiuxf3n-lineal-simple}}
+\section{Regresión lineal simple}
 
+\subsection*{Introducción intuitiva al método de regresión}
 En las nubes de puntos que hemos utilizado hasta ahora, veíamos como en
 los casos en que \(\rho_{XY}\) es cercano a \(-1\) o \(1\), los puntos
 \((X,Y)\) parecen acercarse a una recta que puede ajustarse visualmente.
@@ -346,11 +350,8 @@ un valor de \(x\) calculamos
 
 \[\hat y = a + b x\]
 
-\hypertarget{ejemplo-2}{%
-\subsubsection{Ejemplo}\label{ejemplo-2}}
-
-Para el ejemplo con el que comenzamos este tema, en el que teníamos una
-tabla con las ventas de enero (X) y las de febrero (Y), habiamos
+\begin{example}
+  Usando la tabla del ejemplo  \ref{ex_alturas}, habiamos
 calculado
 
 \[S_{xy} \cong 29.386\] \[S_x \cong 8.205\] \[S_y \cong 3.920\]
@@ -369,12 +370,14 @@ hemos vendido \(x=172\) tendremos que substituir en nuestra recta
 \(a + bx\), resultando la predicción
 
 \[\hat y = a+bx = 9.666 + 0.436 \cdot 172 = 84.658\]
+\end{example}
 
-\hypertarget{coeficiente-de-determinaciuxf3n-r2}{%
-\subsection{\texorpdfstring{Coeficiente de determinación
-\(R^2\)}{Coeficiente de determinación R\^{}2}}\label{coeficiente-de-determinaciuxf3n-r2}}
 
-El coeficiente de determinación se define como el cuadrado del
+\subsection{Precisión del modelo: Coeficiente de determinación \(R^2\) y El error estándar de la
+estimación}
+
+\begin{definition}
+  El coeficiente de determinación se define como el cuadrado del
 coeficiente de correlación de pearson:
 
 \[R^2 = \rho ^2\]
@@ -390,12 +393,11 @@ modelo.
 No existe un criterio inequívoco sobre el mínimo valor exigible para que
 el modelo de regresión lineal sea aceptable. En general, se considera
 inadmisible un modelo con \(R<0.5\)
+\end{definition}
 
-\hypertarget{el-error-estuxe1ndar-de-la-estimaciuxf3n}{%
-\subsection{El error estándar de la
-estimación}\label{el-error-estuxe1ndar-de-la-estimaciuxf3n}}
 
-El \textbf{error estándar de la estimación} es una alternativa al
+\begin{definition}
+  El \textbf{error estándar de la estimación} es una alternativa al
 coeficiente de determinación para estudiar la \textbf{la precisión} con
 que podemos aproximar a los valores de \(Y\) usando la recta de
 regresión.
@@ -421,10 +423,10 @@ Donde
 La idea es visualizando los datos en el diagrama de nube de puntos,
 cuanto más se peguen los datos a la recta menor será este error estandar
 de estimación,
+\end{definition}
 
-\hypertarget{muxe9todo-sencillo-para-calcular-s_e}{%
-\subsubsection{\texorpdfstring{Método sencillo para calcular
-\(S_e\)}{Método sencillo para calcular S\_e}}\label{muxe9todo-sencillo-para-calcular-s_e}}
+
+\subsubsection{Método sencillo para calcular \(S_e\)}
 
 Razonando sobre la fórmula anterior, en realidad podemos calcular
 \(S_e\) fácilmente usando
@@ -436,9 +438,8 @@ Esto simplifica bastante el cálculo ya que calcular
 \(\cdot \sum^N_{i=1} y_i^2\) suele hacerse como cálculo intermedio para
 calcular la covarianza y las varianzas
 
-\hypertarget{ejemplo-3}{%
-\subsubsection{Ejemplo}\label{ejemplo-3}}
-
+\begin{example}
+  
 En la siguente tabla \(x_i\) representan los años de antiguedad de los
 camiones de una empresa, e \(y_i\) representa los gastos de reparación.
 
@@ -465,9 +466,8 @@ luego
 
 \[S_e = \sqrt{\frac{\sum^N_{i=1} y_i^2 - a \cdot \sum^N_{i=1} y_i - b\cdot \sum^N_{i=1} x_i y_i }{N-2}} = \frac{ \sqrt{150 - 3.75 \cdot24 - 0.75 \cdot 78}}{4-2} \cong 0.866\]
 
-\hypertarget{interpretaciuxf3n-del-error-estuxe1ndar-de-la-estimaciuxf3n}{%
-\subsection{Interpretación del error estándar de la
-estimación}\label{interpretaciuxf3n-del-error-estuxe1ndar-de-la-estimaciuxf3n}}
+\end{example}
+
 
 Como ocurría en el caso de la desviación estándar, mientras más grande
 sea el error estándar de la estimación, mayor será la dispersión de los
@@ -511,10 +511,9 @@ porcentajes comentados antes sean ciertos se debe asumir:
   diferir del error estándar en otro punto
 \end{enumerate}
 
-\hypertarget{interpretaciuxf3n-geomuxe9trica-del-error-estuxe1ndar-de-la-estimaciuxf3n-y-r2}{%
-\subsection{\texorpdfstring{Interpretación geométrica del error estándar
+\subsubsection*{Interpretación geométrica del error estándar
 de la estimación y
-\(R^2\)}{Interpretación geométrica del error estándar de la estimación y R\^{}2}}\label{interpretaciuxf3n-geomuxe9trica-del-error-estuxe1ndar-de-la-estimaciuxf3n-y-r2}}
+\(R^2\)}
 
 Observemos las siguientes dos muestras bidimensionales
 
