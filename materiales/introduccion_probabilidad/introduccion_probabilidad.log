@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  15 MAR 2022 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.12)  15 MAR 2022 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,12 +645,12 @@ ed.
 (rerunfilecheck)             Checksum: D59F3C3410BD4C92C180F7FBE7E934B6;300.
  ) 
 Here is how much of TeX's memory you used:
- 9666 strings out of 482471
- 144363 string characters out of 5946661
- 426454 words of memory out of 5000000
- 24465 multiletter control sequences out of 15000+600000
+ 9666 strings out of 483048
+ 144363 string characters out of 5962772
+ 425081 words of memory out of 5000000
+ 24431 multiletter control sequences out of 15000+600000
  597839 words of font info for 67 fonts, out of 8000000 for 9000
- 421 hyphenation exceptions out of 8191
+ 85 hyphenation exceptions out of 8191
  36i,10n,37p,868b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
@@ -665,7 +665,7 @@ blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share
 lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy8.pfb>
-Output written on introduccion_probabilidad.pdf (10 pages, 327287 bytes).
+Output written on introduccion_probabilidad.pdf (10 pages, 327290 bytes).
 PDF statistics:
  215 PDF objects out of 1000 (max. 8388607)
  171 compressed objects within 2 object streams
