@@ -71,6 +71,7 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{problem}[theorem]{Problem}
 \newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
 
 \begin{document}
 
@@ -309,7 +310,7 @@ punto como puede verse en la figura siguiente:
 
 \begin{figure}
 \centering
-\includegraphics[width=4.6875in,height=\textheight]{img/least_squares.png}
+\includegraphics[width=4.6875in,height=\textheight]{img/least_squares2.png}
 \caption{los cuadrados de las distancias son precisamente los errores
 \((Y- f(X))^2\)}
 \end{figure}
@@ -469,48 +470,51 @@ luego
 \end{example}
 
 
-Como ocurría en el caso de la desviación estándar, mientras más grande
-sea el error estándar de la estimación, mayor será la dispersión de los
-puntos alrededor de la línea de regresión. De manera inversa, si
-\(S_e=0\), esperamos que la ecuación de estimación sea un estimador
-\emph{perfecto} de la variable dependiente. En ese caso, todos los
-puntos caerían directamente sobre la línea de regresión y no habría
-puntos dispersos alrededor.
-
-Suponiendo que los puntos observados siguen una distribución normal
-alrededor de la recta de regresión, podemos esperar encontrar el 68\% de
-los puntos dentro de \(\pm 1 S_e\) (o más menos 1 error estándar de la
-estimación), el 95.5\% de los puntos dentro de \(\pm 2 S_e\) y el 99.7\%
-de los puntos dentro de \(\pm 3 S_e\) .
-
-La siguiente figura resume adecuadamente este hecho
-
-\begin{figure}
-\centering
-\includegraphics[width=3.64583in,height=\textheight]{img/error_regression_2.png}
-\caption{-}
-\end{figure}
-
-Es importante observar que en la figura anterior el error estándar de la
-estimación se mide a lo largo del eje Y, y no perpendicularmente desde
-la recta de regresión.
-
-Siendo precisos, para que lo establecido en la figura sea correcto y los
-porcentajes comentados antes sean ciertos se debe asumir:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Los valores observados para Y tienen distribución normal alrededor de
-  cada valor estimado de \(\hat Y\).
-\item
-  La varianza de las distribuciones alrededor de cada valor posible de
-  \(\hat Y\) es la misma. Si esta segunda suposición no fuera cierta,
-  entonces el error estándar en un punto de la recta de regresión podría
-  diferir del error estándar en otro punto
-\end{enumerate}
-
+\begin{note}[Significado de $S_e$]
+  
+  Como ocurría en el caso de la desviación estándar, mientras más grande
+  sea el error estándar de la estimación, mayor será la dispersión de los
+  puntos alrededor de la línea de regresión. De manera inversa, si
+  \(S_e=0\), esperamos que la ecuación de estimación sea un estimador
+  \emph{perfecto} de la variable dependiente. En ese caso, todos los
+  puntos caerían directamente sobre la línea de regresión y no habría
+  puntos dispersos alrededor.
+  
+  Suponiendo que los puntos observados siguen una distribución normal
+  alrededor de la recta de regresión, podemos esperar encontrar el 68\% de
+  los puntos dentro de \(\pm 1 S_e\) (o más menos 1 error estándar de la
+  estimación), el 95.5\% de los puntos dentro de \(\pm 2 S_e\) y el 99.7\%
+  de los puntos dentro de \(\pm 3 S_e\) .
+  
+  La siguiente figura resume adecuadamente este hecho
+  
+  \begin{figure}
+  \centering
+  \includegraphics[width=3.64583in,height=\textheight]{img/error_regression_2.png}
+  \caption{-}
+  \end{figure}
+  
+  Es importante observar que en la figura anterior el error estándar de la
+  estimación se mide a lo largo del eje Y, y no perpendicularmente desde
+  la recta de regresión.
+  
+  Siendo precisos, para que lo establecido en la figura sea correcto y los
+  porcentajes comentados antes sean ciertos se debe asumir:
+  
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Los valores observados para Y tienen distribución normal alrededor de
+    cada valor estimado de \(\hat Y\).
+  \item
+    La varianza de las distribuciones alrededor de cada valor posible de
+    \(\hat Y\) es la misma. Si esta segunda suposición no fuera cierta,
+    entonces el error estándar en un punto de la recta de regresión podría
+    diferir del error estándar en otro punto
+  \end{enumerate}
+  \end{note}
+  
 \subsubsection*{Interpretación geométrica del error estándar
 de la estimación y
 \(R^2\)}
@@ -531,10 +535,10 @@ Observemos las siguientes dos muestras bidimensionales
   tendrá un error estandar \(S_e\) alto, y un \(R^2\) cercano a 0
 \end{itemize}
 
-\hypertarget{metodo-completo-del-cuxe1lculo-de-la-recta-de-regresiuxf3n}{%
-\subsection{Metodo completo del cálculo de la recta de
-regresión}\label{metodo-completo-del-cuxe1lculo-de-la-recta-de-regresiuxf3n}}
 
+\subsection{Metodo completo del cálculo de la recta de regresión}
+
+\begin{method}
 Si tenemos unos datos
 
 \[(x_1, y_1), (x_2, y_2), (x_3,y_3), \ldots (x_N,y_N)\]
@@ -563,14 +567,17 @@ lo tanto predecir \(Y\) usando \(X\) debemos):
   aproxima bien, mientras que un valor cercano a 1 significa que el
   modelo es capaz de aproximar bien los valores de \(Y\) a partir de x.
   También podemos calcular el error estándar de estimación \(S_e\).
+  \item Si ahora tenemos un nuevo valor de \(x\) y queremos estimar un valor de
+  \(Y\) basta hacer
+  
+  \[\hat y = a + b x\]
+  con los valores obtenidos en el método anterior.
+
 \end{enumerate}
 
-Si ahora tenemos un nuevo valor de \(x\) y queremos estimar un valor de
-\(Y\) basta hacer
+\end{method}
 
-\[y = a + b x\]
 
-con los valores obtenidos en el método anterior.
 
 \hypertarget{regresiuxf3n-no-lineal}{%
 \section{Regresión no lineal}\label{regresiuxf3n-no-lineal}}
@@ -582,6 +589,9 @@ análisis de regresión cuadrática, cúbica, logarít­mica, logística, etc.
 
 \hypertarget{regresiuxf3n-exponencial}{%
 \subsection{Regresión exponencial}\label{regresiuxf3n-exponencial}}
+
+
+\begin{method}
 
 En muchas ocasiones la dependencia entre las variables \(X\) e \(Y\) es
 de forma exponencial, en cuyo caso interesa ajustar a la nube de puntos
@@ -610,10 +620,10 @@ obtener \(b\) y \(\ln(a)\) usando
 
 \[\ln a = \overline{Z} - \frac{S_{XZ}}{S^2_X} \overline x\]
 \[a = e^{ \overline{Z} - \frac{S_{XZ}}{S^2_X} \overline x}\]
+\end{method}
 
-\hypertarget{ejemplo-4}{%
-\subsubsection{Ejemplo}\label{ejemplo-4}}
-
+\begin{example}
+Para las siguientes variables $X$, $Y$ de la tabla, calculemos la regresión exponencial:
 \begin{longtable}[]{@{}lllll@{}}
 \toprule
 \(x_i\) & \(y_i\) & \(z_i = \ln(y_i)\) & \(x_i^2\) &
@@ -629,7 +639,7 @@ obtener \(b\) y \(\ln(a)\) usando
 4 & 43.28 & 3.77 & 16 & 15.08\tabularnewline
 4.5 & 1978.49 & 7.59 & 20.25 & 34.16\tabularnewline
 5 & 9171.47 & 9.12 & 20.25 & 45.6\tabularnewline
--- & -- & -- & -- & --\tabularnewline
+\midrule
 25.9 & 11234.43 & 16.44 & 92.63 & 102.1\tabularnewline
 \bottomrule
 \end{longtable}
@@ -664,6 +674,9 @@ aquí tenemos las predicciones junto con los valores reales
 \includegraphics[width=3.64583in,height=\textheight]{img/exponential_regression3.png}
 \caption{a}
 \end{figure}
+
+\end{example}
+
 
 \hypertarget{ejercicios}{%
 \section{Ejercicios}\label{ejercicios}}
