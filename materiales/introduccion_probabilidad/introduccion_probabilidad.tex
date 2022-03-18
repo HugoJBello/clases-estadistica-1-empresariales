@@ -255,7 +255,7 @@ $P(A)$ que cumple
 \end{enumerate}
 \end{definition}
 
-\begin{property}
+\begin{property}\label{prop_3}
   De los axiomas de la probabilidad se deducen las siguientes propiedades
 \begin{enumerate}[(1)]
   \item Si $A_1, A_2, \ldots A_n$ son sucesos excluyentes dos a dos \footnote{esto es, dados dos cuales quiera de ellos $A_i, A_j$, no tienen elementos en común, es decir $A_i\cap A_j = \emptyset$}
@@ -451,6 +451,94 @@ En el ejemplo anterior tendríamos
 \[{10 \choose 2} = \frac{10!}{(10-2)! 2!} = \frac{10!}{(8)! 2!} = 5\cdot 9 = 45\]
 
 
+\begin{example}
+  Tenemos una urna con 10 bolas. De ellas 2 son rojas, 4 azules y 4 blancas. Si extraemos primero una bola y después otra (sin volverlas a colocar en la urna).
+  \begin{enumerate}[(1)]
+    \item Calcular la probabilidad de que salgan 2 bolas rojas
+    \item Calcular la probabilidad de que no salgan dos bolas azules
+    \item Calcular la probabilidad de que salgan 2 bolas rojas o 2 bolas azules
+  \end{enumerate}
+
+  Tenemos que entender bien el experimento. Es muy importante que se extraen las bolas en orden, ya que si las sacamos a la vez 
+  y sin que importase el orden el experimento sería distinto y el conteo también.
+
+  Para (1) llamemos
+  \[A = \text{que salgan 2 bolas rojas}\]
+
+  Pensemos pues en el número de casos posibles  y el número de casos favorables para $A$.
+  Para los casos favorables para $A$ 
+  
+  \begin{align*}
+    \text{número casos posibles} &= \text{número de resultados posibles del experimento}\\
+    &=\text{maneras de extraer cualquiera de las 10 bolas }\\
+    &= 10 \cdot 9
+  \end{align*}
+
+  para entender esto último, pensemos que tenemos dos extracciones, 
+  en la primera nos puede salir una bola cualquiera de las 10 (independientemente del color), 
+  en la segunda extracción, puesto
+  que no volvemos a meter la anterior nos quedan 9, por eso el resultado es $10 \cot 9$.
+
+  \begin{align*}
+    \text{número casos favorables para A} &= \text{número de maneras en que A puede ocurrir}\\
+    &=\text{maneras de extraer las dos bolas rojas en orden}\\
+    &= 2 \cdot 1
+  \end{align*}
+
+  podemos visualizar esto último pensando en que tenemos dos extracciones y en la prima extracción nos pueden salir 
+  cualquiera de las 2 bolas rojas, mientras que en la segunda solo queda una, de ahí $2\cdot 1$.
+
+  Aplicamos ahora la regla de Laplace 
+
+  \[P(A) = \frac{\text{número casos favorables para A}}{\text{número casos posibles para A}} = \frac{2}{10\cdot 9}=\frac{1}{90}\]
+
+
+  Para (2) llamemos
+  \[B = \text{que no salgan 2 bolas azules}\]
+  Observemos que si llamamos 
+  \[C = \text{que salgan 2 bolas azules} \]
+
+  Tenemos 
+
+  \[C= B^c\] 
+
+  Así si conocemos $P(C)$, podemos conocer la probabilidad de $B$ usando la propiedad $P(B) = 1- P(B^c) = 1- P(C)$: Así que dispongámonos a calcularla.
+
+  De manera similar a como hicimos antes:
+
+  \begin{align*}
+    \text{número casos favorables para C} &= \text{número de maneras en que C puede ocurrir}\\
+    &=\text{maneras de extraer las dos bolas azules en orden}\\
+    &= 4 \cdot 3
+  \end{align*}
+
+  Usando la regla de Laplace
+
+  \[P(C) = \frac{\text{número casos favorables para C}}{\text{número casos posibles para C}} 
+  = \frac{4\cdot 3 }{10\cdot 9}=\frac{4}{10\cdot 3}=\frac{2}{5\cdot 3}\]
+
+
+  de tal modo que 
+
+  \[P(B)= 1- P(C) = 1- \frac{2}{5\cdot 3} = \frac{13}{5\cdot 3}\]
+
+  Para (3) llamemos 
+
+  \[D = \text{que salgan 2 bolas rojas o 2 bolas azules}\]
+
+  Ahora observemos que 
+
+  \[D = A \cup C\]
+
+  Esto es porque la unión de sucesos se traduce como el hecho de que ocurra uno u otro.
+
+  Luego  la probabilidad de $C$ la podemos calcular usando la propiedad \ref{prop_3}(5). Y
+
+  \[ P(D) = P(A) + P(C) - P(A\cap C) = \frac{1}{10\cdot 3} + \frac{4}{10\cdot 3} + 0 =  \frac{5}{10\cdot 3} =  \frac{1}{2\cdot 3}\]
+
+  En la igualdad anterior hemos usado que $P(A\cap C)=0$, ya que estos dos sucesos no pueden darse a la vez.
+
+\end{example}
 
 
 \begin{example}
