@@ -572,9 +572,38 @@ Con lo cual, usando la regla de Laplace
 
 \end{example}
 
-
-
 \end{note}
+
+
+\section{Probabilidad condicionada}
+
+Probabilidad condicional es la probabilidad de que ocurra un evento A, sabiendo que también sucede otro evento B. 
+La probabilidad condicional se escribe $P(A|B)$, y se lee "la probabilidad de A dado B", o "la probabilidad de A condicionada a B".
+
+No tiene por qué haber una relación causal o temporal entre $A$ y $B$. A puede preceder en el tiempo a $B$, 
+sucederlo o pueden ocurrir simultáneamente. $A$ puede causar $B$, viceversa o pueden no tener relación causal. 
+
+Las relaciones causales o temporales son nociones que no pertenecen al ámbito de la probabilidad. 
+Pueden desempeñar un papel o no, dependiendo de la interpretación que se le dé a los eventos. 
+
+La \emph{la probabilidad de A condicionada a B} puede calcularse usando la siguiente fórmula 
+
+\[
+  P(A\mid B)=\frac {P(A\cap B)}{P(B)} 
+\]
+
+\subsection{Independencia de sucesos}
+Dos sucesos son \textbf{independientes} si la ocurrencia de uno de ellos no cambia la probabilidad del otro.
+
+De forma más precisa, decimos que dos sucesos aleatorios A y B son independientes si y sólo si se dan las siguientes condiciones
+
+\begin{equation}
+  \label{eq_indep1} P(A \mid B) = P(A)
+\end{equation}
+
+\begin{equation}
+  \label{eq_indep3} P(B\mid A) = P(B)
+\end{equation}
 
 
 \end{document}
