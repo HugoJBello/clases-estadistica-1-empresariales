@@ -1,3 +1,4 @@
+
 \documentclass[]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm}
@@ -9,8 +10,8 @@
 
 \usepackage{parskip}
 \usepackage{lmodern}
+\usepackage{verbatim}
 \usepackage{enumerate}
-
 
 \usepackage{xcolor}
 
@@ -59,20 +60,31 @@
 \newtheorem{hypothesis}[theorem]{Hypothesis}
 \newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
 \newtheorem{properties}[theorem]{Propiedades}
 \newtheorem{criterion}[theorem]{Criterion}
-
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definición}
 \newtheorem{note}[theorem]{Nota}
 \newtheorem{definitions}[theorem]{Definiciones}
 \newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{problem}[theorem]{Problem}
 \newtheorem{principle}[theorem]{Principle}
-\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
 
 \begin{document}
+
 \chapter{Introducción a la probabilidad}
 
 \section{Introducción y terminología}
@@ -577,6 +589,8 @@ Con lo cual, usando la regla de Laplace
 
 \section{Probabilidad condicionada}
 
+\begin{definition}
+  
 Probabilidad condicional es la probabilidad de que ocurra un evento A, sabiendo que también sucede otro evento B. 
 La probabilidad condicional se escribe $P(A|B)$, y se lee "la probabilidad de A dado B", o "la probabilidad de A condicionada a B".
 
@@ -592,18 +606,224 @@ La \emph{la probabilidad de A condicionada a B} puede calcularse usando la sigui
   P(A\mid B)=\frac {P(A\cap B)}{P(B)} 
 \]
 
+\end{definition}
+
 \subsection{Independencia de sucesos}
-Dos sucesos son \textbf{independientes} si la ocurrencia de uno de ellos no cambia la probabilidad del otro.
 
-De forma más precisa, decimos que dos sucesos aleatorios A y B son independientes si y sólo si se dan las siguientes condiciones
+\begin{definition}
+  Dos sucesos son \textbf{independientes} si la ocurrencia de uno de ellos no cambia la probabilidad del otro.
 
+  De forma más precisa, decimos que dos sucesos aleatorios A y B son independientes si y sólo si se dan las siguientes condiciones
+   
 \begin{equation}
   \label{eq_indep1} P(A \mid B) = P(A)
 \end{equation}
 
 \begin{equation}
-  \label{eq_indep3} P(B\mid A) = P(B)
+  \label{eq_indep2} P(B\mid A) = P(B)
 \end{equation}
 
+\end{definition}
+
+\begin{customdef}{Propiedades}
+  Para cualesquiera sucesos $A$ y $B$
+  \begin{enumerate}[(1)]
+    \item Si se da una de las propiedades (\ref{eq_indep1}) o (\ref{eq_indep2}) automática se da la otra. 
+    Es decir que para verificar si $A$ y $B$ son independientes basta ver si se cumple cualquiera de las dos
+    \item Si $A$ y $B$ son independientes entonces 
+    \[P(A\cap B) = P(A) \cdot P(B)\]
+  \end{enumerate}
+\end{customdef}
+
+\begin{example}
+  Se realiza un estudio para conocer la relación entre el nivel adquisitivo de los padres con el nivel adquisitivo de los hijos (un tiempo después)
+  Los datos se recogen en la siguiente tabla
+
+  \begin{center}
+    \begin{tabular}{c|ccc|c}
+                         &Padres pobres&Padres clase media&Padres ricos & Total \\
+       \hline
+       Hijo pobres       &250          &30                &5            &285     \\
+       Hijo clase media  &20           &100               &30           &152     \\
+       Hijo ricos        &2            &15                &68           &85      \\
+       \hline         
+       total             &272          &145               &105          &522     \\
+      \end{tabular}
+  \end{center}
+
+  \begin{enumerate}
+    \item Dados los sucesos
+    \[A=\text{Ser hijo pobre}\]
+    \[B=\text{Tener padres pobres}\] 
+    Calcular la probabilidad de $A$ y la probabilidad de $A$ condicionada a $B$, es decir la
+     probabilidad de ser pobre teniendo padres pobres.
+    \item Calcular la probabilidad de $A\cap B$ es decir la probabilidad de ser pobre y tener padres pobres.
+    \item  ¿Son los sucesos $A$ y $B$ independientes?
+  \end{enumerate}
+
+  Para resolver (1), nos fijamos en la tabla y apliquemos la regla de Laplace 
+
+  \begin{align*}
+    P(A)&=\frac{\text{numero de casos favorables para A}}{\text{número de casos posibles}}\\
+    &=\frac{\text{numero personas que son hijos pobres}}{\text{número total de personas encuestadas}}\\
+    &=\frac{285}{522}\\
+    &\cong 0.54
+  \end{align*}
+
+\end{example}
+
+
+
+\hypertarget{teorema-de-bayes}{%
+\section{Teorema de Bayes}\label{teorema-de-bayes}}
+
+El teorema de bayes permite \emph{dar la vuelta} a la probabilidad
+condicionada.
+
+\begin{theorem}[Bayes]
+  Dados dos sucesos \(A\) y \(B\) se verifica que 
+  \[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]
+\end{theorem}
+ 
+
+\begin{example}
+Se hizo una encuesta a un grupo grande de personas donde se les
+preguntaba el genero y si ellos practicaban algún deporte o hacían
+ejercicio en general, los resultados de la encuesta fueron los
+siguientes: el 40\% por ciento de los encuestados eran hombres y el 60\%
+eran mujeres, de los cuales el 80\% de los hombres y el 50\% de las
+mujeres hacían ejercicio.
+
+¿Cuál es la probabilidad que si se selecciona a alguien que haga
+ejercicio, esta sea hombre?
+
+\(E =\) ``Hacer ejercicio''
+
+\(H =\) ``Hombre''
+
+\(M =\) ``Mujer''
+
+\[P(E) = 0.4\cdot 0.8 + 0.6 \cdot 0.5 = 0.62\]
+
+\[P(H|E) = \frac{P(E|H)\cdot P(H)}{P(E)}=\frac{0.8\cdot 0.4}{0.62}=0.5161\]
+ 
+\end{example}
+
+
+
+\section{Teorema de la Probabilidad Total} 
+
+\begin{definition}
+Dada un espacio muestral \(\Omega\), decimos que
+los sucesos \(A_1, A_2, \ldots, A_n\) forman una partición de \(\Omega\)
+si:
+
+\begin{itemize}
+\tightlist
+\item
+  Dados dos cualesquiera de ellos \(A_i, A_j\) su intersección es vacía
+  (\(A_i\cap A_j = \emptyset\))
+\item
+  Su unión es todo el espacio muestral:
+  \(A_1 \cup A_2 \cup \ldots \cup A_n = \Omega\)
+\end{itemize}
+\end{definition}
+
+
+\begin{example}
+  En el experimento aleatorio tirar un dado los sucesos
+\[A_1 = \text{que salga 1}\] 
+\[A_2 = \text{que salga 2}\]
+\[A_3 = \text{que salga 3}\] 
+\[A_4 = \text{que salga 4}\]
+\[A_5 = \text{que salga 5}\] 
+\[A_6 = \text{que salga 6}\] 
+forman
+una partición del espacio muestral \(\Omega\).
+
+\end{example}
+ 
+
+\begin{example}
+  Para cualquier espacio muestral \(\Omega\), dado un suceso \(A\), si
+consideramos su complementario \(A^c\), ambos forman una partición.
+
+\end{example}
+
+ 
+\begin{theorem}[Probabilidad Total]
+  Sea \(A_{1},A_{2},...,A_{n}\) una partición sobre el espacio muestral y
+sea \(B\) un suceso cualquiera del que se conocen las probabilidades
+condicionales \(P(B|A_i)\), entonces la probabilidad del suceso \(B\)
+viene dada por la expresión:
+\[{\displaystyle P(B)=\sum _{i=1}^{n}P(B|A_{i})P(A_{i})} \]
+ 
+\end{theorem}
+
+
+\begin{example}
+  Se dispone de tres cajas con bombillas. La primera contiene 10
+bombillas, de las cuales hay cuatro fundidas; en la segunda hay seis
+bombillas, estando una de ellas fundida, y la tercera caja hay tres
+bombillas fundidas de un total de ocho. ¿Cuál es la probabilidad de que
+al tomar una bombilla al azar de una cualquiera de las cajas, esté
+fundida?
+
+\(A_1\):Sacar bombilla de caja 1.
+
+\(A_2\):Sacar bombilla de caja 2.
+
+\(A_3\):Sacar bombilla de caja 3.
+
+\(F\): Bombilla defectuosa.
+
+Por el teorema de la probabilidad total:
+
+\[{P(F)=P(A_1)\cdot P(F|A_1) + P(A_2)\cdot P(F|A_2)+ P(A_3)\cdot P(F|A_3)}\]
+
+\[P(F)=\frac{1}{3}\cdot \frac{4}{10} + \frac{1}{3}\cdot \frac{1}{6} + \frac{1}{3}\cdot \frac{3}{8}\]
+
+\end{example}
+
+\begin{exercise}
+
+  la probabilidad de que a un alumno seleccionado al azar le guste el
+  helado es del 60 \%, mientras que la probabilidad de que a un alumno
+  le guste la torta es del 36 \%. Además, se sabe que la probabilidad de
+  que a un alumno le guste la torta dado que le gusta el helado es del
+  40 \%. Calcular la probabilidad de que a un alumno le guste el helado,
+  dado que le gusta la torta.
+\end{exercise}
+  \begin{exercise}
+
+  Una fábrica de tornillos tiene dos máquinas, la M1, es más antigua, y
+  hace el 75\% de todos los tornillos, y la M2, más nueva pero pequeña,
+  25\% que hace el de los tornillos. La M1 hace un 25\% de tornillos
+  defectuosos, mientras que M2 la tan sólo hace un 2\% de tornillos
+  defectuosos. Si escogemos un tornillo al azar, ¿qué probabilidad hay
+  de que salga defectuoso?
+\end{exercise}
+
+  \begin{exercise}
+
+  El sistema de seguridad de incendios de una fábrica se activa con una
+  probabilidad de 0,99 si hay un incendio. La probabilidad de que se
+  active 0,02. Se estima también que la
+  probabilidad de que haya un incendio en la fábrica un día cualquiera
+  es de 0,005.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    La probabilidad de que habiéndose activado la alarma haya un
+    incendio.
+  \item
+    La probabilidad de que se active la alarma habiendo habido un
+    incendio
+  \end{enumerate}
+\end{exercise}
+
+  
 
 \end{document}
