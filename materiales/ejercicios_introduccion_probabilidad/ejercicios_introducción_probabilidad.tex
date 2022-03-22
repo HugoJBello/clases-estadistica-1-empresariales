@@ -1,0 +1,305 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Ejercicios Introducción a la probabilidad}
+\author{Hugo J. Bello}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+\section{Ejercicios generales}
+
+\begin{exercise}
+En la siguente tabla se recogen los datos de lluvia/no lluvia y
+calor/frío de los días de un año.
+
+\begin{longtable}[]{@{}lccrl@{}}
+\toprule
+& \textbf{si-lluvia} & \textbf{no-lluvia} & &\tabularnewline
+\midrule
+\endhead
+\textbf{calor} & 6 & 50 & \textbf{56} &\tabularnewline
+\textbf{frío} & 199 & 110 & \textbf{309} &\tabularnewline
+& \textbf{205} & \textbf{160} & \textbf{365} &\tabularnewline
+& & & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+calcular: 1. Dado un día que ha llovido calcular al probabilidad de que
+sea caluroso. 2. Dado un día que ha hecho calor, calcular la
+probabilidad de que llueva. 3. Dado un día cualquiera del año, calcular
+la probabilidad de que sea caluroso y llueva a la vez. 4. Calcular la
+probabilidad de que llueva un día cualquiera del año.
+\end{exercise}
+
+
+\begin{exercise}
+Se está diseñando un videojuego. En una pantalla el jugador debe vencer
+a un trol para poder entrar en la mazmorra del dragón. Una vez allí debe
+vencer al dragón para conseguir el tesoro. Se diseña el videojuego para
+que: - La probabilidad de vencer al trol es de 1/2. - La probabilidad de
+vencer al dragón una vez vencido el trol es 1/4.
+
+Calcular la probabilidad de obtener el tesoro, es decir \textbf{primero
+vencer al trol y después vencer al dragón.}
+\end{exercise}
+
+
+\begin{exercise}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Un jugador de un juego de rol, en una jugada concreta tiene que sumar
+  4 o más en una tirada de un dado de 10 caras para vencer a su
+  oponente. Calcular la probabilidad de que esto ocurra.
+\item
+  15 personas se sientan en una mesa circular. Calcular la probabilidad
+  de que dos de ellas se sienten una al lado de la otra.
+\item
+  Al lanzar tres dados, calcular la probabilidad de obtener algún
+  cuatro.
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+Se extraen al azar, sucesivamente y sin devolución, 3 bolas de una urna
+en la que hay 6 bolas azules, 4 negras y 2 rojas. Calcular: 1.
+Probabilidad de las 3 bolas extraídas sean azules. 2. Probabilidad de se
+extraigan en el orden roja -- azul -- negra. 3. Probabilidad de que sean
+una de cada color. 4. Probabilidad de que sean de un solo color. 5.
+Probabilidad de que sean de 2 colores.
+\end{exercise}
+
+
+
+\begin{exercise}
+La probabilidad de que un cilicista gane una carrera en un día
+  lluvioso es 0.08 y la de que gane en un día seco es 0.3. Si la
+  probabilidad de que el día de la carrera sea lluvioso es 0.25, ¿cuál
+  será la probabilidad de que el ciclista gane?
+\end{exercise}
+
+\begin{exercise}
+
+  Una librería tiene tres estatenrías: superior, central e inferior.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    En la estantería superior hay 3 novelas y 7 cuentos.
+  \item
+    En la estantería central hay 8 novelas y 6 cuentos.
+  \item
+    En la estentería inferior hay 5 novelas y 9 cuentos. Se escoge un
+    estante al azar y se saca de él un libro. Si resulta que es una
+    novela, ¿cuál es la probabilidad de que se haya sacado del estante
+    central?
+  \end{itemize}
+\end{exercise}
+
+  
+  \begin{exercise}
+
+  El 65\% de los turistas que visitan una provincia elige alojamientos
+  en la capital y el resto en zonas rurales. Además, el 75\% de los
+  turistas que se hospedan en la capital y el 15\% de los que se
+  hospedan en zonas rurales lo hace en hoteles, mientras que el resto lo
+  hace en apartamentos turísticos. Se elige al azar un turita de los que
+  se han alojado en la provincia.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad de que se haya hospedado en un hotel?
+  \item
+    Si se sabe que el turista se ha hospedado en un apartamento
+    turístico, cuál es la probabilidad de que el apartamento esté en
+    zonas rurales?
+  \end{enumerate}
+\end{exercise}
+
+  
+  \begin{exercise}
+
+  El 20\% de los animales de un bosque son aves y otro 20\% son
+  mamíferos, el restante son insectos. El 75\% de las aves son diurnas y
+  el 50\% de los mamíferos también, mientras que de los que insectos
+  solamente el 20\% lo son.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad de ser mamífero y diurno?
+  \item
+    ¿Cuál es la probabilidad de ser diurno?
+  \item
+    ¿Cuál es la probabilidad de que un animal sea ave condicionada a que
+    sea diurno?
+  \end{enumerate}
+\end{exercise}
+
+  
+  \begin{exercise}
+
+  En una empresa hay tres oficinas: oficina 1, oficina 2 y oficina 3. La
+  oficina 1 tiene 5 empleados, la 2 y la 3 tienen 10 empleados. Por otra
+  de los empleados de la empresa hay 3 directivos y 22 empleados
+  normales. Se ha decidido decidido repartir tres premios (1º, 2º y 3º)
+  al azar entre todos los empleados sin que un mismo empleado pueda
+  ganar más de un premio.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad que tiene cada empleado de ganar el primer
+    premio?
+  \item
+    ¿Cuál es la probabilidad que tiene cada empleado de ganar algún
+    premio?
+  \item
+    ¿Que probabilidad hay no gane nadie de la oficina 1?
+  \item
+    ¿Que probabilidad hay de que gane alguien de las oficinas 1 o 2?
+  \item
+    ¿Que probabilidad hay de que gane un ejecutivo?
+  \end{enumerate}
+\item
+  Se hace un estudio para conocer la manera en que los futbolistas
+  desarrollan su carrera. Determinar la probabilidad de un futbolista de
+  llegar a titular y además marcar un gol sabiendo que
+
+  \begin{itemize}
+  \tightlist
+  \item
+    La probabilidad de un futbolista de llegar a titular de su equipo es
+    de 0.2
+  \item
+    La probabilidad de un futbolista de marcar un gol una vez consigue
+    ser titular es de 0.3
+  \end{itemize}
+\end{exercise}
+
+\section{Aplicados a Economía y empresas}
+\begin{exercise}
+    Una aseguradora tiene clientes de riesgo alto, medio y bajo. Estos
+clientes tienen probabilidades de 0.02, 0.01 y 0.0025 de rellenar un
+impreso de reclamación. Si la proporción de clientes de alto riesgo
+es 0.1, de riesgo medio 0.2 y de bajo riesgo es 0.7.
+
+¿Cuál es la probabilidad de que un impreso rellenado sea de un
+cliente de alto riesgo?
+\end{exercise}
+
+
+\begin{exercise}
+    Una compañía de seguros de automóviles clasifca a sus asegurados
+    en cuatro grupos de edad. La siguiente tabla recoge la proporción de
+    asegurados dentro de cada grupo de edad, junto con la probabilidad
+    de tener un accidente.
+
+    \begin{center}
+        \begin{tabular}{ccc}
+            Grupo de edad &Proporción de asegurados &Prob. de accidente \\  
+            \hline              
+            18-25         &0.10                     &0.07               \\  
+            25-45         &0.40                     &0.04               \\  
+            45-60         &0.30                     &0.02               \\  
+            +60           &0.20                     &0.05               \
+        \end{tabular}
+    \end{center}
+    Se elige un asegurado al azar de la compañía:
+    \begin{enumerate}[a)]
+        \item Probabilidad de que tenga un accidente.
+        \item Si sabemos que el asegurado ha tenido un accidente, obtener la
+        probabilidad de que pertenezca a cada uno de los grupos.
+    \end{enumerate}
+    \textbf{Solución:}
+    a) P (A) = 0,039 b) P (1|A) = 0,1795 P (2|A) = 0,4102 P (3|A) =
+    0,15385 P (4|A) = 0,2564.
+\end{exercise}
+
+\end{document}
