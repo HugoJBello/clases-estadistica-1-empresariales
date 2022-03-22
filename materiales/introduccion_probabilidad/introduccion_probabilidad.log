@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  21 MAR 2022 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  22 MAR 2022 10:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,35 +641,35 @@ LaTeX Info: Redefining \% on input line 539.
 LaTeX Info: Redefining \. on input line 583.
 LaTeX Info: Redefining \% on input line 583.
  [11]
-LaTeX Info: Redefining \. on input line 652.
-LaTeX Info: Redefining \% on input line 652.
+LaTeX Info: Redefining \. on input line 653.
+LaTeX Info: Redefining \% on input line 653.
  [12]
-LaTeX Info: Redefining \. on input line 708.
-LaTeX Info: Redefining \% on input line 708.
+LaTeX Info: Redefining \. on input line 688.
+LaTeX Info: Redefining \% on input line 688.
  [13]
-LaTeX Info: Redefining \. on input line 782.
-LaTeX Info: Redefining \% on input line 782.
+LaTeX Info: Redefining \. on input line 760.
+LaTeX Info: Redefining \% on input line 760.
  [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 829.
-LaTeX Info: Redefining \. on input line 829.
-LaTeX Info: Redefining \% on input line 829.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 845.
+LaTeX Info: Redefining \. on input line 845.
+LaTeX Info: Redefining \% on input line 845.
  [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 829.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 845.
  (./introduccion_probabilidad.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 829.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 829.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 845.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 845.
 Package rerunfilecheck Info: File `introduccion_probabilidad.out' has not chang
 ed.
 (rerunfilecheck)             Checksum: DF300F6AD773DDCC6F8B163FC4579DEE;588.
  ) 
 Here is how much of TeX's memory you used:
- 9762 strings out of 482471
- 145644 string characters out of 5946661
- 428420 words of memory out of 5000000
- 24522 multiletter control sequences out of 15000+600000
+ 9764 strings out of 482471
+ 145676 string characters out of 5946661
+ 432451 words of memory out of 5000000
+ 24523 multiletter control sequences out of 15000+600000
  597839 words of font info for 67 fonts, out of 8000000 for 9000
  421 hyphenation exceptions out of 8191
  36i,14n,37p,868b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -686,10 +686,10 @@ blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share
 lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy8.pfb>
-Output written on introduccion_probabilidad.pdf (15 pages, 348988 bytes).
+Output written on introduccion_probabilidad.pdf (15 pages, 349700 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 97 named destinations out of 1000 (max. 500000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 98 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

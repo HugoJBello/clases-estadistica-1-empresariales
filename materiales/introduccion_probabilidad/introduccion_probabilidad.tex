@@ -602,9 +602,10 @@ Pueden desempeñar un papel o no, dependiendo de la interpretación que se le d�
 
 La \emph{la probabilidad de A condicionada a B} puede calcularse usando la siguiente fórmula 
 
-\[
+\begin{equation}\label{equ_condicionada}
   P(A\mid B)=\frac {P(A\cap B)}{P(B)} 
-\]
+\end{equation}
+
 
 \end{definition}
 
@@ -643,9 +644,9 @@ La \emph{la probabilidad de A condicionada a B} puede calcularse usando la sigui
     \begin{tabular}{c|ccc|c}
                          &Padres pobres&Padres clase media&Padres ricos & Total \\
        \hline
-       Hijo pobres       &250          &30                &5            &285     \\
+       Hijo pobre        &250          &30                &5            &285     \\
        Hijo clase media  &20           &100               &30           &152     \\
-       Hijo ricos        &2            &15                &68           &85      \\
+       Hijo rico         &2            &15                &68           &85      \\
        \hline         
        total             &272          &145               &105          &522     \\
       \end{tabular}
@@ -668,7 +669,22 @@ La \emph{la probabilidad de A condicionada a B} puede calcularse usando la sigui
     &=\frac{\text{numero personas que son hijos pobres}}{\text{número total de personas encuestadas}}\\
     &=\frac{285}{522}\\
     &\cong 0.54
+    &\\
+    &\\
+    P(A|B)&=\frac{\text{numero de casos favorables para A conocido B}}{\text{número de casos posibles conocido B}}\\
+    &=\frac{\text{numero personas que son hijos pobres conocido que tienen padres pobres}}{\text{número total de personas encuestadas que tienen padres pobres}}\\
+    &=\frac{250}{272}\\
+    &\cong 0.91\\
+    &\\
+    &\\
+    P(A\cap B)&=\frac{\text{numero de casos favorables para que A y B ocurran a la vez}}{\text{número de casos posibles}}\\
+    &=\frac{\text{numero personas que son hijos pobres y a la vez tienen padres pobres}}{\text{número total de personas encuestadas}}\\
+    &=\frac{250}{522}\\
+    &\cong 0.47
   \end{align*}
+
+  Observamos que aquí hemos calculado la probabilidad $P(A|B)$ usando la idea intuitiva de probabilidad condicionada (asumiendo que B ocurre), 
+  esta probabilidad puede calcularse también usando la fórmula (\ref{equ_condicionada}) de la siguiente manera:
 
 \end{example}
 
