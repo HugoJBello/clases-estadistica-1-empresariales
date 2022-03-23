@@ -12,8 +12,10 @@
 \usepackage{lmodern}
 \usepackage{verbatim}
 \usepackage{enumerate}
-
 \usepackage{xcolor}
+
+%sudo apt-get install texlive-pictures
+\usepackage[all]{xy}
 
 \usepackage{hyperref}
 
@@ -591,8 +593,8 @@ Con lo cual, usando la regla de Laplace
 
 \begin{definition}
   
-Probabilidad condicional es la probabilidad de que ocurra un evento A, sabiendo que también sucede otro evento B. 
-La probabilidad condicional se escribe $P(A|B)$, y se lee "la probabilidad de A dado B", o "la probabilidad de A condicionada a B".
+Probabilidad condicionada es la probabilidad de que ocurra un evento A, sabiendo que también sucede otro evento B. 
+La probabilidad condicionada se escribe $P(A|B)$, y se lee "la probabilidad de A dado B", o "la probabilidad de A condicionada a B".
 
 No tiene por qué haber una relación causal o temporal entre $A$ y $B$. A puede preceder en el tiempo a $B$, 
 sucederlo o pueden ocurrir simultáneamente. $A$ puede causar $B$, viceversa o pueden no tener relación causal. 
@@ -626,15 +628,38 @@ La \emph{la probabilidad de A condicionada a B} puede calcularse usando la sigui
 
 \end{definition}
 
-\begin{customdef}{Propiedades}
+\begin{customdef}{Propiedades}\label{prop_cond_indep}
   Para cualesquiera sucesos $A$ y $B$
   \begin{enumerate}[(1)]
     \item Si se da una de las propiedades (\ref{eq_indep1}) o (\ref{eq_indep2}) automática se da la otra. 
     Es decir que para verificar si $A$ y $B$ son independientes basta ver si se cumple cualquiera de las dos
+    \item Para comprobar que dos sucesos no son independientes basta con ver que una de las dos propiedades 
+     (\ref{eq_indep1}) o (\ref{eq_indep2}) no se cumple.
     \item Si $A$ y $B$ son independientes entonces 
     \[P(A\cap B) = P(A) \cdot P(B)\]
   \end{enumerate}
 \end{customdef}
+
+\begin{example}
+  En el experimento  \emph{Extraer dos cartas de una baraja} los sucesos 
+  \[A = \text{que salga un as en la primera carta}\] 
+  \[B = \text{que salga un as en la segunda carta}\] 
+  No son independientes. Veámoslo 
+  \[P(A) = \frac{\text{casos favorables para A}}{\text{casos posibles}} = \frac{4}{40} = \frac{1}{10} \]
+  \[P(A|B) = P(\text{A habiendo ocurrido B}) = \frac{3}{39} \]
+  Por lo tanto dado que $P(A) \not= P(A|B)$ por \ref{prop_cond_indep}(2) no son independientes
+\end{example}
+
+\begin{example}
+  En el experimento  \emph{Extraer dos cartas de una baraja, extrayendo primero una, volviéndola a introducir barajando y extrayendo otra} los sucesos 
+  \[A = \text{que salga un as en la primera carta}\] 
+  \[B = \text{que salga un as en la segunda carta}\] 
+  son independientes. Veámoslo 
+  \[P(A) = \frac{\text{casos favorables para A}}{\text{casos posibles}} = \frac{4}{40} = \frac{1}{10} \]
+  \[P(A|B) = P(\text{A habiendo ocurrido B}) = = \frac{4}{40} = \frac{1}{10} \]
+  La clave ahora es que al volver a introducir la carta y barajar, las posibilidades al haber ocurrido $B$ son las mismas.
+  Por lo tanto dado que $P(A) = P(A|B)$ por \ref{prop_cond_indep}(1) son independientes
+\end{example}
 
 \begin{example}
   Se realiza un estudio para conocer la relación entre el nivel adquisitivo de los padres con el nivel adquisitivo de los hijos (un tiempo después)
@@ -807,6 +832,22 @@ Por el teorema de la probabilidad total:
 
 \[P(F)=\frac{1}{3}\cdot \frac{4}{10} + \frac{1}{3}\cdot \frac{1}{6} + \frac{1}{3}\cdot \frac{3}{8}\]
 
+Otra manera de resolver este problema es entendiéndolo como un árbol
+\[ 
+\xymatrix{
+                       &caja 1 \ar[r]^{\frac{4}{10}} \ar[rd]^{\frac{6}{10}}& \text{\textbf{\textcolor{red}{fundida}}} \\
+                       &                       & \text{no fundida}  \\
+  \ar[ruu]^{1/3}\ar[r]^{1/3}\ar[rdd]_{1/3}&caja 2  \ar[r]^{\frac{1}{6}} \ar[rd]^{\frac{5}{6}}& \text{\textbf{\textcolor{red}{fundida}}}  \\
+                       &                       & \text{no fundida}  \\
+                       &caja 3  \ar[r]^{\frac{3}{8}} \ar[rd]^{\frac{5}{8}}& \text{\textbf{\textcolor{red}{fundida}}} \\
+                       &                       & \text{no fundida}  
+}
+\]
+
+La idea ahora es fijarnos en todas las maneras en que podemos acabar en el resultado \textbf{fundida}, la idea es que en cada uno de los tres caminos podemos 
+calcular la probabilidad multiplicando las probabilidades de las flechas (1/3 de las veces estaremos en la caja 1 y de
+ ellas 4/10 de las veces saldrá fundida y así sucesivamente con el resto de cajas 2 y 3). De modo que el resultado otra vez será 
+ \[\frac{1}{3}\cdot \frac{4}{10} + \frac{1}{3}\cdot \frac{1}{6} + \frac{1}{3}\cdot \frac{3}{8}\]
 \end{example}
 
 \begin{exercise}
