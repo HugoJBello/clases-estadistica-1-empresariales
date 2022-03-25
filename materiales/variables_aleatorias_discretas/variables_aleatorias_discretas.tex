@@ -226,8 +226,6 @@ la gráfica anterior), los valores de \(F(x)\) se acercan más y más a
 discreta}
 
 \begin{customdef}{Definición intuitiva de esperanza}
-  
-
 La esperanza matemática (también llamada esperanza, valor
 esperado, media poblacional o media) de una variable aleatoria \(X\) ,
 es el número \(\displaystyle \mathbb {E} [X]\) que formaliza la idea de
@@ -243,16 +241,39 @@ experimento se repite un elevado número de veces. Cabe decir que el
 valor que toma la esperanza matemática en algunos casos puede no ser
 esperado en el sentido más general de la palabra (el valor de la
 esperanza puede ser improbable o incluso imposible).
+\end{customdef}
 
+\begin{definition}
+  
+Para una variable aleatoria discreta \(X\) con función de distribución
+\(p(x)= \displaystyle \operatorname {P} (X=x)\), si denotamos $R_X$ al conjunto de valores que toma $X$,
+ la \textbf{esperanza} se define como
+
+\[\displaystyle \operatorname {E} (X)=\sum _{x \in R_x}x\operatorname {P} (X=x) = \sum _{x \in R_x}x\operatorname {p} (x)\]
+
+A menudo a la esperanza $E(X)$ se la denota por la letra griega $\mu$.
+\end{definition}
+
+\begin{example}
 Por ejemplo, el valor esperado cuando tiramos un dado equilibrado de 6
-caras es 3,5. Podemos hacer el cálculo
+caras es 3,5. 
+
+Puesto que llamando
+
+\[X=\text{resultado de tirar un dado}\]
+
+En este caso los resultados posibles son $R_X = \{1, 2,3,4,5,6\}$ y podemos hacer el cálculo
 
 \[\displaystyle \begin{aligned}\operatorname {E} (X)=1\cdot {\frac {1}{6}}+2\cdot {\frac {1}{6}}+3\cdot {\frac {1}{6}}+4\cdot {\frac {1}{6}}+5\cdot {\frac {1}{6}}+6\cdot {\frac {1}{6}}\\[6pt]={\frac {1+2+3+4+5+6}{6}}=3.5\end{aligned}\]
 
 y cabe destacar que \(3.5\) no es un valor posible al tirar el dado. En
 este caso, en el que todos los sucesos son de igual probabilidad, la
 esperanza es igual a la media aritmética.
+\end{example}
 
+
+\begin{example}
+  
 Una aplicación común de la esperanza matemática es en las apuestas o los
 juegos de azar. Por ejemplo, la ruleta francesa tiene 37 casillas
 equiprobables. La ganancia para acertar una apuesta a un solo número
@@ -267,36 +288,50 @@ perder unos 2,7 céntimos por cada euro que apuesta, y el valor esperado
 para apostar 1 euro son \(0.972973\) euros. En el mundo de las apuestas,
 un juego donde el beneficio esperado es cero (no ganamos ni perdemos) se
 llama un \emph{juego justo}.
+\end{example}
 
-Para una variable aleatoria discreta \(X\) con función de probabilidad
-\(\displaystyle \operatorname {P} (X=x_{i})\), si denotamos $R_X$ al conjunto de valores que toma $X$,
- la \textbf{esperanza} se define como
 
-\[\displaystyle \operatorname {E} (X)=\sum _{x \in R_x}x\operatorname {P} (X=x)\]
-
-A parte de por el símbolo $E(X)$ a menudo a la esperanza se la denota por la letra griega $\mu$.
-
-\end{customdef}
-
+\begin{property}
+  Si $X$ es una variable aleatoria con esperanza finita entonces se cumple que 
+  \begin{enumerate}
+    \item $E(c) = c$, esto es si $X$ siempre toma el mismo valor $c$ entonces la esperanza coincide con ese valor.
+    \item $E[a + b \cdot X] = a + b \cdot E(X)$ para cualesquiera números reales $a,b$.
+  \end{enumerate}
+  
+\end{property}
 
 \section{Varianza de una variable aleatoria
 discreta}
 \begin{definition}
-  Sea \(X\) una variable aleatoria con esperanza
-\(\displaystyle \mu =\operatorname {E} (X)\), se define la varianza de
+  Sea \(X\) una variable aleatoria discreta con esperanza
+\(\displaystyle \mu =\operatorname {E} (X)\) y función de distribución \(p(x) = \displaystyle \operatorname {P} (X=x)\), se define la varianza de
 la variable aleatoria \(X\), denotada por
 \(\displaystyle \operatorname {Var} (X)\) como
 
-\[\displaystyle \operatorname {Var} (X)=\operatorname {E} ((X-\mu )^{2})\]
-
-Si la variable aleatoria \(X\) es discreta con función de probabilidad
-\(\displaystyle \operatorname {P} (X=x)\) entonces
-
-\[\displaystyle \operatorname {Var} (X)=\sum _{x\in R_{X}}(x-\mu )^{2}\operatorname {P} (X=x)\]
+\[\displaystyle \operatorname {Var} (X)=\operatorname {E} ((X-\mu )^{2}) = \sum _{x\in R_{X}}(x-\mu )^{2}\operatorname {P} (X=x)\]
 
 Donde \(R_X\) denota todos los valores posibles de \(X\).
 \end{definition}
 
+\begin{example}
+  Si consideramos la variable aleatoria anterior 
+  \[X=\text{resultado de tirar un dado}\]
+  Vimos que su esperanza era $\mu =  (1+2+3+4+5+6)/6=7/2$, Por lo tanto, la varianza de $X$ es 
+  \[
+  \begin{aligned}\operatorname {Var} (X)&=\sum _{i=1}^{6}{\frac {1}{6}}\left(i-{\frac {7}{2}}\right)^{2}\\[5pt]&={\frac {1}{6}}\left((-5/2)^{2}+(-3/2)^{2}+(-1/2)^{2}+(1/2)^{2}+(3/2)^{2}+(5/2)^{2}\right)\\[5pt]&={\frac {35}{12}}\approx 2.92.\end{aligned}
+  \]
+\end{example}
+
+\begin{property}
+  Si $X$ es una variable aleatoria con esperanza finita entonces se cumple que 
+   \[
+    \begin{aligned}\operatorname {Var} (X)&=\operatorname {E} 
+      \left[(X-\operatorname {E} [X])^{2}\right]\\[4pt]&=\operatorname {E} 
+      \left[X^{2}-2X\operatorname {E} [X]+\operatorname {E} [X]^{2}\right]\\[4pt]
+      &=\operatorname {E} \left[X^{2}\right]-2\operatorname {E} [X]\operatorname {E} [X]+
+      \operatorname {E} [X]^{2}\\[4pt]&=\operatorname {E} \left[X^{2}\right]-\operatorname {E} [X]^{2}\end{aligned}
+ \]
+\end{property}
 
 \hypertarget{variables-aleatorias-de-bernoulli}{%
 \section{Variables aleatorias de
