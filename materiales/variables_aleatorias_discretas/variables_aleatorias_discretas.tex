@@ -333,11 +333,11 @@ Donde \(R_X\) denota todos los valores posibles de \(X\).
  \]
 \end{property}
 
-\hypertarget{variables-aleatorias-de-bernoulli}{%
 \section{Variables aleatorias de
-Bernoulli}\label{variables-aleatorias-de-bernoulli}}
+Bernoulli}
 
-Una \textbf{variable aleatoria de Bernoulli} toma solo dos valores:
+\begin{definition}
+  Una \textbf{variable aleatoria de Bernoulli} toma solo dos valores:
 \(0\) y \(1\). El valor \(1\) (que representa el éxito en el
 experimento) ocurre con la probabilidad \(p\) y el valor \(0\) (que
 representa el fracaso en el experimento) con la probabilidad
@@ -345,10 +345,6 @@ representa el fracaso en el experimento) con la probabilidad
 
 Cuando una variable \(X\) sigue una distribución de Bernoulli escribimos
 \(\displaystyle X\sim \operatorname {Bernoulli} (p)\)
-
-Un experimento al cual se aplica la distribución de Bernoulli se conoce
-como Ensayo de Bernoulli o simplemente ensayo y la serie de esos
-experimentos como experimento Bernoulli.
 
 Su función de probabilidad es
 
@@ -358,43 +354,51 @@ La función de distribución acumulada de una variable aleatoria
 \(\displaystyle X\sim \operatorname {Bernoulli} (p)\) está dada por
 
 \[\displaystyle F(x)={\begin{cases}0&x<0\\1-p&0\leq x<1\\1&x\geq 1\end{cases}}\]
+\end{definition}
 
-\hypertarget{esperanza}{%
-\subsection{Esperanza}\label{esperanza}}
+\begin{customdef}{Experimento de Bernoulli}
+  Una manera sencilla de entender la variable aleatoria de Bernoulli es pensar que modeliza el experimento más básico que 
+  podemos hacer: \emph{Una situación en la que solo pueden darse dos resultados: éxito o fracaso} y la probabilidad de éxito es 
+  conocida: $p$. El ejemplo más sencillo de este experimento es justamente tirar una moneda (en este caso la probabilidad de éxito es $1/2$
+\end{customdef} 
 
-Su esperanza está dada por
+\begin{property} Si una variable $X$ es  $\operatorname {Bernoulli} (p)$
+ \begin{enumerate} [(1)]
+   \item $\operatorname {E} \left[X\right]=p$
+   \item  $\operatorname {Var} \left[X\right]=p(1-p)$
+ \end{enumerate}
+  
+\end{property}
 
-\[\displaystyle \operatorname {E} \left[X\right]=p\]
-
-Esta se demuestra fácilmente utilizando la definición de esperanza
+\begin{proof}
+(1) Esta se demuestra fácilmente utilizando la definición de esperanza
 
 \[\displaystyle {\begin{aligned}\operatorname {E} [X]&=0\cdot \operatorname {P} [X=0]+1\cdot \operatorname {P} [X=1]\\&=p\end{aligned}}\]
 
-con lo anterior es fácil obtener una expresión para
+(2) Con lo anterior es fácil obtener una expresión para
 \(\displaystyle \operatorname {E} [X^{2}]\) pues
 
 \[\displaystyle {\begin{aligned}\operatorname {E} [X^{2}]&=\sum _{x=0}^{1}x^{2}p^{x}(1-p)^{1-x}\\&=p(1-p)^{1-1}\\&=p\end{aligned}}\]
-
-\hypertarget{varianza}{%
-\subsection{Varianza}\label{varianza}}
-
+ 
 Teniendo \(\displaystyle \operatorname {E} [X^{2}]\) y
 \(\displaystyle \operatorname {E} [X]\) puede deducirse que la varianza
 de \(X\) está dada por
 
 \[\displaystyle {\begin{aligned}\operatorname {Var} \left[X\right]&=\operatorname {E} [X^{2}]-\operatorname {E} [X]^{2}\\&=p-p^{2}\\&=p\left(1-p\right)\end{aligned}}\]
 
-\hypertarget{ejemplo}{%
-\subsubsection{Ejemplo}\label{ejemplo}}
+\end{proof}
+
+\begin{example}
 
 Tirar una moneda es claramente un ejemplo de variable de Bernoulli. Si
 consideramos la correspondencia \(X=0\) como cruz, y \(X=1\) como cara,
 \(X\) sigue una variable con una distribución de Bernoulli con
 \(p=1/2\), es decir
 \(\displaystyle X\sim \operatorname {Bernoulli} (1/2)\)
+\end{example}
 
-\hypertarget{distribuciuxf3n-binomial}{%
-\section{Distribución Binomial}\label{distribuciuxf3n-binomial}}
+
+\section{Distribución Binomial} 
 
 Supongamos que hacemos \(n\) experimentos independientes o ensayos,
 donde \(n\) es un número fijado. Supongamos además que la probabilidad
@@ -425,15 +429,21 @@ La función de distribución acumulada de una variable aleatoria
 
 \[\displaystyle F(x)=\operatorname {P} (X\leq x)=\sum _{k=0}^{x}{n \choose k}p^{k}(1-p)^{n-k}\]
 
-\hypertarget{esperanza-1}{%
-\subsection{Esperanza}\label{esperanza-1}}
 
-Si \(\displaystyle X\sim \operatorname {Bin} (n,p)\), entonces el valor
-esperado de \(X\) es
+\begin{property}
+  
+Si \(\displaystyle X\sim \operatorname {Bin} (n,p)\), entonces 
+\begin{enumerate}[(1)]
+  \item $\operatorname {E} (X)=np$
+  \item $\operatorname {Var} (X)=np(1-p)$
+\end{enumerate}
+\end{property}
 
-\[\displaystyle \operatorname {E} (X)=np.\]
 
-Esto se deduce del hecho de que la esperanza matemática es lineal y de
+\begin{proof}
+  
+
+(1) se deduce del hecho de que la esperanza matemática es lineal y de
 que \(X\) es la suma de \(n\) variables aleatorias de Bernoulli
 
 En otras palabras, si\\
@@ -443,22 +453,16 @@ variables aleatorias Bernoulli con parámetro \(p,\) entonces
 
 \[\displaystyle \operatorname {E} (X)=\operatorname {E} (X_{1}+\cdots +X_{n})=\operatorname {E} (X_{1})+\cdots +\operatorname {E} (X_{n})=p+\cdots +p=np.\]
 
-\hypertarget{varianza-1}{%
-\subsection{Varianza}\label{varianza-1}}
-
-Para calcular la varianza de una variable binomial, razonamos como en el
+\end{proof}
+ 
+(2) Para calcular la varianza de una variable binomial, razonamos como en el
 apartado anterior:
 
 \[\displaystyle \operatorname {Var} (X)=np(1-p).\]
+ 
 
-This similarly follows from the fact that the variance of a sum of
-independent rand
-
-om variables is the sum of the variances.
-
-\hypertarget{ejemplo-1}{%
-\subsubsection{Ejemplo}\label{ejemplo-1}}
-
+\begin{example}
+  
 Supongamos que se lanza 51 veces un dado de 6 caras y queremos calcular
 la probabilidad de que el número 3 salga 20 veces.
 
@@ -473,8 +477,9 @@ probabilidad buscada es \(\displaystyle \operatorname {P} (X=20)\)
 
 \[\displaystyle \operatorname {P} (X=20)={51 \choose 20}(1/6)^{20}(1-1/6)^{51-20}=0.0000744\,\!\]
 
-\hypertarget{distribuciuxf3n-geomuxe9trica}{%
-\section{Distribución Geométrica}\label{distribuciuxf3n-geomuxe9trica}}
+\end{example}
+ 
+ \section{Distribución Geométrica} 
 
 La \textbf{distribución geométrica} se construye también haciendo
 múltiples de Bernuoulli con probabilidad de \emph{éxito} es \(p\). La
