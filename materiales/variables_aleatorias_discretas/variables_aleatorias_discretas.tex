@@ -348,7 +348,7 @@ Cuando una variable \(X\) sigue una distribución de Bernoulli escribimos
 
 Su función de probabilidad es
 
-\[\displaystyle f(x)=\operatorname {P} (X=x)=p^{x}(1-p)^{1-x}\qquad x=0,1\]
+\[\displaystyle p(x)=\operatorname {P} (X=x)=p^{x}(1-p)^{1-x}\qquad x=0,1\]
 
 La función de distribución acumulada de una variable aleatoria
 \(\displaystyle X\sim \operatorname {Bernoulli} (p)\) está dada por
@@ -400,6 +400,8 @@ consideramos la correspondencia \(X=0\) como cruz, y \(X=1\) como cara,
 
 \section{Distribución Binomial} 
 
+\begin{definition}
+  
 Supongamos que hacemos \(n\) experimentos independientes o ensayos,
 donde \(n\) es un número fijado. Supongamos además que la probabilidad
 de \emph{éxito} es \(p\) y la de \emph{fracaso} es \(1-p\).
@@ -412,7 +414,7 @@ precisamente una \textbf{variable aleatoria Binomial} con parámetros
 Si \(\displaystyle X\sim \operatorname {Bin} (n,p)\) entonces su función
 de probabilidad está dada por
 
-\[f(x)=\displaystyle \operatorname {P} (X=x)={n \choose x}p^{x}(1-p)^{n-x}\]
+\[p(x)=\displaystyle \operatorname {P} (X=x)={n \choose x}p^{x}(1-p)^{n-x}\]
 
 para \(\displaystyle x=0,1,2,\dots ,n\), siendo
 \[\displaystyle \!{n \choose x}={\frac {n!}{x!(n-x)!}}\,\!\]
@@ -428,6 +430,7 @@ La función de distribución acumulada de una variable aleatoria
 \(\displaystyle X\sim \operatorname {Bin} (n,p)\) está dada por
 
 \[\displaystyle F(x)=\operatorname {P} (X\leq x)=\sum _{k=0}^{x}{n \choose k}p^{k}(1-p)^{n-k}\]
+\end{definition}
 
 
 \begin{property}
@@ -442,7 +445,6 @@ Si \(\displaystyle X\sim \operatorname {Bin} (n,p)\), entonces
 
 \begin{proof}
   
-
 (1) se deduce del hecho de que la esperanza matemática es lineal y de
 que \(X\) es la suma de \(n\) variables aleatorias de Bernoulli
 
@@ -479,8 +481,10 @@ probabilidad buscada es \(\displaystyle \operatorname {P} (X=20)\)
 
 \end{example}
  
- \section{Distribución Geométrica} 
+\section{Distribución Geométrica} 
 
+\begin{definition}
+  
 La \textbf{distribución geométrica} se construye también haciendo
 múltiples de Bernuoulli con probabilidad de \emph{éxito} es \(p\). La
 diferencia respecto a la binomial es que \(X\) será el \emph{número de
@@ -492,31 +496,37 @@ tanto
 la función de probabilidad de
 \(\displaystyle X\sim \operatorname {Geometrica} (p)\) es
 
-\[\displaystyle \operatorname {P} (X=x)=p(1-p)^{x-1}\]
+\[p(x) = \displaystyle \operatorname {P} (X=x)=p(1-p)^{x-1}\]
 
 para (x=0,1,2,3,\dots )\\
 
 Si \(X\sim \operatorname {Geometrica} (p)\) entonces la función de
-distribución está dada por
+distribución acumulada está dada por
 
 \[\begin{aligned}\operatorname {P} (X\leq x)&=\sum _{k=0}^{x}p(1-p)^{k-1}\\&=p\sum _{k=0}^{x}(1-p)^{k-1}\\&=p\left({\frac {1-(1-p)^{x}}{1-(1-p)}}\right)\\&=1-(1-p)^{x}\end{aligned}\]
 
 para (x=0,1,2,3,\dots)
+\end{definition}
 
-\hypertarget{esperanza-y-varianza}{%
-\subsection{Esperanza y varianza}\label{esperanza-y-varianza}}
+\begin{property}
+  Si \(X\sim \operatorname {Geometrica} (p)\) entonces
+\begin{enumerate}
+  \item $\operatorname {E} (X)={\frac {1}{p}}$
+  \item $\operatorname {var} (X)={\frac {1-p}{p^{2}}}$
+\end{enumerate}
+\end{property}
 
-Si \(X\sim \operatorname {Geometrica} (p)\) entonces
 
-\[\displaystyle \operatorname {E} (X)={\frac {1}{p}},\qquad \operatorname {var} (X)={\frac {1-p}{p^{2}}}.\]
-
-Las demostraciones de estos hechos son un poco más complicada ver:
+\begin{proof}
+  Las demostraciones de estos hechos son un poco más complicada ver:
 
 \begin{itemize}
 \tightlist
 \item
   \url{https://en.wikipedia.org/wiki/Geometric_distribution}
 \end{itemize}
+\end{proof}
+
 
 \hypertarget{ejemplo-2}{%
 \subsubsection{Ejemplo}\label{ejemplo-2}}
