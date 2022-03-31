@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  29 MAR 2022 12:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.12)  31 MAR 2022 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,7 +714,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<funcion_masa_discreta.png, id=77, 645.41125pt x 633.36626pt>
+<funcion_masa_discreta.png, id=45, 645.41125pt x 633.36626pt>
 File: funcion_masa_discreta.png Graphic file (type png)
 <use funcion_masa_discreta.png>
 Package pdftex.def Info: funcion_masa_discreta.png  used on input line 183.
@@ -722,7 +722,7 @@ Package pdftex.def Info: funcion_masa_discreta.png  used on input line 183.
 LaTeX Info: Redefining \. on input line 185.
 LaTeX Info: Redefining \% on input line 185.
  [2]
-<funcion_dist_acumulada.png, id=86, 708.6475pt x 672.5125pt>
+<funcion_dist_acumulada.png, id=54, 708.6475pt x 672.5125pt>
 File: funcion_dist_acumulada.png Graphic file (type png)
 <use funcion_dist_acumulada.png>
 Package pdftex.def Info: funcion_dist_acumulada.png  used on input line 208.
@@ -759,33 +759,33 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \. on input line 546.
-LaTeX Info: Redefining \% on input line 546.
+LaTeX Info: Redefining \. on input line 545.
+LaTeX Info: Redefining \% on input line 545.
  [9]
-LaTeX Info: Redefining \. on input line 604.
-LaTeX Info: Redefining \% on input line 604.
+LaTeX Info: Redefining \. on input line 616.
+LaTeX Info: Redefining \% on input line 616.
  [10]
-LaTeX Info: Redefining \. on input line 666.
-LaTeX Info: Redefining \% on input line 666.
+LaTeX Info: Redefining \. on input line 676.
+LaTeX Info: Redefining \% on input line 676.
  [11]
-LaTeX Info: Redefining \. on input line 718.
-LaTeX Info: Redefining \% on input line 718.
+LaTeX Info: Redefining \. on input line 730.
+LaTeX Info: Redefining \% on input line 730.
  [12]
-LaTeX Info: Redefining \. on input line 762.
-LaTeX Info: Redefining \% on input line 762.
+LaTeX Info: Redefining \. on input line 774.
+LaTeX Info: Redefining \% on input line 774.
  [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 821.
-LaTeX Info: Redefining \. on input line 821.
-LaTeX Info: Redefining \% on input line 821.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 833.
+LaTeX Info: Redefining \. on input line 833.
+LaTeX Info: Redefining \% on input line 833.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 821.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 833.
 
 (./variables_aleatorias_discretas.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 821.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 821.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 833.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 833.
 
 
 Package rerunfilecheck Warning: File `variables_aleatorias_discretas.out' has c
@@ -795,40 +795,37 @@ hanged.
 
 Package rerunfilecheck Info: Checksums for `variables_aleatorias_discretas.out'
 :
-(rerunfilecheck)             Before: 857307A3CB43AF42391ABA5BF59F505B;1185
+(rerunfilecheck)             Before: 6B7115143671E40563820EC2336C7C1C;587
 (rerunfilecheck)             After:  00380C4F4F8C751AA2E1A2993C9D8B29;1111.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 12514 strings out of 482471
- 179686 string characters out of 5946661
- 511308 words of memory out of 5000000
- 27221 multiletter control sequences out of 15000+600000
+ 12496 strings out of 483048
+ 179356 string characters out of 5962772
+ 509241 words of memory out of 5000000
+ 27172 multiletter control sequences out of 15000+600000
  580438 words of font info for 63 fonts, out of 8000000 for 9000
- 421 hyphenation exceptions out of 8191
+ 85 hyphenation exceptions out of 8191
  36i,12n,37p,3241b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.4.6.1} has been referenced but does no
-t exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athex.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb>
-Output written on variables_aleatorias_discretas.pdf (14 pages, 280867 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb>
+Output written on variables_aleatorias_discretas.pdf (14 pages, 280771 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
 

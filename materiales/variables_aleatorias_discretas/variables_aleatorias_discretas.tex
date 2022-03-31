@@ -528,9 +528,8 @@ para (x=0,1,2,3,\dots)
 \end{proof}
 
 
-\hypertarget{ejemplo-2}{%
-\subsubsection{Ejemplo}\label{ejemplo-2}}
-
+\begin{example}
+   
 Se está testando un antidepresivo. La droga puede funcionar o no, pero
 hay que testarla en múltiples dosis para ver cual de las tomas funciona.
 Por ejemplo la droga puede funcionar al primer intento, al segundo
@@ -548,17 +547,20 @@ Fijémonos de que en realidad si llamamos \(X\) al número de tomas
 \[\displaystyle \Pr(X=1)=(1-p)^{1}\,p\ =0.4^{1}\times 0.6=0.4\times 0.6=0.24.\]
 
 \[\displaystyle \Pr(X=2)=(1-p)^{2}\,p,=0.4^{2}\times 0.6=0.096.\]
+\end{example}
 
-\hypertarget{ejemplo-3}{%
-\subsubsection{Ejemplo}\label{ejemplo-3}}
-
+\begin{example} 
 Calcular el número de hijos que hay tener hasta tener una niña con
 probabilidad más de \(1/2\).
+\end{example}
 
-\hypertarget{distribuciuxf3n-binomial-negativa}{%
-\section{Distribución Binomial
-Negativa}\label{distribuciuxf3n-binomial-negativa}}
 
+
+ \section{Distribución Binomial
+Negativa} 
+
+
+\begin{definition}
 La distribución Binomial negativa, surge como generalización de la
 distribución geométrica. Supongamos que realizamos una secuencia
 independiente de experimentos de Bernoulli de probabilidad \(p\), hasta
@@ -574,9 +576,11 @@ sucesos restantes deben ser asignados entre los \(k-1\) intentos
 realizados en \({k-1 \choose r-1}\) maneras. De este modo:
 
 \[P(X=k) = {k-1 \choose r-1} p^r (1-p)^{k-r}\]
+\end{definition}
 
-\hypertarget{ejemplo-4}{%
-\subsubsection{Ejemplo}\label{ejemplo-4}}
+
+
+\begin{example}
 
 Si la probabilidad de que un niño expuesto a una enfermedad contagiosa
 la contraiga es 0.40 ¿Cuál es la probabilidad de que el décimo niño
@@ -589,9 +593,9 @@ hasta encontrar el tercero en contraer la enfermedad.
 
 La solución es:
 \[\displaystyle {10-1 \choose 3-1}0,\!4^{3}(1-0,4)^{10-3}={9 \choose 2}0,\!4^{3}(0,\,6)^{7}=0,\!0644973\]
+\end{example}
 
-\hypertarget{ejemplo-5}{%
-\subsubsection{Ejemplo}\label{ejemplo-5}}
+\begin{example}
 
 En un proceso de manufactura se sabe que un promedio de 1 en cada 10
 productos es defectuoso, ¿cual es la probabilidad que el quinto (5)
@@ -604,10 +608,18 @@ defectuoso
 \[\displaystyle {5-1 \choose 2-1}0,\!1^{2}(1-0,\!1)^{5-2}={4 \choose 0}0,\!1^{2}(0,\,9)^{3}\]
 de probabilidad que el quinto elemento extraído sea el primero en estar
 defectuoso.
+\end{example}
 
-\hypertarget{distribuciuxf3n-hipergeomuxe9trica}{%
-\section{Distribución
-Hipergeométrica}\label{distribuciuxf3n-hipergeomuxe9trica}}
+\begin{property}
+  Si \(\displaystyle X\sim \operatorname {BN} (r,p)\)
+  \begin{enumerate}[(1)]
+    \item $E(X) = r/p$
+    \item $V(X) = r(1-p)/p^2$
+  \end{enumerate}
+\end{property}
+
+\section{Distribución Hipergeométrica} 
+
 
 Supongamos que, a diferencia que en la distribución Binomial, tenemos un
 conjunto de \(N\) objetos, que además pertenecen a dos categorías (dos
