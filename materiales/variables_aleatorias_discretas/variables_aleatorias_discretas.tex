@@ -542,11 +542,10 @@ Fijémonos de que en realidad si llamamos \(X\) al número de tomas
 (intentos) hasta que la droga funcione,
 \(\displaystyle X\sim \operatorname {Geometrica} (0.6)\)
 
-\[\displaystyle \Pr(X=0)=(1-p)^{0}\,p\ =0.4^{0}\times 0.6=1\times 0.6=0.6.\]
 
-\[\displaystyle \Pr(X=1)=(1-p)^{1}\,p\ =0.4^{1}\times 0.6=0.4\times 0.6=0.24.\]
+\[\displaystyle \Pr(X=1)=(1-p)^{1-1}\,p\ =0.4^{0}\times 0.6=0.6\]
 
-\[\displaystyle \Pr(X=2)=(1-p)^{2}\,p,=0.4^{2}\times 0.6=0.096.\]
+\[\displaystyle \Pr(X=2)=(1-p)^{2-1}\,p=0.4^{1}\times 0.6\]
 \end{example}
 
 \begin{example} 
@@ -618,10 +617,25 @@ defectuoso.
   \end{enumerate}
 \end{property}
 
+\begin{proof}
+  Para hacernos a una idea de cómo demostrar esto, basta entender que si $X$ es binomial negativa podemos entender $X$ como la suma
+  de $r$ variables geométricas independientes $X_i$. 
+  En este caso $X_i = $ número de intentos hasta obtener un acierto, es decir $X_i \sim Geom (p)$.
+
+
+  Teniendo esto en cuenta 
+
+  \[E(X)= E(\sum^r_{i=1} X_i) = r \sum^r_{i=1} E[X_i] = r/p \]
+  \[V(X)= V(\sum^r_{i=1} X_i) = r \sum^r_{i=1} V[X_i] = r(1-p)/p \] 
+
+  Para la varianza hemos usado el hecho de que son independientes, si no no podemos afirmar que la varianza de las sumas 
+  la suma de las varianzas.
+\end{proof}
+
 \section{Distribución Hipergeométrica} 
 
-
-Supongamos que, a diferencia que en la distribución Binomial, tenemos un
+\begin{definition}
+  Supongamos que, a diferencia que en la distribución Binomial, tenemos un
 conjunto de \(N\) objetos, que además pertenecen a dos categorías (dos
 tipos o clases). La categoría \(A\) contiene a \(K\) de los objetos y la
 categoría \(B\) los restantes \(N-K\).
@@ -653,34 +667,31 @@ obtener los \(n-k\) fracasos (objetos en la categoría \(B\)). El
 producto de estos dos números combinatorios nos da los \emph{casos
 favorables}, los \emph{casos posibles} en cambio los obtenemos con
 \({\binom {N}{n}}\).
+\end{definition}
+ 
 
-\hypertarget{esperanza-y-varianza-1}{%
-\subsection{Esperanza y varianza}\label{esperanza-y-varianza-1}}
+\begin{property}
 
-Si \(\displaystyle X\sim \operatorname {HG} (N,K,n)\) entonces \(X\)
-cumple algunas propiedades:
-
-El valor esperado de la variable aleatoria \(X\) es
-
-\[\displaystyle \operatorname {E} (X)={\frac {nK}{N}}\]
-
-y su varianza está dada por
-
-\[\displaystyle \operatorname {Var} (X)={\frac {nK}{N}}{\bigg (}{\frac {N-K}{N}}{\bigg )}{\bigg (}{\frac {N-n}{N-1}}{\bigg )}\]
-
+  Si \(\displaystyle X\sim \operatorname {HG} (N,K,n)\)  
+\begin{enumerate}
+  \item $\displaystyle \operatorname {E} (X)={\frac {nK}{N}}$
+  \item $\displaystyle \operatorname {Var} (X)={\frac {nK}{N}}{\bigg (}{\frac {N-K}{N}}{\bigg )}{\bigg (}{\frac {N-n}{N-1}}{\bigg )}$
+\end{enumerate}
+\end{property}
+ 
 La distribución hipergeométrica es aplicable a muestreos sin reemplazo y
 la binomial a muestreos con reemplazo. En situaciones en las que el
 número esperado de repeticiones en el muestreo es presumiblemente bajo,
 puede aproximarse la primera por la segunda. Esto es así cuando N es
 grande y el tamaño relativo de la muestra extraída, n/N, es pequeño.
 
-\hypertarget{ejemplo-6}{%
-\subsubsection{Ejemplo}\label{ejemplo-6}}
-
+\begin{example}
+  
 Supongamos que hay diez automóviles disponibles para que usted los
 pruebe \((N = 10)\) y cinco de ellos tienen motores turbo \((K = 5)\).
 Si prueba tres de los vehículos al azar \((n = 3)\), ¿cuál es la
 probabilidad de que dos de los tres que pruebe tengan motores turbo?
+\end{example}
 
 \hypertarget{distribuciuxf3n-de-poisson}{%
 \section{Distribución de Poisson}\label{distribuciuxf3n-de-poisson}}
