@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  1 APR 2022 11:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  4 APR 2022 13:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,7 +714,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<funcion_masa_discreta.png, id=69, 645.41125pt x 633.36626pt>
+<funcion_masa_discreta.png, id=65, 645.41125pt x 633.36626pt>
 File: funcion_masa_discreta.png Graphic file (type png)
 <use funcion_masa_discreta.png>
 Package pdftex.def Info: funcion_masa_discreta.png  used on input line 183.
@@ -722,7 +722,7 @@ Package pdftex.def Info: funcion_masa_discreta.png  used on input line 183.
 LaTeX Info: Redefining \. on input line 185.
 LaTeX Info: Redefining \% on input line 185.
  [2]
-<funcion_dist_acumulada.png, id=78, 708.6475pt x 672.5125pt>
+<funcion_dist_acumulada.png, id=74, 708.6475pt x 672.5125pt>
 File: funcion_dist_acumulada.png Graphic file (type png)
 <use funcion_dist_acumulada.png>
 Package pdftex.def Info: funcion_dist_acumulada.png  used on input line 208.
@@ -765,36 +765,36 @@ LaTeX Info: Redefining \% on input line 546.
 LaTeX Info: Redefining \. on input line 616.
 LaTeX Info: Redefining \% on input line 616.
  [10]
-LaTeX Info: Redefining \. on input line 679.
-LaTeX Info: Redefining \% on input line 679.
+LaTeX Info: Redefining \. on input line 682.
+LaTeX Info: Redefining \% on input line 682.
  [11]
-LaTeX Info: Redefining \. on input line 741.
-LaTeX Info: Redefining \% on input line 741.
+LaTeX Info: Redefining \. on input line 743.
+LaTeX Info: Redefining \% on input line 743.
  [12]
-LaTeX Info: Redefining \. on input line 785.
-LaTeX Info: Redefining \% on input line 785.
+LaTeX Info: Redefining \. on input line 791.
+LaTeX Info: Redefining \% on input line 791.
  [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 844.
-LaTeX Info: Redefining \. on input line 844.
-LaTeX Info: Redefining \% on input line 844.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 874.
+LaTeX Info: Redefining \. on input line 874.
+LaTeX Info: Redefining \% on input line 874.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 844.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 874.
 
 (./variables_aleatorias_discretas.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 844.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 844.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 874.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 874.
 Package rerunfilecheck Info: File `variables_aleatorias_discretas.out' has not 
 changed.
-(rerunfilecheck)             Checksum: 4A644A1047E744DB3B070E830819D79A;1037.
+(rerunfilecheck)             Checksum: D9BF4B091A67E6ED3D17A6C3AC92B50D;963.
  ) 
 Here is how much of TeX's memory you used:
- 12501 strings out of 482471
- 179406 string characters out of 5946661
- 511901 words of memory out of 5000000
- 27210 multiletter control sequences out of 15000+600000
+ 12499 strings out of 482471
+ 179315 string characters out of 5946661
+ 510721 words of memory out of 5000000
+ 27205 multiletter control sequences out of 15000+600000
  580438 words of font info for 63 fonts, out of 8000000 for 9000
  421 hyphenation exceptions out of 8191
  36i,12n,37p,3241b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -811,10 +811,10 @@ are/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on variables_aleatorias_discretas.pdf (14 pages, 282276 bytes).
+Output written on variables_aleatorias_discretas.pdf (14 pages, 282816 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
- 78 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

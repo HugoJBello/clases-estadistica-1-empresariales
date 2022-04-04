@@ -568,13 +568,13 @@ necesarios, en este caso \(X\) será una variable aleatoria binomial
 negativa y escribiremos \(\displaystyle X\sim \operatorname {BN} (r,p)\)
 
 Veamos cómo será la función de distribución en este caso. Para encontrar
-\(P(X=k)\), pensemos que cada secuencia de experimentos en la que se han
-obtenido \(r\) éxitos tiene probabilidad \(p^r(1-p)^{k-r}\).
+\(P(X=x)\), pensemos que cada secuencia de experimentos en la que se han
+obtenido \(r\) éxitos tiene probabilidad \(p^r(1-p)^{x-r}\).
 Obligatoriamente, el último intento debe ser éxito, así que los \(r-1\)
-sucesos restantes deben ser asignados entre los \(k-1\) intentos
+sucesos restantes deben ser asignados entre los \(x-1\) intentos
 realizados en \({k-1 \choose r-1}\) maneras. De este modo:
 
-\[P(X=k) = {k-1 \choose r-1} p^r (1-p)^{k-r}\]
+\[P(X=x) = {x-1 \choose r-1} p^r (1-p)^{x-r}\]
 \end{definition}
 
 
@@ -641,9 +641,9 @@ tipos o clases). La categoría \(A\) contiene a \(K\) de los objetos y la
 categoría \(B\) los restantes \(N-K\).
 
 La distribución hipergeomética mide \textbf{la probabilidad de obtener
-\(k\) objetos de la categoría \(A\)} después de \(n\) intentos.
+\(x\) objetos de la categoría \(A\)} después de \(n\) intentos.
 
-\[\displaystyle p(k)=P(X=k)={\frac {{\binom {K}{k}}{\binom {N-K}{n-k}}}{\binom {N}{n}}},\]
+\[\displaystyle p(x)=P(X=x)={\frac {{\binom {K}{x}}{\binom {N-K}{n-x}}}{\binom {N}{n}}},\]
 
 donde
 
@@ -656,17 +656,22 @@ donde
 \item
   \(n\) número de intentos,
 \item
-  \(k\) número de éxitos observados
+  \(x\) número de objetos de la categoría A observados (éxitos)
 \end{itemize}
 
 Para entender el porqué de la fórmula anterior, pensemos en que
-\({\binom {K}{k}}\) se corresponden con las maneras que podemos extraer
+\({\binom {K}{x}}\) se corresponden con las maneras que podemos extraer
 los \(k\) éxitos (objetos en la categoría \(A\)), mientras que
-\({\binom {N-K}{n-k}}\) corresponde con las maneras en que podemos
-obtener los \(n-k\) fracasos (objetos en la categoría \(B\)). El
+\({\binom {N-K}{n-x}}\) corresponde con las maneras en que podemos
+obtener los \(n-x\) fracasos (objetos en la categoría \(B\)). El
 producto de estos dos números combinatorios nos da los \emph{casos
 favorables}, los \emph{casos posibles} en cambio los obtenemos con
 \({\binom {N}{n}}\).
+
+Habitualmente la categoría A se identifica como los \emph{éxitos} y los de la B como fracasos. 
+Entendamos que esta terminología de categoría A y B es simplemente para dar nombres a los elementos, y habitualmente omitiremos 
+estos nombres.
+
 \end{definition}
  
 
@@ -686,17 +691,38 @@ puede aproximarse la primera por la segunda. Esto es así cuando N es
 grande y el tamaño relativo de la muestra extraída, n/N, es pequeño.
 
 \begin{example}
-  
 Supongamos que hay diez automóviles disponibles para que usted los
 pruebe \((N = 10)\) y cinco de ellos tienen motores turbo \((K = 5)\).
 Si prueba tres de los vehículos al azar \((n = 3)\), ¿cuál es la
 probabilidad de que dos de los tres que pruebe tengan motores turbo?
 \end{example}
 
-\hypertarget{distribuciuxf3n-de-poisson}{%
-\section{Distribución de Poisson}\label{distribuciuxf3n-de-poisson}}
+\begin{example}
+ Una empresa fabrica plumas estilográficas. La empresa afirma a sus inversores que tal solo un 1 por ciento de 
+ sus plumas son defectuosas. Un perito toma un paquete de 300 y se dispone a testarlas extrayéndolas del paquete, 
+ en su peritaje extraerá solamente 5. Suponiendo que 
+ lo que afirma la empresa sea cierto
+ \begin{enumerate}
+   \item ¿Cuántas defectuosas espera encontrar tras sus 5 extracciones?
+   \item ¿Cuál es la probabilidad de que encuentre 1 defectuosa tras sus 5 extracciones?
+ \end{enumerate}
+ 
+ Para resolver esto, asumimos que es cierto que solo una de cada 100 es defectuosa. Por lo tanto en nuestro paquete hay 300, 
+ tendremos que hay 3 defectuosas y 297 no defectuosas. esto es $K=3$, $N=300$, $n=5$.
+ \[E(X) = 5 \frac{3}{300} = 0.05\]
 
-La distribución de Poisson es una distribución de probabilidad discreta
+ Este valor decimal podemos interpretarlo como espera encontrar 0 plumas defectuosas.
+
+ Para el segundo apartado
+
+ \[p(1) = \frac {{\binom {3}{1}}{\binom {300-3}{5-1}}}{\binom {300}{5}} = \frac{3 \cdot 971435}{19582837560} \cong 0.00014 \]
+  
+  \end{example}
+ 
+\section{Distribución de Poisson} 
+
+\begin{definition}
+  La distribución de Poisson es una distribución de probabilidad discreta
 que expresa, a partir de una frecuencia de ocurrencia media, la
 probabilidad de que ocurra un determinado número de eventos durante
 cierto período de tiempo. Concretamente, se especializa en la
@@ -725,31 +751,34 @@ ejemplo, si el suceso estudiado tiene lugar en promedio 4 veces por
 minuto y estamos interesados en la probabilidad de que ocurra k \(k\)
 veces dentro de un intervalo de 10 minutos, usaremos un modelo de
 distribución de Poisson con \(\lambda = 10\cdot 4 = 40\).
+\end{definition}
 
-\hypertarget{esperanza-y-varianza-2}{%
-\subsection{Esperanza y varianza}\label{esperanza-y-varianza-2}}
 
+\begin{property}
+  
 Si \(\displaystyle X\sim \operatorname {Poisson} (\lambda )\) entonces
-la variable aleatoria \(X\) satisface algunas propiedades.
+la variable aleatoria \(X\) satisface  
 
-La media o esperanza matemática de la variable aleatoria \(X\) es
-
-\[\displaystyle \operatorname {E} (X)=\lambda \]
-
-Esta se demuestra por definición de esperanza matemática
+\begin{enumerate}[(1)]
+  \item $\displaystyle \operatorname {E} (X)=\lambda$
+  \item $\displaystyle \operatorname {Var} (X)=\lambda $
+\end{enumerate}
+ 
+\begin{proof}
+  (1) se demuestra por definición de esperanza matemática
 
 \[\displaystyle {\begin{aligned}\operatorname {E} [X]&=\sum _{k=0}^{\infty }k\left({\frac {e^{-\lambda }\lambda ^{k}}{k!}}\right)\\&=e^{-\lambda }\sum _{k=1}^{\infty }{\frac {k\lambda ^{k}}{k!}}\\&=e^{-\lambda }\sum _{k=1}^{\infty }{\frac {\lambda ^{k}}{(k-1)!}}\\&=\lambda e^{-\lambda }\sum _{k=1}^{\infty }{\frac {\lambda ^{k-1}}{(k-1)!}}\\&=\lambda e^{-\lambda }\sum _{j=0}^{\infty }{\frac {\lambda ^{j}}{j!}}\\&=\lambda e^{-\lambda }e^{\lambda }\\&=\lambda \end{aligned}}\]
+ 
+\end{proof}
 
-La varianza de la variable aleatoria \(X\) es
-
-\[\displaystyle \operatorname {Var} (X)=\lambda \]
+\end{property}
 
 Es decir, tanto el valor esperado como la varianza de una variable
 aleatoria con distribución de Poisson son iguales a \(\lambda\) .
 
-\hypertarget{ejemplo-7}{%
-\subsubsection{Ejemplo}\label{ejemplo-7}}
 
+\begin{example}
+  
 Si el \(\displaystyle 2\%\) de los libros encuadernados en cierto taller
 tienen encuadernación defectuosa, para obtener la probabilidad de que 5
 de 400 libros encuadernados en este taller tengan encuadernaciones
@@ -760,18 +789,17 @@ defectuosos) es el \(\displaystyle 2\%\) de 400 es decir, 8. Por lo
 tanto, la probabilidad buscada es:
 
 \[\displaystyle \operatorname {P} (X=5)={\frac {8^{5}e^{-8}}{5!}}=0.092\]
+\end{example}
 
-\hypertarget{ejemplo-8}{%
-\subsubsection{Ejemplo}\label{ejemplo-8}}
-
-\emph{The number of soldiers killed by horse-kicks each year in each
-corps in the Prussian cavalry. This example was used in a book by
-Ladislaus Bortkiewicz (1868--1931) 23-25}
-
-Si la media de soldados que mueren por coces de caballos es de
+\begin{example}
+  El número de soldados muertos por coces de caballos en un año en la caballería Prusiana sigue una distribución de Poisson.
+  Este ejemplo fue introducido 
+  en un libro por Ladislaus Bortkiewicz (1868--1931) 23-25. 
+  Según este autor la media de soldados que mueren por coces de caballos es de
 \(\lambda = 0.61\), y se sabe que esta sigue una distribución de
 Poisson, calcular la probabilidad de que: 1. Mueran 0 soldados este año
 2. Mueran menos de 3
+\end{example}
 
 \hypertarget{relaciuxf3n-con-la-binomial}{%
 \subsection{Relación con la
@@ -781,7 +809,9 @@ La distribución de Poisson es el caso límite de la distribución
 binomial. De hecho, si los parámetros \(n, p\) de una distribución
 binomial tienden a infinito (en el caso de n) y a cero (en el caso de
 \(p\) de manera que \(\lambda = np\) se mantenga constante, la
-distribución límite obtenida es de Poisson. \#\# Procesos de Poisson
+distribución límite obtenida es de Poisson. 
+
+\subsubsection{Procesos de Poisson}
 
 La distribución de Poisson se aplica a varios fenómenos discretos de la
 naturaleza (esto es, aquellos fenómenos que ocurren 0, 1, 2, 3,
