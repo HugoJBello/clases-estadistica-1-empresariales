@@ -180,7 +180,7 @@ En nuestro ejemplo podemos representarla así:
 \begin{longtable}[]{@{}l@{}}
 \toprule
 \endhead
-\includegraphics[width=2.60417in,height=\textheight]{funcion_masa_discreta.png}\tabularnewline
+\includegraphics[width=2.60417in,height=\textheight]{img/funcion_masa_discreta.png}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -205,7 +205,7 @@ ejemplo anterior.
 \begin{longtable}[]{@{}l@{}}
 \toprule
 \endhead
-\includegraphics[width=2.60417in,height=\textheight]{funcion_dist_acumulada.png}\tabularnewline
+\includegraphics[width=2.60417in,height=\textheight]{img/funcion_dist_acumulada.png}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -432,6 +432,12 @@ La función de distribución acumulada de una variable aleatoria
 \[\displaystyle F(x)=\operatorname {P} (X\leq x)=\sum _{k=0}^{x}{n \choose k}p^{k}(1-p)^{n-k}\]
 \end{definition}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=3in,height=\textheight]{img/binom.png}
+  \caption{Función de distribución de la variable binomial para varios valores de sus parámetros}
+\end{figure}
+
 
 \begin{property}
   
@@ -462,6 +468,8 @@ apartado anterior:
 
 \[\displaystyle \operatorname {Var} (X)=np(1-p).\]
  
+
+
 
 \begin{example}
   
@@ -507,6 +515,13 @@ distribución acumulada está dada por
 
 para (x=0,1,2,3,\dots)
 \end{definition}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3in,height=\textheight]{img/geom.png}
+  \caption{Función de distribución de la variable geométrica para varios valores de sus parámetros}
+\end{figure}
+
 
 \begin{property}
   Si \(X\sim \operatorname {Geometrica} (p)\) entonces
@@ -673,7 +688,12 @@ Entendamos que esta terminología de categoría A y B es simplemente para dar no
 estos nombres.
 
 \end{definition}
- 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3in,height=\textheight]{img/hipergeom.png}
+  \caption{Función de distribución de la variable hipergeométrica}
+\end{figure}
 
 \begin{property}
 
@@ -753,6 +773,12 @@ veces dentro de un intervalo de 10 minutos, usaremos un modelo de
 distribución de Poisson con \(\lambda = 10\cdot 4 = 40\).
 \end{definition}
 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3in,height=\textheight]{img/poisson.png}
+  \caption{Función de distribución de la variable Poisson para varios valores de sus parámetros}
+\end{figure}
 
 \begin{property}
   
