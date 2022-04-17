@@ -1,0 +1,299 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Ejercicios Variables Aleatorias Discretas}
+\author{Hugo J. Bello}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+
+
+
+\maketitle
+\section{Ejercicios generales}
+\begin{exercise}
+    La última novela de un autor ha tenido un gran éxito, hasta el punto
+  de que el 80\% de los lectores ya la han leído. Un grupo de 4 amigos
+  son aficionados a la lectura:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad de que en el grupo hayan leído la novela 2
+    personas?
+  \item
+    ¿Y cómo máximo 2?
+  \item ¿Cuál es el número esperado de lectores en este grupo de amigos?
+  \end{enumerate}
+
+\end{exercise}
+\begin{exercise}
+
+  Un agente de seguros vende pólizas a cinco personas de la misma edad y
+  que disfrutan de buena salud. Según las tablas actuales, la
+  probabilidad de que una persona en estas condiciones viva 30 años o
+  más es 2/3. Calcular 
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item La probabilidad de que, transcurridos 30 años,
+  vivan las cinco personas
+  \item
+  La probabilidad de que, transcurridos 30 años,
+  vivan al menos tres personas
+  \item El número esperado de personas que vivirán transcurridos 30 años.
+
+  
+  \end{enumerate}
+
+\end{exercise}
+\begin{exercise}
+
+  Se lanza una moneda cuatro veces. Calcular la probabilidad de que
+  salgan más caras que cruces.
+
+\end{exercise}
+\begin{exercise}
+
+  En un torneo de fútbol, Un País concreto tiene una probabilidad de
+  60\% de ganar un partido.  Cada país juega hasta perder por primera vez.
+  \begin{enumerate}
+    \item Encuentra la probabilidad de que este país juegue al menos 4
+    partidos.
+    \item Determina el número esperado de partidos hasta perder por primera vez.
+  \end{enumerate}
+  
+
+\end{exercise}
+\begin{exercise}
+
+  Una prueba consta de 200 preguntas de verdadero o falso, para un
+  sujeto que\\
+  respondiese al azar ¿Cual sería la probabilidad de que acertase:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    40 preguntas
+  \item
+    menos de 3 preguntas 
+  \end{enumerate}
+
+\end{exercise}
+\begin{exercise}
+
+  Al grabar un comercial de televisión, la probabilidad es 0.30 de que
+  cierto actor dirá sus líneas correctamente en una toma. ¿Cuál es la
+  probabilidad de que diga correctamente sus líneas por primera vez en
+  la sexta toma?
+
+\end{exercise}
+
+\begin{exercise}
+  Para tratar a un paciente de una afección de pulmón, han de ser
+  operados en operaciones independientes sus 5 lóbulos pulmonares. La
+  técnica a utilizar es tal que si todo va bien, lo que ocurre con
+  probabilidad de 7/11, el lóbulo queda definitivamente sano, pero si no
+  es así se deberá esperar el tiempo suficiente para intentarlo
+  posteriormente de nuevo. Se practicará la cirugía hasta que 4 de sus 5
+  lóbulos funcionen correctamente. ¿Cuál es la probabilidad de que se
+  necesiten 10 intervenciones? 
+\end{exercise}
+
+\begin{exercise}
+  De una urna que contiene el 60\% de bolas negras y el 40\% de bolas
+  blancas, se extraen bolas de forma sucesiva y con reemplazamiento.
+  Calcular:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Probabilidad de extraer 5 bolas blancas antes de la tercera negra.\\
+  \item El número esperado de extracciones de bolas blancas antes de la tercera negra.\\
+  \item Probabilidad de que haya que extraer 10 bolas para obtener tres
+    negras.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  La probabilidad de un niño expuesto a una enfermedad contagiosa se
+  contagie es de 0.4. ¿Cuál es la probabilidad de que el décimo niño
+  expuesto sea el tercero en contraerla?
+\end{exercise}
+
+\begin{exercise}
+  Probabilidad de obtener 3 de preguntas falladas en un examen tipo test
+  antes de tener el décimo acierto 
+\end{exercise}
+
+\begin{exercise}
+  De cada 20 piezas fabricadas por una máquina, hay 2 que son
+  defectuosas. Para realizar un control de calidad, se observan 15
+  elementos y se rechaza el lote si hay alguna que sea defectuoso. 
+  
+  \begin{enumerate}
+    \item Número esperado de elementos defectuosos en el lote
+    \item Calcular la probabilidad de que el lote sea rechazado.
+  \end{enumerate}
+  
+\end{exercise}
+
+\begin{exercise}
+  Diez refrigeradores de cierto tipo han sido devueltos a un
+  distribuidor debido al a presencia de un ruido oscilante agudo cuando
+  el refrigerador está funcionando. Supongamos que 4 de estos 10
+  refrigeradores tienen compresores defectuosos y los otros 6 tienen
+  problemas más leves. Si se examinan al azar 5 de estos 10
+  refrigeradores, y se define la variable aleatoria X: \emph{el
+  número entre los 5 examinados que tienen un compresor defectuoso}.
+  Indicar:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    La distribución de la variable aleatoria X
+  \item
+    La probabilidad de que no todos tengan fallas leves
+  \item
+    La probabilidad de que a lo sumo cuatro tengan fallas de compresor
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  En una comunidad hay 100 vecinos. Se sabe que 30 acuden a las
+  reuniones y 70 no. 
+  \begin{enumerate}
+    \item Calcular la probabilidad de que al llamar a 15 de
+    ellos al azar 3 sean de los que acuden a las reuniones.
+    \item Determinar el número de vecinos que no acuden a las reuniones que uno espera encontrar 
+    al llamar a 15 de ellos.
+  \end{enumerate}
+
+  
+\end{exercise}
+
+\begin{exercise}
+  Sea una baraja de 40 cartas. De ella se toma una muestra de 5 cartas
+  sin reemplazamiento. Obtener la probabilidad de obtener al menos dos
+  ases. 
+\end{exercise}
+
+\begin{exercise}
+  Una empresa electrónica observa que el número de componentes que
+  fallan antes de\\
+  cumplir 100 horas de funcionamiento es una variable aleatoria de
+  Poisson. Si el número\\
+  promedio de estos fallos es ocho,
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    ¿cuál es la probabilidad de que falle un componente en 25 horas?
+  \item
+    ¿y de que fallen no más de dos componentes en 50 horas?
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Supongamos que los astronomos estiman que meteoritos grandes golpean
+  la tierra una media de una vez cada 100 año \((\lambda = 1\) evento
+  por cada 100 años) y que el número de golpes de meteoritos sigue una
+  distribución de Poisson. ¿Cual es la probabilidad de \(k=0\) golpes de
+  meteorito en los próximos 100 años?
+\end{exercise}
+
+\begin{exercise}
+  En un rio particular, las riadas ocurren una vez cada 100 años.
+  Calcular la probabilidad de que ocurran 4 riadas en un periodo de 100
+  años, asumiendo que el número de riadas sigue una distribución de
+  Poisson.
+\end{exercise}
+
+
+\end{document}
