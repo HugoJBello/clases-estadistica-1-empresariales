@@ -292,12 +292,8 @@ llama un \emph{juego justo}.
 
 
 \begin{property}
-  Si $X$ es una variable aleatoria con esperanza finita entonces se cumple que 
-  \begin{enumerate}
-    \item $E(c) = c$, esto es si $X$ siempre toma el mismo valor $c$ entonces la esperanza coincide con ese valor.
-    \item $E[a + b \cdot X] = a + b \cdot E(X)$ para cualesquiera números reales $a,b$.
-  \end{enumerate}
-  
+  Si $X$ es una variable aleatoria discreta con esperanza finita entonces se cumple que 
+  \[E[a + b \cdot X] = a + b \cdot E(X)\] para cualesquiera números reales $a,b$.
 \end{property}
 
 \section{Varianza de una variable aleatoria
@@ -323,7 +319,7 @@ Donde \(R_X\) denota todos los valores posibles de \(X\).
 \end{example}
 
 \begin{property}
-  Si $X$ es una variable aleatoria con esperanza finita entonces se cumple que 
+  Si $X$ es una variable aleatoria discreta con esperanza finita entonces se cumple que 
    \[
     \begin{aligned}\operatorname {Var} (X)&=\operatorname {E} 
       \left[(X-\operatorname {E} [X])^{2}\right]\\[4pt]&=\operatorname {E} 
