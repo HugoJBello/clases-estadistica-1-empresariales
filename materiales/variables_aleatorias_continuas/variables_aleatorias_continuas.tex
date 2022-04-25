@@ -189,7 +189,7 @@ uniforme}
 Una variable aleatoria continua tiene una distribución uniforme en el
 intervalo \([\alpha, \beta]\) si función de densidad es la siguiente
 
-\[f(x)=\begin{cases}{\frac {1}{b-a}}&\mathrm {para} \ a\leq x\leq b,\\[8pt]0&\text {para el resto de valores}\end{cases}\]
+\[f(x)=\begin{cases}{\frac {1}{\beta-\alpha}}&\mathrm {para} \ \alpha\leq x\leq \beta,\\[8pt]0&\text {para el resto de valores}\end{cases}\]
 
 Se denota por \(U(\alpha, \beta)\).
 
@@ -222,7 +222,8 @@ veremos que el resultado es
 
   Calculemos $\displaystyle  P(2<X<18)$:
 
-   \[\displaystyle P(2<X<18)=\int^{18}_2 \frac {1}{23-0} dx =  \frac {x}{23-0} \bigg]^{18}_2 =  (18-2)\cdot {\frac {1}{23}}={\frac {16}{23}} \]
+   \[\displaystyle P(2<X<18)=\int^{18}_2 \frac {1}{23-0} dx 
+   =  \frac {x}{23-0} \bigg]^{18}_2 =  (18-2)\cdot {\frac {1}{23}}={\frac {16}{23}} \]
 \end{example}
 
 \begin{example}
@@ -232,12 +233,33 @@ Que acabe en un ángulo concreto sigue una distribución uniforme U(0, 360).
 Calcular la probabilidad de que caiga el premio situado entre los ángulos 0 y 18 grados.
  
 
-\[\displaystyle P(0<X<18)=\int^{18}_0 \frac {1}{360-0} dx =  \frac {x}{360} \bigg]^{18}_0 =  (18-0)\cdot {\frac {1}{360}}={\frac {18}{360}} \]
+\[\displaystyle P(0<X<18)=\int^{18}_0 \frac {1}{360-0} dx 
+=  \frac {x}{360} \bigg]^{18}_0 =  (18-0)\cdot {\frac {1}{360}}={\frac {18}{360}} \]
 
 \end{example}
 
+\begin{property}
+  Si $X \sim  U(\alpha, \beta)$ entonces 
+  \begin{enumerate}
+    \item $E[X] = \frac{1}{2} (\alpha+\beta)$
+    \item $V[X] = \frac{1}{12} (\beta-\alpha)$
+  \end{enumerate}
+\end{property}
 
-
+\begin{proof}
+  Para ver (1), basta calcular 
+  \[E[X] = \int^{\beta}_{\alpha} x \frac{1}{\beta - \alpha} dx 
+  = \bigg[\frac{x^2}{2}\bigg]^{\beta}_{\alpha}\frac{1}{\beta - \alpha}  =  \frac{\beta^2-\alpha^2}{2(\beta - \alpha)}
+  = \frac{(\beta-\alpha)(\beta + \alpha)}{2(\beta - \alpha)} = \frac{1}{2} (\alpha+\beta) \]
+  Para demostrar (2) usaremos que $E[X^2] = \frac{\beta^3 - \alpha^3}{3\beta - 3\alpha}$, esto se puede demostrar usando una integral similar a la anterior. 
+  Ahora vemos que 
+  \begin{align*}
+    V[X] &= E[X^2] - E[X]^2 = \frac{\beta^3 - \alpha^3}{3\beta-3\alpha} - \frac{(\alpha+\beta)^2}{4} \\
+    &= \frac{4(\beta^3 - \alpha^3) - 3(\beta-\alpha)(\alpha+\beta)^2}{12(\beta-\alpha)} \\
+    &= \frac{(\beta-\alpha)^3}{12(\beta - \alpha)} = \frac{1}{12} (\beta-\alpha)
+  \end{align*}
+ 
+\end{proof}
 
 \subsection{La distribución normal} 
 
