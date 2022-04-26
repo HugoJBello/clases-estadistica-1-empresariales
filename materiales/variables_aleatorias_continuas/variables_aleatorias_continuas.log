@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  25 APR 2022 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  26 APR 2022 12:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -546,6 +546,19 @@ Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip60
+\f@nch@O@elh=\skip61
+\f@nch@O@erh=\skip62
+\f@nch@O@olh=\skip63
+\f@nch@O@orh=\skip64
+\f@nch@O@elf=\skip65
+\f@nch@O@erf=\skip66
+\f@nch@O@olf=\skip67
+\f@nch@O@orf=\skip68
+)
 \c@theorem=\count296
 \c@claim=\count297
 
@@ -555,24 +568,24 @@ LaTeX Info: Redefining \% on input line 24.
 )
 \openout1 = `variables_aleatorias_continuas.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 9
-1.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+13.
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -590,66 +603,58 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
-1.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+13.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
-1.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+13.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-91.
+113.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-91.
+113.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 91.
+(Font)              <10> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 91.
+(Font)              <7> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 91.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
-
+(Font)              <5> on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 113
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 113
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.39998pt on input line 91.
+Package xypdf Info: Line width: 0.39998pt on input line 113.
 \AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring OFF on input line 91.
+Package hyperref Info: Link coloring OFF on input line 113.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -662,9 +667,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count304
 )
-LaTeX Info: Redefining \ref on input line 91.
-LaTeX Info: Redefining \pageref on input line 91.
-LaTeX Info: Redefining \nameref on input line 91.
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
 
 (./variables_aleatorias_continuas.out) (./variables_aleatorias_continuas.out)
 \@outlinefile=\write4
@@ -705,76 +710,108 @@ LaTeX Info: Redefining \nameref on input line 91.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 97.
+(Font)              <12> on input line 119.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 97.
+(Font)              <8> on input line 119.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 97.
+(Font)              <6> on input line 119.
 [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 108.
-<img/sc_1.png, id=31, 1253.68375pt x 477.785pt>
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+<img/sc_1.png, id=35, 1253.68375pt x 477.785pt>
 File: img/sc_1.png Graphic file (type png)
 <use img/sc_1.png>
-Package pdftex.def Info: img/sc_1.png  used on input line 138.
+Package pdftex.def Info: img/sc_1.png  used on input line 160.
 (pdftex.def)             Requested size: 361.33994pt x 137.7084pt.
- [2 <./img/sc_1.png>]
-<img/uniform.png, id=52, 1284.8pt x 917.4275pt>
+LaTeX Info: Redefining \. on input line 180.
+LaTeX Info: Redefining \% on input line 180.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 12.22504pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[2 <./img/sc_1.png>]
+<img/uniform.png, id=56, 1284.8pt x 917.4275pt>
 File: img/uniform.png Graphic file (type png)
 <use img/uniform.png>
-Package pdftex.def Info: img/uniform.png  used on input line 208.
+Package pdftex.def Info: img/uniform.png  used on input line 235.
 (pdftex.def)             Requested size: 144.52396pt x 103.19914pt.
-<img/uniform2.png, id=53, 1284.8pt x 897.3525pt>
+<img/uniform2.png, id=57, 1284.8pt x 897.3525pt>
 File: img/uniform2.png Graphic file (type png)
 <use img/uniform2.png>
-Package pdftex.def Info: img/uniform2.png  used on input line 213.
+Package pdftex.def Info: img/uniform2.png  used on input line 240.
 (pdftex.def)             Requested size: 144.52396pt x 100.94095pt.
-LaTeX Info: Redefining \. on input line 226.
-LaTeX Info: Redefining \% on input line 226.
+ [3]
+LaTeX Info: Redefining \. on input line 287.
+LaTeX Info: Redefining \% on input line 287.
+ [4 <./img/uniform.png> <./img/uniform2.png>]
+<img/exponential_distribution1.png, id=81, 1284.8pt x 1027.84pt>
+File: img/exponential_distribution1.png Graphic file (type png)
+<use img/exponential_distribution1.png>
+Package pdftex.def Info: img/exponential_distribution1.png  used on input line 
+309.
+(pdftex.def)             Requested size: 144.52396pt x 115.61917pt.
+<img/exponential_distribution2.png, id=82, 1284.8pt x 1027.84pt>
+File: img/exponential_distribution2.png Graphic file (type png)
+<use img/exponential_distribution2.png>
+Package pdftex.def Info: img/exponential_distribution2.png  used on input line 
+314.
+(pdftex.def)             Requested size: 144.52396pt x 115.61917pt.
+ [5 <./img/exponential_distribution1.png> <./img/exponential_distribution2.png>
+]
+LaTeX Info: Redefining \. on input line 390.
+LaTeX Info: Redefining \% on input line 390.
+ [6]
+<img/normal1_new.png, id=106, 1927.2pt x 1231.60126pt>
+File: img/normal1_new.png Graphic file (type png)
+<use img/normal1_new.png>
+Package pdftex.def Info: img/normal1_new.png  used on input line 403.
+(pdftex.def)             Requested size: 144.53377pt x 92.3661pt.
+<img/normal2_new.png, id=107, 1927.2pt x 1231.60126pt>
+File: img/normal2_new.png Graphic file (type png)
+<use img/normal2_new.png>
+Package pdftex.def Info: img/normal2_new.png  used on input line 408.
+(pdftex.def)             Requested size: 144.53377pt x 92.3661pt.
 
-[3] [4 <./img/uniform.png> <./img/uniform2.png>]
-<img/sc_3.png, id=76, 1175.39125pt x 523.9575pt>
-File: img/sc_3.png Graphic file (type png)
-<use img/sc_3.png>
-Package pdftex.def Info: img/sc_3.png  used on input line 281.
-(pdftex.def)             Requested size: 289.07639pt x 128.8624pt.
-<img/normal2.png, id=77, 1284.8pt x 963.6pt>
-File: img/normal2.png Graphic file (type png)
-<use img/normal2.png>
-Package pdftex.def Info: img/normal2.png  used on input line 304.
-(pdftex.def)             Requested size: 216.80554pt x 162.60416pt.
-LaTeX Info: Redefining \. on input line 316.
-LaTeX Info: Redefining \% on input line 316.
- [5 <./img/sc_3.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 340.
- [6 <./img/normal2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 340.
- (./variables_aleatorias_continuas.aux
+[7 <./img/normal1_new.png> <./img/normal2_new.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 478.
+LaTeX Info: Redefining \. on input line 478.
+LaTeX Info: Redefining \% on input line 478.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 478.
+
+(./variables_aleatorias_continuas.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 340.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 340.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 478.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 478.
 Package rerunfilecheck Info: File `variables_aleatorias_continuas.out' has not 
 changed.
-(rerunfilecheck)             Checksum: 3A222E428813E77D942E9DBB7258A09B;402.
+(rerunfilecheck)             Checksum: 39BC969F280BABFF7F2AD6F372A46CAE;485.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 12432 strings out of 482471
- 178340 string characters out of 5946661
- 510617 words of memory out of 5000000
- 27182 multiletter control sequences out of 15000+600000
+ 12577 strings out of 482471
+ 180110 string characters out of 5946661
+ 512988 words of memory out of 5000000
+ 27305 multiletter control sequences out of 15000+600000
  586619 words of font info for 75 fonts, out of 8000000 for 9000
  421 hyphenation exceptions out of 8191
- 36i,10n,37p,3241b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
+ 36i,14n,45p,3241b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/l
 m/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
@@ -787,10 +824,10 @@ m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/
 lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on variables_aleatorias_continuas.pdf (6 pages, 409142 bytes).
+Output written on variables_aleatorias_continuas.pdf (8 pages, 622239 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 199 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 84 words of extra memory for PDF output out of 10000 (max. 10000000)
 

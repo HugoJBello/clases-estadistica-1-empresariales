@@ -26,6 +26,28 @@
 \usepackage[spanish]{babel}
 
 
+
+\usepackage{fancyhdr}
+\makeatletter
+
+\fancyhf{}% Clear header/footer
+\fancyhead[RO]{\leftmark}% Chapter details in book
+\fancyhead[LE]{\rightmark \;\; Hugo J. Bello}% Stored \chapterauthor details
+\fancyfoot[C]{\thepage}
+%\renewcommand{\headrulewidth}{0pt}% Remove header rule
+%\renewcommand{\footrulewidth}{0pt}% Remove footer rule (default)
+\pagestyle{fancy}
+\makeatother
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
@@ -186,12 +208,17 @@ Al igual que ocurría con variables aleatorias discretas, en el caso continuo se
 \subsection{La distribución
 uniforme} 
 
+\begin{definition}
+  
 Una variable aleatoria continua tiene una distribución uniforme en el
 intervalo \([\alpha, \beta]\) si función de densidad es la siguiente
 
 \[f(x)=\begin{cases}{\frac {1}{\beta-\alpha}}&\mathrm {para} \ \alpha\leq x\leq \beta,\\[8pt]0&\text {para el resto de valores}\end{cases}\]
 
 Se denota por \(U(\alpha, \beta)\).
+\end{definition}
+
+
 
 Si calculamos la distribución acumulada:
 
@@ -261,27 +288,131 @@ Calcular la probabilidad de que caiga el premio situado entre los ángulos 0 y 1
  
 \end{proof}
 
+
+\subsection{La distribución exponencial} 
+
+\begin{definition}
+  Una variable aleatoria continua tiene una distribución \textbf{exponencial} de parámetro 
+  $\lambda$ si su función de densidad es la siguiente
+  
+  \[f(x)=\begin{cases}
+    \lambda e^{-\lambda x} &\mathrm {para} \ x\geq 0,\\
+     0&\text {para el resto de valores}
+  \end{cases}\]
+  
+  Se denota por \(exp(\lambda)\).
+\end{definition}
+
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\linewidth}
+  \centering
+  \includegraphics[width=2in,height=\textheight]{img/exponential_distribution1.png}
+  \caption{Función de densidad de la distribución\\ exponencial}
+  \end{minipage}%
+  \begin{minipage}{0.5\linewidth}
+  \centering
+  \includegraphics[width=2in,height=\textheight]{img/exponential_distribution2.png}
+  \caption{Función de densidad acumulada de \\la distribución exponencial}
+  \end{minipage}
+
+\end{figure} 
+
+
+\begin{property}\label{prop_exp_mean}
+  Si $X \sim  exp(\lambda)$ entonces 
+  \begin{enumerate}
+    \item $E[X] = \frac{1}{\lambda}$
+    \item $V[X] = \frac{1}{\lambda^2}$
+  \end{enumerate}
+\end{property}
+
+\begin{proof}
+  \[E[X] = \int^{\infty}_{0} \lambda x e^{-\lambda x} dx 
+  = \lim_{y\to \infty}\lambda \bigg[ e^{-\lambda x} \frac{x \lambda -1}{\lambda^2}\bigg]^y_0 = \lim_{y\to \infty} \big( e^{-\lambda y }\frac{y\lambda -1}{\lambda} + \frac{1}{\lambda}\big) = \frac{1}{\lambda} \]
+
+  Para resolver esta integral hemos usado que $\int x e^{cx} dx = e^{c x } \frac{c x - 1}{c ^2} + c$
+
+  Para calcular la varianza aplicando integración por partes con $u = \lambda x^2$ y $v = e^{\lambda x }$, podemos ver facilmente que 
+
+  \[E[X^2] = \int^{\infty}_{0} \lambda x^2 e^{-\lambda x} dx = 2/\lambda^2\]
+
+  (omitimos los detalles de la anterior integral), y de este modo
+  
+  \[V[X] = E[X^2] - E[X]^2 = \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2}\]
+\end{proof}
+
+
+\begin{example}
+  El número de kilómetros viajados por un coche hasta que la transmisión se rompe sigue una variable
+  $exp(\lambda= 1/100 000)$. 
+  \begin{enumerate}[(1)]
+    \item ¿Cuál es la probabilidad de que se roma antes de los $50000$ kilómetros?
+    \item ¿Cuál es el número esperado de kilómetros hasta que se rompa?
+  \end{enumerate}
+
+  Para resolver (1) pensemos en que 
+  \begin{align*}
+    P(X\leq 50000) &= \int^{50000}_0 \frac{1}{100000} e ^{\frac{-1}{100000}x} dx\\
+    &=\big[ - e^{\frac{-x}{100000}}\big]^{50000}_0  = 1 - e^{-1/2} \cong 0.393
+  \end{align*}
+
+  Para (2) aplicamos la propiedad anterior \ref{prop_exp_mean}(1), con lo que 
+  \[E[X] = 1/\lambda = 100000\] 
+ 
+\end{example}
+
+\begin{customdef}{Aplicaciones de la distribución exponencial}
+  La distribución exponencial puede ser interpretada como la versión continua de la distribución geométrica. A diferencia de la 
+  distribución geométrica (que recordemos era el número de intentos hasta el primer acierto en un experimento de Bernoulli), 
+  la exponencial describe \emph{el tiempo necesario para que un proceso continuo cambie su estado}
+
+  Para eventos que ocurren a un ritmo constante, con una "media de tiempo necesario para que ocurra" conocida, a distribución exponencial 
+  puede usarse para estudiar el \emph{tiempo hasta la siguiente ocurrencia de ese evento}. 
+
+  Algunos ejemplos de usos de la exponencial pueden ser 
+  \begin{itemize}
+    \item tiempo necesario hasta que llegue el próximo consumidor a una tienda
+    \item tiempo hasta siguiente fallo del sistema
+    \item tiempo hasta que aparezca el siguiente rayo en una tormenta
+    \item kilómetros hasta que se estropee una pieza de un motor.
+    \item $\ldots$
+  \end{itemize}
+\end{customdef}
+
+
 \subsection{La distribución normal} 
 
 La distribución normal juega un rol central en la teoría de la
 probabilidad y la estadística. Una de sus aplicaciones se debe a C.F.
 Gauss, que la usó en 1809 para medir errores en astronomía.
 
+\begin{definition}
+  
 Una función aleatoria continua tiene una \textbf{distribución normal}
 con parámetros \(\mu\) y \(\sigma\), su función de densidad de
 probabilidad es
 
 \[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]
 
-Esta distribución se denota por \(N(\mu, \sigma)\).
+Esta distribución se denota por \(N(\mu, \sigma^2)\).
+\end{definition}
 
-
-\begin{figure}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\linewidth}
   \centering
-  \includegraphics[width=4in,height=\textheight]{img/sc_3.png}
-  \caption{ }
-\end{figure}
+  \includegraphics[width=2in,height=\textheight]{img/normal1_new.png}
+  \caption{Función de densidad de la distribución\\ normal}
+  \end{minipage}%
+  \begin{minipage}{0.5\linewidth}
+  \centering
+  \includegraphics[width=2in,height=\textheight]{img/normal2_new.png}
+  \caption{Función de densidad acumulada de \\la distribución normal}
+  \end{minipage}
 
+\end{figure} 
+
+
+\begin{customdef}{Interpretación de $\mu$ y $\sigma$}
 
 Como vemos esta función \(f\) tiene una forma de campana, donde los
 parámetros \(\mu\) y \(\sigma\) se interpretan como:
@@ -289,23 +420,16 @@ parámetros \(\mu\) y \(\sigma\) se interpretan como:
 \begin{itemize}
 \item
   \(\mu\) determina el valor entorno al que se centra la campana.
-  Veremos que coincide con la esperanza matemáticas.
+  Veremos que coincide con la esperanza matemática. Este valor es el valor en torno al cual se sitúa la campana, su máximo.
 \item
-  \(\sigma\) determina lo \emph{apretada} que está la campana, es decir
-  lo dispersa que está la variable.
+  \(\sigma\) determina lo \emph{apretada o esparcida} que está la campana, es decir
+  lo dispersa que está la variable. Valores más grandes de $\sigma$ darán lugar a campanas más abiertas.
 \end{itemize}
 
-En la siguiente gráfica vemos la normal para distintos valores de
-\(\mu\) y \(\sigma\)
+\end{customdef}
 
 
-\begin{figure}
-  \centering
-  \includegraphics[width=3in,height=\textheight]{img/normal2.png}
-  \caption{ }
-\end{figure}
- 
-
+\begin{customdef}{Aplicaciones de la Normal}
 Algunos ejemplos de variables asociadas a fenómenos naturales que siguen
 el modelo de la normal son:
 
@@ -323,7 +447,21 @@ el modelo de la normal son:
   nivel de ruido en telecomunicaciones;
 \item
   errores cometidos al medir ciertas magnitudes;
+  \item $\cdots$
 \end{itemize}
+\end{customdef}
+
+\begin{property}
+  Si $X \sim  N(\mu, \sigma^2)$ entonces 
+  \begin{enumerate}
+    \item $E[X] = \mu$
+    \item $V[X] = \sigma^2$
+  \end{enumerate}
+\end{property}
+
+\begin{proof}
+   
+\end{proof}
 
 \hypertarget{bibliografuxeda}{%
 \section{Bibliografía}\label{bibliografuxeda}}

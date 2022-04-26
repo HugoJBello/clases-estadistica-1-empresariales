@@ -26,6 +26,27 @@
 \usepackage[spanish]{babel}
 
 
+\usepackage{fancyhdr}
+\makeatletter
+
+\fancyhf{}% Clear header/footer
+\fancyhead[RO]{\leftmark}% Chapter details in book
+\fancyhead[LE]{\rightmark \;\; Hugo J. Bello}% Stored \chapterauthor details
+\fancyfoot[C]{\thepage}
+%\renewcommand{\headrulewidth}{0pt}% Remove header rule
+%\renewcommand{\footrulewidth}{0pt}% Remove footer rule (default)
+\pagestyle{fancy}
+\makeatother
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
