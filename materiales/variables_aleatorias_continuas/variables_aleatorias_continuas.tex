@@ -112,10 +112,7 @@
 
 \begin{document}
 
-
-
-
-\maketitle
+\chapter{Variables aleatorias continuas}
 
 \section{Variables aleatorias continuas, definición y
 propiedades} 
@@ -474,8 +471,6 @@ La versión de la normal más sencilla de todas es la que tiene $\mu=0$ y $\sigm
   
 Como veremos a menudo podemos usar esta normal para trabajar con cualquier otra normal con parámetros cualesquiera $\mu, \sigma$.
 
-
-
 Usando \ref{eq_n01}, definimos:
 
 \begin{equation}\label{eq_phi_norm}
@@ -509,13 +504,13 @@ Considerando
 
  vemos que 
 
-\begin{align*}
+\begin{align}\label{prob_phi}
     P(a\leq X\leq b)&= \int^b_a f(x) dx \\
     &= \int^b_a \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx
     = \int^{b}_{a} \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\big(\frac{x-\mu}{\sigma}\big)^2} dx
     = \int^{z_b}_{z_a} \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{z^2}{2}} dz\\ 
     &= \int^{z_b}_{z_a} f(z) dz = \bigg(\int^{\infty}_{z_a} f(z) dz\bigg) - \bigg(\int^{\infty}_{z_b} f(z) dz\bigg)  = \Phi(z_a) - \Phi(z_b)
-\end{align*}
+\end{align}
 
 Hemos las propiedades de la integral definida sobre la ecuación \ref{eq_nmusigma}, haciendo el cambio de
 variable $z=(x-\mu)/\sigma$ y c.
@@ -524,20 +519,105 @@ variable $z=(x-\mu)/\sigma$ y c.
 \begin{example}
   La distribución de estaturas de un conjunto de personas se ajusta a un
 modelo normal \(N(169cm,8cm)\). Se pide:
-\begin{enumerate}
+
+\begin{enumerate}[(1)]
   \item la probabilidad de que una persona tenga su estatura comprendida entre 171 y 175 cm
+  \item la probabilidad de que una persona tenga estatura superior a 191 cm.
+  \item la probabilidad de que una persona estatura inferior a 153 cm.
 \end{enumerate}
 
-En este caso tenemos que \(b = 175, a =171\) y
+(1) En este caso tenemos que \(b = 175, a =171\) y
 \(z_b = (175-169)/8=0.75, z_a = (171-169)/8=0.25\) De acuerdo con
-lo anterior, basta
+lo anterior
+(\ref{prob_phi}), basta
 con calcular
 \(P(a\leq X\leq b) = (\Phi(z_a) - \Phi(z_b))= \Phi(0.25) - \Phi(0.75)\)
 para obtener el resultado, buscando los valores en la tabla obtenemos que el s
 \(\Phi(0.25) - \Phi(0.75) =   (0.40129 - 0.22965)\) 
 
+
+(2) En este caso puesto que el intervalo es $(191,\infty)$ 
+tenemos que $b = z_b = \infty$ \(a = 191\) y \(z_a = (191-169)/8=2.75\) De
+acuerdo con lo que hemos visto en
+(\ref{prob_phi}), basta
+con calcular \(\Phi(z_a)- \Phi(z_b)= \Phi(2.75) - 0\) para obtener
+el resultado, luego hay que buscar el valor \(\Phi(2.75)\) en la
+tabla. En este caso nos da
+\(0.00298\). Luego la probabilidad es 
+es \(  \Phi(2.75)=  0.00298\)
+
+(3)
+En este caso puesto que el intervalo es $(-\infty,153)$
+En este caso tenemos que $a=z_a = -\infty$, \(b = 153\) y \(z_b = (153-169)/8=-2\) De
+  acuerdo con lo que hemos visto en
+  (\ref{prob_phi}), basta
+  con calcular \( (\Phi(-\infty) - \Phi(z_b))= (1-\Phi(-2))\) para
+  obtener el resultado, luego hay que buscar el valor \(\Phi(-2)\) en la
+  tabla.
+
+  En este caso, como \(-2\) es negativo y en la tabla solo tenemos
+  valores positivos, hay que saber que
+  \(\phi(-2) = 1 - \Phi(2) = 1- 0.02275 = 0.099772\). Luego el numero de
+  personas con estatura inferior a 153 es
+  \(1-\Phi(-2)= 1-0.099772\)
+ 
 \end{example}
 
+
+\subsection{Distribución de Pareto}
+
+El economista Vilfredo Pareto observó que el número de personas que exceden un nivel de renta 
+$x$ puede ser aproximado por una cantidad $C/x^\alpha$ para ciertas constantes $C y \alpha$ (aparentemente para la mayor parte 
+de los países $\alpha = 1.5$). Este fenómeno ocurre muy a menudo (dinero ganado con discos por artistas, artículos publicados por 
+científicos, reclamaciones a seguros, ventas de empresas...).
+
+Si formalizamos la idea anterior que inspiró a pareto, las funciones de distribución acumuladas de estas funciones 
+serán del tipo $F = 1 - 1/x^\alpha$ para $x\geq 1$, (fijando arbitrariamente $1$ como punto de comienzo), calculando la derivada 
+de esta función obtenemos la función de densidad de la siguiente definición.
+
+\begin{definition}
+Una Variable aleatoria $X$ sigue la distribución de Pareto su función de distribución es 
+\[
+f(x) = \begin{cases}
+  \frac{\alpha x_m}{x^{\alpha+1}} & \text{ para } x\geq x_m\\
+  0 & \text{ para } x\leq x_m
+\end{cases}  
+\]
+\end{definition}
+
+
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\linewidth}
+  \centering
+  \includegraphics[width=2.5in,height=\textheight]{img/pareto_1.svg.png}
+  \caption{Función de densidad de la distribución\\ Pareto}
+  \end{minipage}%
+  \begin{minipage}{0.5\linewidth}
+  \centering
+  \includegraphics[width=2.5in,height=\textheight]{img/pareto_2.svg.png}
+  \caption{Función de densidad acumulada de \\la distribución Pareto}
+  \end{minipage}
+\end{figure} 
+
+\begin{property}
+Si $X\sim \text{Pareto}(\alpha, x_m)$ entonces 
+\[\operatorname {E} (X)={\begin{cases}\infty &\alpha \leq 1,\\{\frac {\alpha x_{\mathrm {m} }}{\alpha -1}}&\alpha >1.\end{cases}}\]
+\[
+  \operatorname {Var} (X)={\begin{cases}\infty &\alpha \in (1,2],\\\left({\frac {x_{\mathrm {m} }}{\alpha -1}}\right)^{2}{\frac {\alpha }{\alpha -2}}&\alpha >2.\end{cases}}  
+\]
+
+\end{property}
+
+%More than a century ago the economist Vilfredo Pareto ([20]) noticed that
+%the number of people whose income exceeded level x was well approximated
+%by C/x α , for some constants C and α > 0 (it appears that for all countries
+%α is around 1.5). A similar phenomenon occurs with city sizes, earthquake
+%rupture areas, insurance claims, and sizes of commercial companies. When
+%these quantities are modeled as realizations of random variables X, then their
+%distribution functions are of the type F (x) = 1 − 1/x α for x ≥ 1. (Here
+%1 is a more or less arbitrarily chosen starting point—what matters is the
+%behavior for large x.) Diﬀerentiating, we obtain probability densities of the
+%form f (x) = α/x α+1 . This motivates the following deﬁnition.
 
 \newpage
 
@@ -554,8 +634,6 @@ comienza con \(+0.02\)), lo que nos da \(0.45224\)
 Para valores negativos tener en cuenta que \(\Phi(-y) = 1-\Phi(y)\).
 Luego si por ejemplo queremos calcular \(\Phi(-0.12)\) basta con buscar
 \(\Phi(0.12)\) y luego calcular \(1-\Phi(0.12)\)\\
-
-
 
 \begin{longtable}[]{@{}ccccccccccc@{}}
 \toprule
