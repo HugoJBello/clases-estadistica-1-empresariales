@@ -1,0 +1,114 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Ejercicios Variables Aleatorias Continuas}
+\author{Hugo J. Bello}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+
+
+
+\maketitle
+\section{Ejercicios generales}
+
+
+
+\begin{example}
+  En un casino la ruleta tiene  37 números distribuidos entre los 360 grados 
+  Calcular la probabilidad de que caiga la bola entre los 5 primeros números, es decir entre el ángulo 0 y el  48.64, sabiendo que esto sigue una 
+  distribución uniforme $U(0,360)$
+  \end{example}
+
+
+
+\begin{example}
+  El número de tornillos fabricados por una máquina hasta romperse sigue una variable
+  $exp(\lambda= 1/500 000)$. 
+  \begin{enumerate}
+    \item ¿Cuál es la probabilidad de que se roma antes de los $100000$ tornillos?
+    \item ¿Cuál es el número esperado de tornillos hasta que se rompa?
+  \end{enumerate}
+\end{example}
+
+\end{document}
