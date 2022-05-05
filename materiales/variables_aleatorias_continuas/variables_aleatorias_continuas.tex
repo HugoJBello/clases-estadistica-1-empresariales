@@ -533,7 +533,7 @@ lo anterior
 con calcular
 \(P(a\leq X\leq b) = (\Phi(z_a) - \Phi(z_b))= \Phi(0.25) - \Phi(0.75)\)
 para obtener el resultado, buscando los valores en la tabla obtenemos que el s
-\(\Phi(0.25) - \Phi(0.75) =   (0.40129 - 0.22965)\) 
+\(\Phi(0.25) - \Phi(0.75) =   (0.40129 - 0.22965) \cong 0.17\) 
 
 
 (2) En este caso puesto que el intervalo es $(191,\infty)$ 
@@ -564,6 +564,17 @@ En este caso tenemos que $a=z_a = -\infty$, \(b = 153\) y \(z_b = (153-169)/8=-2
 \end{example}
 
 
+\begin{example}
+  En el ejemplo anterior hemos establecido que las alturas de un grupo de personas siguen un modelo normal \(N(169cm,8cm)\), hemos calculado 
+  que la probabilidad de encontrar a una persona con  estatura entre 171 y 175 cm es 0.17. Si este grupo tiene 200 personas podemos preguntarnos 
+  ¿Cuántas personas con alturas entre 171 y 175 esperamos encontrar?
+
+  Hay varias maneras de responder a esta pregunta. La más clara es imaginarnos que estamos extrayendo al azar personas de este grupo 
+  de $n=200$ y que por cada extracción tenemos una probabilidad $p=0.17$ de encontrar una persona en este rango. Esto es una 
+  variable aleatoria binomial de parámetros $n$ y $p$ con lo cual el \emph{valor esperado} es su esperanza matemática que vimos que era
+  $n\cot p 200 \cdot 0.17 = 34$.
+\end{example}
+
 \subsection{Distribución de Pareto}
 
 El economista Vilfredo Pareto observó que el número de personas que exceden un nivel de renta 
@@ -584,6 +595,8 @@ f(x) = \begin{cases}
 \end{cases}  
 \]
 \end{definition}
+
+
 
 
 \begin{figure}[htbp]
@@ -629,6 +642,31 @@ Si $X\sim \text{Pareto}(\alpha, x_m)$ entonces
 
 \end{property}
 
+
+
+
+\begin{example}
+  Una empresa cuenta con múltiples sucursales. El número de reclamaciones de una sucursal sigue una distribución de Pareto 
+  con parámetros $x_m = 20, \alpha = 1.1$. 
+  \begin{enumerate}
+    \item Calcular la probabilidad de que una tienda tenga entre 20 y 40 reclamaciones.
+    \item Determinar el número esperado de reclamaciones.
+  \end{enumerate}
+
+  si llamamos 
+  \[X=\text{número de reclamaciones de una sucursal}\] 
+  para el partado 1 tenemos 
+
+  \begin{align*}
+    \int^{40}_{20} \frac{\alpha x_m}{x^{\alpha+1}}dx &=\int^{40}_{20} \frac{1.1\cdot 20}{x^{1.1 +1}}dx\\
+    &= 1.1\cdot 20 (-1.1)[40^{-1.1} - 20^{-1.1}] = 0.47
+  \end{align*}
+
+  Para el apartado 2 usamos que la esperanza de la variable aleatoria $X$ 
+  \[E[X] = \frac {\alpha x_m}{\alpha -1} = \frac{1.1 \cdot 20}{1.1 -1} = 220\]
+
+\end{example}
+
 %More than a century ago the economist Vilfredo Pareto ([20]) noticed that
 %the number of people whose income exceeded level x was well approximated
 %by C/x α , for some constants C and α > 0 (it appears that for all countries
@@ -640,6 +678,7 @@ Si $X\sim \text{Pareto}(\alpha, x_m)$ entonces
 %behavior for large x.) Diﬀerentiating, we obtain probability densities of the
 %form f (x) = α/x α+1 . This motivates the following deﬁnition.
 
+\newpage
 \newpage
 
 
