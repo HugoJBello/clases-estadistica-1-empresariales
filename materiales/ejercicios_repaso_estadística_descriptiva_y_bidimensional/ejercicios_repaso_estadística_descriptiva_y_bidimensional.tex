@@ -1,0 +1,175 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Ejercicios repaso estadística descriptiva y variables estadísticas bidimensional}
+\author{Hugo J. Bello}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+
+
+
+\maketitle
+\section{Ejercicios estadística descriptiva}
+
+
+
+\begin{exercise}
+  Las ventas de una empresa a lo largo de un periodo fueron
+  \[10, 10.5, 25, 20, 24, 24, 25, 24, 25, 2, 12, 15, 25, 27, 28\]
+  mientras que las de la competencia
+  \[10, 10.4, 24, 20, 23, 23, 21, 23, 23, 21, 11, 13, 24, 25, 27\]
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Para la muestra de las ventas de la primera empresa, calcular media, mediana, los
+    cuartiles 1 y 3 y el percentil 70.
+  \item
+    Usa una medida de concentración para responder a la pregunta ¿Cual de las dos empresas vende más?
+  \item Usa una medida de dispersión para responder a la pregunta ¿Cual de las dos empresas tiene unas ventas más dispares o dispersas?
+  \item
+    Usar dos diagramas de cajas y bigotes para comparar ambas muestras.
+  \end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Una empresa realiza un estudio para conocer el número de horas semanales que un conjunto de usuarios consumen netfix. 
+Obtiene los siguientes resultados
+\begin{figure}
+  \centering
+  \begin{tabular}{lc}
+    intervalo (número de horas) & frecuencia\\
+    \hline
+    {[}0, 2) & 20    \\
+    {[}2, 4) & 31    \\
+    {[}4, 6) & 90    \\
+    {[}6, 8) & 115   \\
+    {[}8, 10) & 82   \\
+    {[}10, 12) & 53  \\
+    {[}12, 14) & 22 \\
+    {[}14, 16] & 22
+  \end{tabular}
+\end{figure}
+\begin{enumerate}
+  \item
+  Calcular la media, mediana, desviación media,  desviación típica y  la varianza.
+\item
+  Dibujar su histograma y su polígono de frecuencias.
+\end{enumerate}
+\end{exercise}
+
+\section{Ejercicios variable bidimensional}
+
+
+\begin{exercise}
+  Una empresa fabrica dos productos. Las demandas de ambos productos (en miles de unidades) están recogidas en la siguente tabla
+\begin{figure}
+  \centering
+  \begin{tabular}{lc}
+    Demanda producto 1 (X) & Demanda producto 2 (Y)\\
+    \hline
+    1 & 1.5    \\
+    5.2 & 5.6  \\  
+    10 & 9     \\
+    15.5 & 13  \\ 
+    20 & 17    \\
+    25 & 22.1  \\  
+    30 & 32    
+  \end{tabular}
+\end{figure}
+\begin{enumerate}
+  \item
+  Calcula la covarianza y el coeficiente de correlación de Pearson e
+  interprétalo.
+
+\item Calcula el coeficiente de determinación de Pearson e interprétalo.
+\item
+  Calcula la recta de regresión de Y sobre X y su error estándar de la estimación.
+\item
+  Calcula la recta de regresión de X sobre Y
+\item
+  Estima el valor de la cantidad demandada del producto 2 que corresponderá a la demanda del producto 1 con valor 28
+\end{enumerate}
+\end{exercise}
+\end{document}
