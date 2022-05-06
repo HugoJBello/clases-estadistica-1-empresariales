@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  5 MAY 2022 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  6 MAY 2022 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,46 +598,47 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 100.
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-117.
+125.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
- [1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
  (./ejercicios_variables_aleatorias_continuas.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
 Package rerunfilecheck Info: File `ejercicios_variables_aleatorias_continuas.ou
 t' has not changed.
 (rerunfilecheck)             Checksum: DBBC37A636182F02FCD17E3E0713A414;55.
  ) 
 Here is how much of TeX's memory you used:
- 9735 strings out of 482471
- 145397 string characters out of 5946661
- 426448 words of memory out of 5000000
+ 9747 strings out of 482471
+ 145490 string characters out of 5946661
+ 428448 words of memory out of 5000000
  24578 multiletter control sequences out of 15000+600000
  574425 words of font info for 63 fonts, out of 8000000 for 9000
  421 hyphenation exceptions out of 8191
- 36i,6n,37p,884b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,6n,37p,884b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/shar
+c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lm
 mi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on ejercicios_variables_aleatorias_continuas.pdf (1 page, 111482
- bytes).
+nts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
+Output written on ejercicios_variables_aleatorias_continuas.pdf (2 pages, 12858
+9 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
+ 87 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 26 named destinations out of 1000 (max. 500000)
  9 words of extra memory for PDF output out of 10000 (max. 10000000)
 
