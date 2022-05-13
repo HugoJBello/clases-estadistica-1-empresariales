@@ -92,22 +92,23 @@ ventas en enero y las ventas en febrero. Para ello se recogen los datos
 de 9 años y se anotan en una tabla las ventas de enero y febrero de cada
 año en miles de euros.
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-ventas enero & ventas febrero\tabularnewline
-\midrule
-\endhead
-142.74 & 69.06\tabularnewline
-146.58 & 70.62\tabularnewline
-149.01 & 72.03\tabularnewline
-151.72 & 73.48\tabularnewline
-154.12 & 74.89\tabularnewline
-158.23 & 76.48\tabularnewline
-160.19 & 77.85\tabularnewline
-165.46 & 79.54\tabularnewline
-168.82 & 81.05\tabularnewline
-\bottomrule
-\end{longtable}
+
+\begin{figure}
+  \centering
+\begin{tabular}{cc}
+ventas enero & ventas febrero\\
+\hline
+142.74 & 69.06\\
+146.58 & 70.62\\
+149.01 & 72.03\\
+151.72 & 73.48\\
+154.12 & 74.89\\
+158.23 & 76.48\\
+160.19 & 77.85\\
+165.46 & 79.54\\
+168.82 & 81.05
+\end{tabular}
+\end{figure}
 
 Para analizar estos datos, podríamos trabajar con cada variable por
 separado (calculando medias, varianzas, haciendo gráficas\ldots{}), pero
@@ -156,23 +157,24 @@ Obtenemos \(\overline x \cong155.207\), \(\overline y \cong77.337\).
 Añadimos una columna calculando las multiplicaciones
 \((x_i - \overline{x})(y_i - \overline{y})\)
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
+
+\begin{figure}
+  \centering
+\begin{tabular}{ccc}
 \(x_i\) & \(y_i\) &
-\((x_i - \overline{x})(y_i - \overline{y})\)\tabularnewline
-\midrule
-\endhead
-142.74 & 69.06 & 80.389\tabularnewline
-146.58 & 70.62 & 21.981\tabularnewline
-149.01 & 72.03 & 16.658\tabularnewline
-151.72 & 73.48 & 4.142\tabularnewline
-154.12 & 74.89 & -1.916\tabularnewline
-158.23 & 76.48 & -1.564\tabularnewline
-160.19 & 77.85 & 2.502\tabularnewline
-165.46 & 79.54 & 27.908\tabularnewline
-168.82 & 81.05 & 114.372\tabularnewline
-\bottomrule
-\end{longtable}
+\((x_i - \overline{x})(y_i - \overline{y})\)\\
+\hline
+142.74 & 69.06 & 80.389\\
+146.58 & 70.62 & 21.981\\
+149.01 & 72.03 & 16.658\\
+151.72 & 73.48 & 4.142 \\
+154.12 & 74.89 & -1.916\\
+158.23 & 76.48 & -1.564\\
+160.19 & 77.85 & 2.502 \\
+165.46 & 79.54 & 27.908\\
+168.82 & 81.05 & 114.372
+\end{tabular}
+\end{figure}
 
 y para calcular la covarianza basta sumar esta tercera columna y dividir
 entre el número de datos
@@ -283,9 +285,8 @@ Habitualmente, dados unas variables \(X\) e \(Y\), será la variable
 a \(Y\) \emph{variable dependiente} ya a la \(X\) \emph{variable
 independiente}.
 
-\hypertarget{muxe9todo-de-muxednimos-cuadrados}{%
 \subsection{Método de mínimos
-cuadrados}\label{muxe9todo-de-muxednimos-cuadrados}}
+cuadrados}
 
 Imaginemos que tenemos una recta
 
@@ -378,7 +379,7 @@ hemos vendido \(x=172\) tendremos que substituir en nuestra recta
 estimación}
 
 \begin{definition}
-  El coeficiente de determinación se define como el cuadrado del
+  El \textbf{coeficiente de determinación} se define como el cuadrado del
 coeficiente de correlación de pearson:
 
 \[R^2 = \rho ^2\]
@@ -411,7 +412,6 @@ la estimación en cada uno de los puntos de la muestra
 Donde
 
 \begin{itemize}
-\tightlist
 \item
   \((x_i, y_i)\) son los puntos de la muestra bidimensional
 \item
@@ -444,17 +444,17 @@ calcular la covarianza y las varianzas
 En la siguente tabla \(x_i\) representan los años de antiguedad de los
 camiones de una empresa, e \(y_i\) representa los gastos de reparación.
 
-\begin{longtable}[]{@{}lllll@{}}
-\toprule
-\(x_i\) & \(y_i\) & \(x_iy_i\) & \(x_i^2\) & \(y_i^2\)\tabularnewline
-\midrule
-\endhead
-5 & 7 & 35 & 25 & 49\tabularnewline
-3 & 7 & 21 & 9 & 49\tabularnewline
-3 & 6 & 18 & 9 & 36\tabularnewline
-1 & 4 & 4 & 1 & 16\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{figure}
+  \centering
+\begin{tabular}{ccccc}
+\(x_i\) & \(y_i\) & \(x_iy_i\) & \(x_i^2\) & \(y_i^2\)\\
+\hline
+5 & 7 & 35 & 25 & 49\\
+3 & 7 & 21 & 9 & 49 \\
+3 & 6 & 18 & 9 & 36 \\
+1 & 4 & 4 & 1 & 16  
+\end{tabular}
+\end{figure}
 
 Si calcularmos los coeficientes de la recta de regresión de \(Y\) sobre
 \(X\) obtendremos
@@ -502,8 +502,6 @@ luego
   porcentajes comentados antes sean ciertos se debe asumir:
   
   \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \tightlist
   \item
     Los valores observados para Y tienen distribución normal alrededor de
     cada valor estimado de \(\hat Y\).
@@ -521,10 +519,12 @@ de la estimación y
 
 Observemos las siguientes dos muestras bidimensionales
 
-\includegraphics[width=3.64583in,height=\textheight]{img/error_regression.png}
+\begin{figure}
+  \centering
+  \includegraphics[width=3.64583in,height=\textheight]{img/error_regression.png}
+\end{figure}
 
 \begin{itemize}
-\tightlist
 \item
   La muestra de la izquierda está muy pegada a la recta de regresión,
   por lo que tendrá un error estandar \(S_e\) bajo, y un \(R^2\) cercano
@@ -579,17 +579,15 @@ lo tanto predecir \(Y\) usando \(X\) debemos):
 
 
 
-\hypertarget{regresiuxf3n-no-lineal}{%
-\section{Regresión no lineal}\label{regresiuxf3n-no-lineal}}
+\section{Regresión no lineal}
 
 Los modelos de regresión no siempre son lineales, es decir, no siempre
 vienen ex­presados por la ecuación de una recta. Existen también
 modificaciones de esta ecuación de tal manera que se pueden practicar
 análisis de regresión cuadrática, cúbica, logarít­mica, logística, etc.
 
-\hypertarget{regresiuxf3n-exponencial}{%
-\subsection{Regresión exponencial}\label{regresiuxf3n-exponencial}}
 
+\subsection{Regresión exponencial}
 
 \begin{method}
 
@@ -624,25 +622,26 @@ obtener \(b\) y \(\ln(a)\) usando
 
 \begin{example}
 Para las siguientes variables $X$, $Y$ de la tabla, calculemos la regresión exponencial:
-\begin{longtable}[]{@{}lllll@{}}
-\toprule
+
+\begin{figure}
+  \centering
+\begin{tabular}{ccccc}
 \(x_i\) & \(y_i\) & \(z_i = \ln(y_i)\) & \(x_i^2\) &
-\(x_i z_i\)\tabularnewline
-\midrule
-\endhead
-1 & 0.06 & -2.81 & 1 & -2.81\tabularnewline
-1.2 & 0.02 & -3.91 & 1,44 & -4.69\tabularnewline
-1.5 & 0.08 & -2.53 & 2.25 & -3.8\tabularnewline
-2 & 0.57 & -0.56 & 4 & -1.12\tabularnewline
-3 & 10.8 & 2.38 & 9 & 7.14\tabularnewline
-3.7 & 29.66 & 3.39 & 13.69 & 12.54\tabularnewline
-4 & 43.28 & 3.77 & 16 & 15.08\tabularnewline
-4.5 & 1978.49 & 7.59 & 20.25 & 34.16\tabularnewline
-5 & 9171.47 & 9.12 & 25 & 45.6\tabularnewline
-\midrule
-25.9 & 11234.43 & 16.44 & 92.63 & 102.1\tabularnewline
-\bottomrule
-\end{longtable}
+\(x_i z_i\)\\
+\hline
+1 & 0.06 & -2.81 & 1 & -2.81        \\
+1.2 & 0.02 & -3.91 & 1,44 & -4.69   \\
+1.5 & 0.08 & -2.53 & 2.25 & -3.8    \\          
+2 & 0.57 & -0.56 & 4 & -1.12        \\
+3 & 10.8 & 2.38 & 9 & 7.14          \\
+3.7 & 29.66 & 3.39 & 13.69 & 12.54  \\
+4 & 43.28 & 3.77 & 16 & 15.08       \\
+4.5 & 1978.49 & 7.59 & 20.25 & 34.16\\
+5 & 9171.47 & 9.12 & 25 & 45.6       \\
+\hline
+25.9 & 11234.43 & 16.44 & 92.63 & 102.1
+\end{tabular}
+\end{figure}
 
 si dibujamos los puntos \((x_i,y_i)\) encontramos
 
@@ -684,27 +683,26 @@ aquí tenemos las predicciones junto con los valores reales
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Los siguientes datos corresponden al precio de un porducto y a la
+  Los siguientes datos corresponden al precio de un producto y a la
   cantidad ofertada:
 
-  \begin{longtable}[]{@{}ll@{}}
-  \toprule
-  cantidad ofertada (miles) Y & precio (euros) X\tabularnewline
-  \midrule
-  \endhead
-  1 & 3.5\tabularnewline
-  5 & 5\tabularnewline
-  10 & 8\tabularnewline
-  15 & 8.5\tabularnewline
-  20 & 12.5\tabularnewline
-  25 & 13\tabularnewline
-  30 & 15\tabularnewline
-  \bottomrule
-  \end{longtable}
+  \begin{figure}
+    \centering
+  \begin{tabular}{cc}
+  cantidad ofertada (miles) Y & precio (euros) X\\
+  \hline
+  1 & 3.5  \\
+  5 & 5    \\
+  10 & 8   \\
+  15 & 8.5 \\
+  20 & 12.5\\
+  25 & 13  \\
+  30 & 15  
+  \end{tabular}
+  \end{figure}
+
 
   \begin{enumerate}
-  \def\labelenumii{\arabic{enumii}.}
-  \tightlist
   \item
     Calcula la covarianza y el coeficiente de correlación de Pearson e
     interprétalo. ¿Se cumple la ley de la oferta?
