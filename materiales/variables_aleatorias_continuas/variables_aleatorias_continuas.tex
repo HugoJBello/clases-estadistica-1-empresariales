@@ -659,7 +659,8 @@ Si $X\sim \text{Pareto}(\alpha, x_m)$ entonces
 
   \begin{align*}
     \int^{40}_{20} \frac{\alpha x_m}{x^{\alpha+1}}dx &=\int^{40}_{20} \frac{1.1\cdot 20}{x^{1.1 +1}}dx\\
-    &= 1.1\cdot 20 (-1.1)[40^{-1.1} - 20^{-1.1}] = 0.47
+    &=\int^{40}_{20} 1.1\cdot 20 x^{-2.1}dx = 1.1\cdot 20[\frac{x^{-2.1 + 1}}{-2.1 + 1}]^{40}_{20}\\
+    &= (1.1\cdot 20 /-1.1) (40^{-1.1} - 20^{-1.1}) =  -20 \cdot (-0.019) = 0.38
   \end{align*}
 
   Para el apartado 2 usamos que la esperanza de la variable aleatoria $X$ 

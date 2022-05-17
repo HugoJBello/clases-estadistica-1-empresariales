@@ -1,0 +1,140 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Ejercicios Repaso Variables Aleatorias Continuas}
+\author{Hugo J. Bello}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+
+
+
+\maketitle
+\section{Ejercicios generales}
+
+
+
+\begin{exercise}
+  Un ascensor recorre 30 metros desde el primer al último piso y se estropea con una cierta 
+  frecuencia de veces. La altura X respecto piso base a la que se estropea sigue una distribución 
+  uniforme $U(0,30)$.
+
+  Calcula la probabilidad de que se estropee en el segundo piso, es decir entre las alturas 3 y 6 del piso base.
+
+  Cual es el valor esperado de distancia a la que se estropea el ascensor
+
+  \end{exercise}
+
+
+
+\begin{exercise}
+  El número de días transcurridos hasta que ocurre un desastre natural sigue una variable
+  $exp(\lambda= 1/100)$. 
+  \begin{enumerate}
+    \item ¿Cuál es la probabilidad de que ocurra un desastre antes de 80 días?
+    \item ¿Cuál es el número esperado de días hasta que ocurra el desastre?
+  \end{enumerate}
+\end{exercise}
+ 
+\begin{exercise}
+  Las ganancias de las empresas del sector siguen una normal de media $1000$ euros y desviación típica $5$. Calcular la probabilidad de que 
+  \begin{enumerate}
+    \item Las ganancias sean menos de 300 euros.
+    \item Entre 300 y 500 euros
+    \item Más de 2000 euros al mes
+    \item Si tenemos un grupo de 10 empresas del sector, ¿Cuántas de ellas estimas que ganen entre 300 y 500 euros?
+  \end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+  Los likes de una red social siguen una distribución de Pareto 
+  con parámetros $x_m = 10, \alpha = 1.4$. 
+  \begin{enumerate}
+    \item Calcular la probabilidad de que un post tenga  entre 10 y 100 likes.
+    \item Determinar el número esperado de likes.
+  \end{enumerate}
+\end{exercise}
+
+
+\end{document}
