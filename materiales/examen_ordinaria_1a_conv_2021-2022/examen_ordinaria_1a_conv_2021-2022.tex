@@ -1,0 +1,154 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Examen primera convocatoria ordinaria}
+\author{ESTADÍSTICA I (4-230-445-41956-1-2021)}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+
+
+
+\maketitle
+
+\begin{enumerate}
+  \item 
+ 
+    Una fábrica produce 2 productos (producto 1 y producto 2). En la siguiente tabla se recogen los datos de ventas de ambos productos 
+    en distintas zonas (en miles de euros)
+    \begin{figure}
+      \centering
+      \begin{tabular}{lc}
+        Producto 1 (X) & Producto 2 (Y)\\
+        \hline
+        1 & 7    \\
+        3 & 5.6  \\  
+        3 & 5.2     \\
+        4 & 4  \\ 
+        3 & 3.2    \\
+        5 & 1  \\  
+        6 & 0.5\\    
+        7 & 0    
+      \end{tabular}
+    \end{figure}
+
+    \begin{enumerate}
+      \item
+      Calcula la covarianza y el coeficiente de correlación de Pearson e
+      interprétalo. Calcula el coeficiente de determinación de Pearson e interprétalo.
+      
+      \item
+      Calcula la recta de regresión de Y sobre X y su error estándar de la estimación. 
+      Estima usando la recta de regresión las ventas del producto 2 que corresponderán a 3.2 ventas del producto 1.
+
+      \item Dibuja dos diagramas de cajas y bigotes para comparar las ventas de ambos productos. Utiliza una medida de dispersión para decidir
+      cual del las ventas de ambos productos presenta una dispersión mayor.
+    \end{enumerate}
+ 
+  \item Un centro comercial tiene 2 plantas (P1, P2), la P1 , atiende
+    al 85\% de todos los clientes, y la P2 atiende el 
+    15\% restante. En la P1 un 1.2\% de los clientes regresan, mientras que para la P2 la tan sólo un 0.5\%.
+    \begin{enumerate}
+      \item ¿Si escogemos un cliente al azar, que probabilidad hay de que ese cliente regrese al centro comercial?
+      \item ¿Qué probabilidad hay de que el cliente acudiera a la planta 1 si sabemos que regresará al centro comercial?
+      \item ¿Si escogemos 20 clientes al azar, cual es la cantidad esperada de clientes que regresarán al centro comercial?
+    \end{enumerate}
+ 
+
+ 
+  \item Una comunidad de vecinos está compuesta por 2 plantas de un mismo edificio. 50 personas viven en la primera planta y 72 en la segunda.
+    La comunidad debe elegir a 5 representantes distintos de entre los vecinos, para ello se introducen los nombres de todos los vecinos 
+    en la una urna y extraen 5 nombres al azar. ¿Qué probabilidad hay de que resulten elegidos 3 representantes de la primera planta?
+ 
+
+  \item  El número de días transcurridos hasta que ocurre una inspección de sanidad sigue una variable
+  $exp(\lambda= 1/130)$. 
+  \begin{enumerate}
+    \item ¿Cuál es la probabilidad de que ocurra una inspección después de 30 días?
+    \item ¿Cuál es el número esperado de días hasta que ocurra la siguiente inspección?
+  \end{enumerate}
+ 
+ 
+\end{enumerate}
+
+\end{document}
