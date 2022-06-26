@@ -1,0 +1,163 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\xpatchcmd\swappedhead{~}{.~}{}{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\usepackage[ marginparwidth=3cm, marginparsep=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  
+%remove section numbers
+%\setcounter{secnumdepth}{0}
+
+\title{Examen segunda convocatoria ordinaria}
+\author{ESTADÍSTICA I (4-230-445-41956-1-2021)}
+\date{}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\theoremstyle{plain}
+\swapnumbers % Switch number/label style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Propiedad}
+\newtheorem{properties}[theorem]{Propiedades}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{note}[theorem]{Nota}
+\newtheorem{definitions}[theorem]{Definiciones}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{method}[theorem]{Método}
+
+% for specifying a name
+\theoremstyle{definition} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{customdef}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+\begin{document}
+
+
+
+
+\maketitle
+
+\begin{quotation}
+  \textbf{Indicaciones}
+  \begin{itemize}
+    \item No se permite tener al alcance de la mano el teléfono móvil ni ningún otro dispositivo. Los dispositivos deberán estar apagados en todo momento.
+    \item Debe entregarse la hoja del examen junto con las hojas de respuestas. Debe ponerse el nombre en todas las hojas incluida la del examen.
+    \item Todos los ejercicios cuentan por igual. Los apartados de cada ejercicio cuentan por igual.
+    \item Se debe explicar cada cálculo que se realiza.
+  \end{itemize}
+\end{quotation}
+
+\begin{enumerate}
+  \item 
+  Una multinacional vende calzado y busca estudiar las características de sus consumidores potenciales.
+  Para ello hace un estudio en el que busca conocer la relación entre los kilómetros diarios andados por la población y el gasto en calzado
+  La siguiente tabla recoge los resultados de individuos estudiados.
+ \begin{figure}
+   \centering
+   \begin{tabular}{lc}
+     kilómetros andados (X) & gasto anual en calzado (Y)\\
+     \hline
+     21   & 90.2      \\  
+     4.1  & 61         \\ 
+     7    & 62.5       \\
+     12.3 & 81.6      \\
+     13   & 93        \\
+     8    & 72.2       \\
+     10.5 & 82.2      \\    
+     11.1 & 85.5     \\
+     8.5  & 70.4     \\
+     11.3 & 81.4     \\
+   \end{tabular}
+ \end{figure}
+ \begin{enumerate}
+   \item
+   Calcula la covarianza y el coeficiente de correlación de Pearson e
+   interprétalo. Calcula el coeficiente de determinación de Pearson e interprétalo.
+ \item
+   Calcula la recta de regresión de Y sobre X. 
+   Estima usando la recta de regresión el el gasto en calzado que tendrá una persona que camina $9$ kilómetros al día
+ 
+ \item Para los datos de la variable Y crea una tabla agrupando por intervalos de longitud 5 y úsala para dibujar un polígono de frecuencias.
+ \end{enumerate}
+ 
+ 
+  \item  Una startup se presenta a 2 concursos (concurso 1 y concurso 2). 
+  La probabilidad de que gane el concurso 2 habiendo ganado el 1 es 0.8. La probabilidad de ganar 
+  el concurso 1 es de 0.4 y y la de ganar 2 es de 0.5. 
+  \begin{enumerate}
+    \item ¿Cuál es la ganar el concurso 1 habiendo ganado el 2?
+    \item ¿Cuál es la probabilidad de que necesite presentarse 5 veces al concurso 1 para ganarlo?
+  \end{enumerate}
+ 
+  \item Un recrutador de ONG necesita recrutar a 12 socios para no ser despedido.  
+  Cada intento de recrutar tiene una probabilidad de  0.1 convencer a un posible socio. 
+  \begin{enumerate}  
+  \item ¿Cual es la probabilidad de necesitar 150 intentos para conseguirlo?
+  \item ¿Cuál es el número esperado intentos para conseguirlo?  
+  \end{enumerate}
+
+  \item   Los seguidores que tiene un streamer de una red social siguen una distribución de Pareto 
+  con parámetros $x_m = 21, \alpha = 1.2$. 
+  \begin{enumerate}
+    \item Calcular la probabilidad de que un streamer tenga  entre 21 y 200 seguidores.
+    \item Determinar el número esperado de seguidores.
+  \end{enumerate}
+ 
+ 
+\end{enumerate}
+
+\end{document}
