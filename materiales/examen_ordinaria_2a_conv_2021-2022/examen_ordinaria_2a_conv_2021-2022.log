@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.12)  26 JUN 2022 21:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.11)  27 JUN 2022 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,12 +617,12 @@ not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9706 strings out of 483048
- 144683 string characters out of 5962772
- 427016 words of memory out of 5000000
- 24516 multiletter control sequences out of 15000+600000
+ 9706 strings out of 482471
+ 144683 string characters out of 5946661
+ 428389 words of memory out of 5000000
+ 24550 multiletter control sequences out of 15000+600000
  571308 words of font info for 61 fonts, out of 8000000 for 9000
- 85 hyphenation exceptions out of 8191
+ 421 hyphenation exceptions out of 8191
  36i,9n,37p,877b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share
@@ -632,7 +632,7 @@ fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.p
 fb>
-Output written on examen_ordinaria_2a_conv_2021-2022.pdf (2 pages, 129770 bytes
+Output written on examen_ordinaria_2a_conv_2021-2022.pdf (2 pages, 129775 bytes
 ).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
